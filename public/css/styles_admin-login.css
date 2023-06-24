@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.login-form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+    .login-form h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .login-form label {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="email"],
+    .login-form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .login-form button[type="submit"] {
+        width: 50%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 130px;
+        margin-top: 15px;
+    }
+
+footer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+    .footer-right p {
+        margin-right: 10px;
+    }
+
+    .footer-right a {
+        margin-right: 10px;
+        color: #333;
+    }
+
+        .footer-right a:hover {
+            color: #000;
+        }
+
+.or-text {
+    text-align: center;
+    margin: 20px 0;
+}
+
+    .login-form p{
+        text-align:center;
+        color:red;
+    }
+
+    .admin-register-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4e3eff;
+        color: #555;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }

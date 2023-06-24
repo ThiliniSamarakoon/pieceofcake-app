@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#D46DF9, white) 0 0 / 100% calc(100% - (-400px)), white 0 calc(100% - 0px) / 10% 10%;
+}
+
+.registration-form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .registration-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .registration-form form {
+        display: grid;
+        gap: 10px;
+    }
+
+    .registration-form label {
+        font-weight: bold;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="email"],
+    .registration-form input[type="tel"],
+    .registration-form input[type="password"],
+    .registration-form select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+    .button-group button[type="submit"] {
+        padding: 10px 20px;
+        background-color: greenyellow;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .button-group button[type="reset"] {
+        padding: 10px 20px;
+        background-color: red;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .button-group button:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .button-group button[type="submit"]:hover {
+        background-color: green;
+        color: white;
+    }
+
+    .button-group button[type="reset"]:hover {
+        background-color: orange;
+        color: white;
+    }
+
