@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Login Customized Orders</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styles_login.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styles_login-customized-orders.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/script_login.js') }}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <?php
@@ -35,7 +33,7 @@
     ?>
     <div class="login-form" id="login-form">
         <h2>Login</h2>
-        <form id="login" method="POST" action="{{ route('user.login.submit') }}">
+        <form id="login" method="POST" action="{{ route('customized.orders.store') }}"">
             @csrf
 
             <label for="UserName">User Name:</label>
@@ -44,7 +42,7 @@
             <label for="Email">Email:</label>
             <input type="text" id="Email" name="Email" placeholder="Enter your email" required>
 
-            <label for="Password">Password</label>
+            <label for="Password">Password:</label>
             <input type="password" id="Password" name="Password" placeholder="Enter your password" required>
 
             <div id="error-messages"></div> 
@@ -53,7 +51,7 @@
 
         <div class="or-text">OR</div>
 
-        <button class="guest-button" id="guest-button" onclick="window.location.href = '{{ route('cake-shop') }}';">Continue as a Guest</button>
+        <button class="register-button" id="register-button" onclick="window.location.href = '{{ route('customer.register') }}';">Register</button>
     </div>
 
     <?php
@@ -76,11 +74,10 @@
 </footer>
 
 <!-- HTML attribute method -->
-<div id="error-message" data-error-message="{{ session('errorMessage') }}"></div>
+<div id="error-message" data-error-message="{{ session('errorMessage') }}"></div> 
 
 <!-- Hidden input field method -->
 <input type="hidden" id="error-message-input" value="{{ session('errorMessage') }}">
-
 
 </body>
 </html>

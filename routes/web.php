@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminRegisterController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\CustomizedOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,9 +51,9 @@ Route::get('/admin-register', function () {
     return view('html.admin-register');
 })->name('admin.register');
 
-Route::get('/customized-orders', function () {
-    return view('html.customized-orders');
-})->name('customized.orders');
+Route::get('/customized_orders', function () {
+    return view('html.customized_orders');
+})->name('customer.customized_orders');
 
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
@@ -62,3 +63,13 @@ Route::post('/login', [LoginController::class, 'login'])->name('user.login.submi
 Route::post('/admin/register', [AdminRegisterController::class, 'admin_register'])->name('admin.register.submit');
 
 Route::post('/admin/login', [AdminLoginController::class, 'adminLogin'])->name('admin.login.submit');
+
+Route::get('/customized-orders', function () {
+    return view('html.login-customized-order');
+})->name('login.customized.orders');
+
+Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
+
+
+
+

@@ -3,7 +3,7 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    background: linear-gradient(#D46DF9, white) 0 0 / 100% calc(100% - (-400px)), white 0 calc(100% - 0px) / 10% 10%;
+    background: white;
 }
 
 .registration-form {
@@ -12,7 +12,13 @@ body {
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 5px black;
+}
+
+.registration-form p {
+    font-size: 12px;
+    color:red;
+    text-align:center;
 }
 
     .registration-form h2 {

@@ -9,6 +9,7 @@
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/script_login.js') }}"></script>
     <script src="{{ asset('js/script_register.js') }}"></script>
+
 </head>
 <body>
     <?php
@@ -19,14 +20,14 @@
             <li><img src="{{ asset('images/piece_of_cake_logo.jpeg') }}" alt="Logo Icon" width="50" height="50" style="margin-top: 5px;">
             <li><button type="button" id="home-button" onclick="window.location.href = '{{ route('cake-shop') }}';">Home</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#cake-categories';">Cake Categories</button></li>
-            <li><button type="button" onclick="window.location.href = '{{ route('customized.orders') }}';">Customized Orders</button></li>
+            <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#About-Us-Section';">About Us</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section';">Contact Us</button></li>
             <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.login') }}';" >Login</button></li>
             <li class="top-right">
-                <img src="{{ asset('images/cart_icon.png') }}" alt="Cart Icon" width="30" height="30">
-                <img src="{{ asset('images/profile_icon.png') }}" alt="Profile Icon" width="30" height="30">
-                <input type="text" placeholder="Search..." style="height: 20px" >
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-search"></i>
             </li>
         </ul>
     </div>
@@ -36,6 +37,7 @@
     ?>
     <div class="registration-form" >
         <h2>Registration Form</h2>
+        <p>(Please note that to make a customized order first you should have a registered account)</p>
         <form id="registration-form" onsubmit="handleSubmit(event)"  method="POST" action="{{ route('customer.register.submit') }}">
             @csrf
             <label for="first-name">First Name:</label>

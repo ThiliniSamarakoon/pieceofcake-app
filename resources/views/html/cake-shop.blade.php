@@ -17,10 +17,10 @@
             <li><img src="{{ asset('images/piece_of_cake_logo.jpeg') }}" alt="Logo Icon" width="50" height="50" style="margin-top: 5px;">
             <li><button id="home-button" type="button" onclick="scrollToSection('#piece-of-cake')">Home</button></li>
             <li><button type="button" onclick="scrollToSection('#cake-categories')">Cake Categories</button></li>
-            <li><button type="button" onclick="window.location.href = '{{ route('customized.orders') }}';">Customized Orders</button></li>
+            <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
             <li><button type="button" onclick="scrollToSection('#About-Us-Section')">About Us</button></li>
             <li><button type="button" onclick="scrollToSection('#Contact-Us-Section')">Contact Us</button></li>
-            <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.login') }}';" >Login</button></li>
+            <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';" >Register</button></li>
             <li class="top-right">
                 <i class="fas fa-shopping-cart"></i>
                 <i class="fas fa-user"></i>
@@ -41,20 +41,13 @@
     ?>
     <div class="slideshow-container">
         <img class="slide active" src="{{ asset('images/cake-slide1.jpg') }}" alt="Image 1">
-        <img class="slide" src="{{ asset('images/cake-slide2.jpg') }}" alt="Image 2" style="margin-left:650px;">
-        <img class="slide" src="{{ asset('images/cake-slide3.jpg') }}" alt="Image 3" style="margin-left: 450px;">
+        <img class="slide" src="{{ asset('images/cake-slide2.jpg') }}" alt="Image 2">
+        <img class="slide" src="{{ asset('images/cake-slide3.jpg') }}" alt="Image 3" >
         <img class="slide" src="{{ asset('images/cake-slide4.jpg') }}" alt="Image 4">
         <img class="slide" src="{{ asset('images/cake-slide5.jpg') }}" alt="Image 5">
         <img class="slide" src="{{ asset('images/cake-slide6.jpg') }}" alt="Image 6">
     </div>
     <br><br>
-
-    <?php
-    //Register button
-    ?>
-    <div class="register-button">
-        <button type="button" id="register-button" onclick="window.location.href = '{{ route('customer.register') }}';">REGISTER</button>
-    </div>
 
     <?php
     //Cake Categories text
@@ -70,8 +63,8 @@
         <div class="category-item">
             <img class="category-image" src="{{ asset('images/cake-slide1.jpg') }}" alt="Category 1">
             <h3 class="category-name">Birthday Cakes</h3>
-            <p class="category-description">Browse our selection and make your loved one's birthday
-            even more memorable with a delicious cake from us!</p>
+            <p class="category-description">Discover our extensive cake selection and make your loved one's birthday an
+            extraordinary and unforgettable occasion with a delectable cake from our exquisite selection.</p>
             <div class="category-button">
                 <button type="button">Select Cake</button>
             </div>
@@ -89,10 +82,8 @@
         <div class="category-item">
             <img class="category-image" src="{{ asset('images/cake-slide3.jpg') }}" alt="Category 3">
             <h3 class="category-name">Cup Cakes</h3>
-            <p class="category-description">We offer a mouth-watering selection of delicious cupcakes that are perfect for any
-            occasion! we offer a variety of frostings, including buttercream, cream cheese, and whipped cream.
-            You can choose from a range of colors and decorations to customize your cupcakes and make them perfect
-            for your event.</p>
+            <p class="category-description">With a delightful array of frostings like buttercream,
+            cream cheese, and whipped cream, personalize your cupcakes with a choice of colors and decorations to suit your event.</p>
             <div class="category-button">
                 <button type="button">Select Cake</button>
             </div>
@@ -118,8 +109,7 @@
         <div class="category-item">
             <img class="category-image" src="{{ asset('images/cake-slide6.jpg') }}" alt="Category 6">
             <h3 class="category-name">Gift Packs</h3>
-            <p class="category-description">We offer a range of beautifully curated gift packs for all occasions! Our gift packs
-            come in various sizes and include a selection of our delicious treats that are perfect for gifting to your loved ones
+            <p class="category-description">Discover our beautifully curated gift packs for all occasions! Available in various sizes and include a selection of our delicious treats that are perfect for gifting to your loved ones
             or for indulging yourself.</p>
             <div class="category-button">
                 <button type="button">Select Cake</button>
@@ -144,8 +134,7 @@
             customized and personalized creations. As a sole proprietorship, we have been proudly serving our loyal customers since 2015.
             In keeping up with technological developments and consumer demand, we have been continually modernising our processes
             and provide computer based systems and online services. So, we ensure our service blends smoothly with any event. 
-            We are located at 109/A Pubudu Mawatha, Siddamulla, Piliyandala, we are open from 7:00am to 10:00pm every day for
-            online orders. For orders and inquiries during operating hours, please feel free to contact us at +94 71 492 5742.
+            We are open from 7:00am to 10:00pm every day for online orders.
             Thank you for choosing Piece Of Cake - Sweetest slice of Paradise!</p>
         </div>
     </div>

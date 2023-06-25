@@ -40,12 +40,22 @@ class LoginController extends Controller
 
         if ($user && Hash::check($request->input('Password'), $user->Password)) {
             // Authentication successful
-            return redirect()->intended(route('cake-shop'));
+            Auth::login($user);
+
+            // Create a new customized order record
+            $customizedOrder = new CustomizedOrder();
+            $customizedOrder->user_id = $user->id;
+            
+            // Save the customized order to the database
+            $customizedOrder->save();
+
+            return redirect()->intended(route('customized.orders'));
+
         }else {
             // Authentication failed
             $errorMessage = 'Invalid login credentials';
             $request->session()->flash('errorMessage', $errorMessage);
-            return view('html.login');
+            return redirect()->back()->withInput();
     }
 }       
 }   
