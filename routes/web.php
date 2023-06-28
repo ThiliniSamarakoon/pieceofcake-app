@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminRegisterController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\CustomizedOrderController;
+use App\Http\Controllers\CustomOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,11 @@ Route::get('/customized_orders', function () {
     return view('html.customized_orders');
 })->name('customer.customized_orders');
 
+Route::get('/choose-cakeoptions', function () {
+    return view('html.choose-cakeoptions');
+})->name('customer.choose-cakeoptions');
+
+
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('customer.login');
@@ -69,6 +75,11 @@ Route::get('/customized-orders', function () {
 })->name('login.customized.orders');
 
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
+
+Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');
+
+//Route::post('/submit-form', 'CustomOrderController@submitForm')->name('submit-form');
+Route::post('/submit-custom-order', [CustomOrderController::class, 'submitForm'])->name('submit.custom.order');
 
 
 

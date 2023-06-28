@@ -4,13 +4,14 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Models",
     "\\database",
     "\\database\\migrations",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\html"
+    "\\resources\\views\\html",
+    "\\routes",
+    "\\storage"
   ],
-  "SelectedNode": "\\public\\css\\styles.css",
+  "SelectedNode": "\\app\\Models\\User.php",
   "PreviewInSolutionExplorer": false
 }

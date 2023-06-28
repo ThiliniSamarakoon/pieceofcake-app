@@ -33,6 +33,7 @@
     ?>
     <div class="login-form" id="login-form">
         <h2>Login</h2>
+        <p class="note1"><b>(Please note that to make a customized order first you should have a registered account)</b></p>
         <form id="login" method="POST" action="{{ route('customized.orders.store') }}"">
             @csrf
 

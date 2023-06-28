@@ -33,29 +33,97 @@
     ?>
     <div class="header">
         <h1 class="customized-cake-heading">Customized Cake</h1>
-        <p class="para1">Transform your cake into a masterpiece with our vast selection of elements, <br>cake shapes, text boxes, fill buckets and others!</p>
-        <p class="note1"><b>(Please note that to make a customized order first you should have a registered account)</b></p>
-        <button id="chooseOptionButton">Choose Options</button>
+        <p class="para1">Transform your cake into a masterpiece with our vast selection of elements!</p>
+        <p style="text-align:center; color:red;"><b>Click on Save Button to Send the Order to the Owner</b></p>
+        <button class="button-choose-options" title="Choose your favourite Cake type, frostings, shapes and others" onclick="window.location.href = '{{ route('customer.choose-cakeoptions') }}';">Choose Options</button>
+        <button class="button-add-to-cart" title="Add to Cart">Add to Cart</button>
+    </div>
     </div>
 
-    <?php
-    //canvas
-    ?>
-    <canvas id="canvas"></canvas>
-    <input type="color" id="colorPicker">
-    <label for="uploadImage" id="uploadImageLabel">
-        <img src="{{ asset('images/uploadImage_icon.png') }}" alt="Image">
-    </label>
-    <input type="file" id="uploadImage" style="display: none">
+<?php
+//Canvas
+?>   
+        <canvas id="myCanvas"></canvas>
+        <div class="wrapper" id="wrapper">
+            <div class="icon color">
+                <div class="tooltip">
+                    Select
+                </div>
+                <span><i><input type="color" id="colorChange"></i></span>
+            </div>
+                <div class="tooltip">
+                    <h4>Pen Size</h4>
+                </div>
+                <span><i><input type="range" id="penSize" step="2" min="2" max="150" value="5"></i></span>
+    
+         <div class="icon Pencil">
+            <div class="tooltip">
+                Pencil
+            </div>
+            <button  id="btnPencil">
+            <span><i class="fa fa-pencil-alt"></i></span>
+             </button>
+        </div>
+        
+        <div class="icon Bucket">
+            <div class="tooltip">
+                Fill
+            </div>
+            <button  id="btnBucket">
+            <span><i class="fa fa-fill-drip"></i></span>
+             </button>
+        </div>
 
-    <div class="button-container">
-        <button id="downloadButton">Download</button>
-        <button id="saveButton">Save</button>
-        <button id="clearButton" type="reset">Clear</button>
-    </div>
+        <div class="icon Eraser">
+            <div class="tooltip">
+                Eraser
+            </div>
+            <button  id="btnEraser">
+            <span><i class="fa fa-eraser"></i></span>
+             </button>
+        </div>
+        
+        <div class="icon Clear">
+            <div class="tooltip">
+                Clear
+            </div>
+            <button  id="btnClear">
+            <span><i class="fa fa-broom"></i></span>
+             </button>
+        </div>
 
-    <br>
-        <button id="checkout">Checkout</button>
+        <div class="icon Undo">
+            <div class="tooltip">
+                Undo
+            </div>
+             <button  id="btnUndo">
+            <span><i class="fa fa-undo"></i></span>
+             </button>
+        </div>
+
+         <div class="icon upload">
+            <div class="tooltip">
+                Upload
+            </div>
+                <button  id="btnUpload">
+                <span><i class="fas fa-upload"></i></span>
+                <input type="file" id="uploadImage" style="display: none;">
+                </button>
+         </div>
+<form id="saveForm" method="POST" action="{{ route('customized.orders.store') }}"  enctype="multipart/form-data">
+    @csrf
+        <div class="icon save">
+            <div class="tooltip">
+                Save
+            </div>
+            <input type="hidden" id="imageData" name="image" value="">
+             <button  id="btnSave" type="submit">
+            <span><i class="fas fa-save"></i></span>
+             </button>
+        </div>
+</form> 
+</div>
+
     <?php
     //Footer Section
     ?>
