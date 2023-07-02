@@ -22,7 +22,7 @@
             <li><button type="button" onclick="scrollToSection('#Contact-Us-Section')">Contact Us</button></li>
             <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';" >Register</button></li>
             <li class="top-right">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('customer.cart.overview') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
                 <i class="fas fa-search"></i>
             </li>
@@ -66,7 +66,7 @@
             <p class="category-description">Discover our extensive cake selection and make your loved one's birthday an
             extraordinary and unforgettable occasion with a delectable cake from our exquisite selection.</p>
             <div class="category-button">
-                <button type="button">Select Cake</button>
+                <button type="button" onclick="window.location.href = '{{ route('customer.birthday-cakes') }}';">Select Cake</button>
             </div>
         </div>
         <div class="category-item">

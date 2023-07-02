@@ -23,7 +23,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section'">Contact Us</button></li>
             <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register</button></li>
             <li class="top-right">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('customer.cart.overview') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
                 <i class="fas fa-search"></i>
             </li>

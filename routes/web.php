@@ -60,6 +60,14 @@ Route::get('/choose-cakeoptions', function () {
     return view('html.choose-cakeoptions');
 })->name('customer.choose-cakeoptions');
 
+Route::get('/cart-overview', function () {
+    return view('html.cart-overview');
+})->name('customer.cart.overview');
+
+Route::get('/birthday-cake', function () {
+    return view('html.birthday-cakes-page');
+})->name('customer.birthday-cakes');
+
 
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 

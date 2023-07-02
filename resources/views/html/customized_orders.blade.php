@@ -21,7 +21,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section'">Contact Us</button></li>
             <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register</button></li>
             <li class="top-right">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('customer.cart.overview') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
                 <i class="fas fa-search"></i>
             </li>
@@ -36,7 +36,7 @@
         <p class="para1">Transform your cake into a masterpiece with our vast selection of elements!</p>
         <p style="text-align:center; color:red;"><b>Click on Save Button to Send the Order to the Owner</b></p>
         <button class="button-choose-options" title="Choose your favourite Cake type, frostings, shapes and others" onclick="window.location.href = '{{ route('customer.choose-cakeoptions') }}';">Choose Options</button>
-        <button class="button-add-to-cart" title="Add to Cart">Add to Cart</button>
+        <button class="button-add-to-cart" title="Please click on this after owner accept the order via SMS" onclick="window.location.href = '{{ route('customer.cart.overview') }}';">Add to Cart</button>
     </div>
     </div>
 

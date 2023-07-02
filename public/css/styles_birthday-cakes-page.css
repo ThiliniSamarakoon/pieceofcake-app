@@ -1,0 +1,54 @@
+.heading {
+    text-align:center;
+}
+
+.rounded-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.show-details-button {
+    background-color: lightgrey;
+    border-radius: 10px;
+    color: black;
+    padding: 2px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+    .show-details-button i {
+        margin-left: 5px;
+    }
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.column {
+    text-align: center;
+}
+
+.sort-by {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left:1235px;
+}
+
+    .sort-by label {
+        margin-right: 10px;
+    }
+
+    .sort-by select {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+
