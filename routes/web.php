@@ -68,6 +68,13 @@ Route::get('/birthday-cake', function () {
     return view('html.birthday-cakes-page');
 })->name('customer.birthday-cakes');
 
+Route::get('/wedding-structures', function () {
+    return view('html.wedding-structures');
+})->name('customer.wedding-structures');
+
+Route::get('/wedding-structures', function () {
+    return view('html.cup-cakes-page');
+})->name('customer.cup-cakes');
 
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 

@@ -1,10 +1,10 @@
 .heading {
-    text-align:center;
+    text-align: center;
 }
 
 .rounded-image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -13,14 +13,15 @@
     background-color: lightgrey;
     border-radius: 10px;
     color: black;
-    padding: 5px 10px;
+    padding: 5px 15px;
     text-align: center;
-    width:150px;
+    width: 200px;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
     margin-top: 10px;
     cursor: pointer;
+    margin-bottom:10px;
 }
 
     .show-details-button i {
@@ -42,20 +43,3 @@
     flex-direction: column;
     justify-content: center;
 }
-
-.sort-by {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left:1235px;
-}
-
-    .sort-by label {
-        margin-right: 10px;
-    }
-
-    .sort-by select {
-        padding: 5px;
-        font-size: 14px;
-    }
-
-

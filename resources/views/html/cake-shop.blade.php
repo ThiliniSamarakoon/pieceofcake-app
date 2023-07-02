@@ -76,7 +76,7 @@
             to match your wedding theme and create a beautiful and personalized cake that will leave a lasting
             impression on your guests.</p>
             <div class="category-button">
-                <button type="button">Select Cake</button>
+                <button type="button" onclick="window.location.href = '{{ route('customer.wedding-structures') }}';">Select Cake</button>
             </div>
         </div>
         <div class="category-item">
@@ -85,7 +85,7 @@
             <p class="category-description">With a delightful array of frostings like buttercream,
             cream cheese, and whipped cream, personalize your cupcakes with a choice of colors and decorations to suit your event.</p>
             <div class="category-button">
-                <button type="button">Select Cake</button>
+                <button type="button" onclick="window.location.href = '{{ route('customer.cup-cakes') }}';">Select Cake</button>
             </div>
         </div>
         <div class="category-item">
