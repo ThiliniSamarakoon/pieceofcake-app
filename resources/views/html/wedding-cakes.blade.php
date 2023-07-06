@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cup Cakes</title>
+    <title>Wedding Cakes</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_birthday-cakes-page.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
@@ -32,58 +32,32 @@
     <?php
     //Heading
     ?>
-    <h1 class="heading">Cup Cakes</h1>
+    <h1 class="heading">Wedding Cakes</h1>
 
     <?php
     // Images with buttons
     ?>
     <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image1.jpg') }}" alt="Image 1" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image1.jpg') }}" alt="Image 1" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image2.jpg') }}" alt="Image 2" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image2.jpg') }}" alt="Image 2" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image3.jpg') }}" alt="Image 3" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image3.jpg') }}" alt="Image 3" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image4.jpg') }}" alt="Image 4" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-    </div>
-    <div class="image-grid">
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image5.jpg') }}" alt="Image 5" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image6.jpg') }}" alt="Image 6" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image7.jpg') }}" alt="Image 7" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image8.jpg') }}" alt="Image 8" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image4.jpg') }}" alt="Image 4" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -91,51 +65,25 @@
     </div>
     <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image9.jpg') }}" alt="Image 9" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image5.jpg') }}" alt="Image 5" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image10.jpg') }}" alt="Image 10" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image6.jpg') }}" alt="Image 6" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image11.jpg') }}" alt="Image 11" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image7.jpg') }}" alt="Image 7" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image12.jpg') }}" alt="Image 12" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-    </div>
-    <div class="image-grid">
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image13.jpg') }}" alt="Image 13" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image14.jpg') }}" alt="Image 14" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image15.jpg') }}" alt="Image 15" class="rounded-image" >
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image16.jpg') }}" alt="Image 16" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image8.jpg') }}" alt="Image 8" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -143,25 +91,25 @@
     </div>
     <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image17.jpg') }}" alt="Image 17" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image9.jpg') }}" alt="Image 9" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image18.jpg') }}" alt="Image 18" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image10.jpg') }}" alt="Image 10" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image19.jpg') }}" alt="Image 19" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image11.jpg') }}" alt="Image 11" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image20.jpg') }}" alt="Image 20" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image12.jpg') }}" alt="Image 12" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -169,7 +117,33 @@
     </div>
     <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Cup_cakes/image21.jpg') }}" alt="Image 21" class="rounded-image" >
+            <img src="{{ asset('images/Wedding_cakes/image13.jpg') }}" alt="Image 13" class="rounded-image" >
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="column">
+            <img src="{{ asset('images/Wedding_cakes/image14.jpg') }}" alt="Image 14" class="rounded-image" >
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="column">
+            <img src="{{ asset('images/Wedding_cakes/image15.jpg') }}" alt="Image 15" class="rounded-image" >
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="column">
+            <img src="{{ asset('images/Wedding_cakes/image16.jpg') }}" alt="Image 16" class="rounded-image" >
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="image-grid">
+        <div class="column">
+            <img src="{{ asset('images/Wedding_cakes/image17.jpg') }}" alt="Image 17" class="rounded-image" >
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>

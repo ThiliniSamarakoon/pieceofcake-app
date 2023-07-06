@@ -85,11 +85,12 @@
             <h3>Weight</h3>
             <label>
                 <select name="weight">
-                    <option value="1kg">1kg</option>
-                    <option value="1.5kg">1.5kg</option>
-                    <option value="2kg">2kg</option>
-                    <option value="2.5kg">2.5kg</option>
-                    <option value="3kg">3kg</option>
+                    <option value="1kg">0.5 kg</option>
+                    <option value="1kg">1 kg</option>
+                    <option value="1.5kg">1.5 kg</option>
+                    <option value="2kg">2 kg</option>
+                    <option value="2.5kg">2.5 kg</option>
+                    <option value="3kg">3 kg</option>
                 </select>
             </label>
             <br>
@@ -99,7 +100,7 @@
 
         <!-- Description -->
         <div class="custom-order-column">
-            <h3>Description</h3>
+            <h3>Message on the Cake: </h3>
             <textarea name="description"></textarea>
         </div>
 

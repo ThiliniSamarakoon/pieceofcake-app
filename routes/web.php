@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminRegisterController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\CustomizedOrderController;
 use App\Http\Controllers\CustomOrderController;
+use App\Http\Controllers\OrderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -72,9 +74,25 @@ Route::get('/wedding-structures', function () {
     return view('html.wedding-structures');
 })->name('customer.wedding-structures');
 
-Route::get('/wedding-structures', function () {
+Route::get('/cup-cakes', function () {
     return view('html.cup-cakes-page');
 })->name('customer.cup-cakes');
+
+Route::get('/wedding-cakes', function () {
+    return view('html.wedding-cakes');
+})->name('customer.wedding-cakes');
+
+Route::get('/celebration-cakes', function () {
+    return view('html.celebration-cakes');
+})->name('customer.celebration-cakes');
+
+Route::get('/gift-packs', function () {
+    return view('html.gift-packs');
+})->name('customer.gift-packs');
+
+Route::get('/cakes-for-girls', function () {
+    return view('html.cakes-for-girls');
+})->name('customer.cakes-for-girls');
 
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
@@ -95,6 +113,8 @@ Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->nam
 
 //Route::post('/submit-form', 'CustomOrderController@submitForm')->name('submit-form');
 Route::post('/submit-custom-order', [CustomOrderController::class, 'submitForm'])->name('submit.custom.order');
+
+Route::post('/orders', [OrderController::class, 'store'])->name('customer.orders.store');
 
 
 

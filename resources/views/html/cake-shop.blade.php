@@ -36,6 +36,10 @@
             <p class="tagline"> SWEETEST SLICE OF PARADISE </P>
     </div>
 
+    <div class="discount-message" style="background-image: url('{{ asset('images/discount.png') }}'); background-position: right;">
+        <p><b><span style="color:red;">Unlock a special offer!</span><br><br> Register on our site and enjoy a 10% <br>discount for every 3 orders you place.</b></p>
+    </div>
+
     <?php
     //Slideshow container
     ?>
@@ -94,7 +98,7 @@
             <p class="category-description">We offer a stunning selection of beautiful and delicious wedding cakes to make
             your special day even more memorable! You can choose from a range of designs to match your wedding theme.</p>
             <div class="category-button">
-                <button type="button">Select Cake</button>
+                <button type="button" onclick="window.location.href = '{{ route('customer.wedding-cakes') }}';">Select Cake</button>
             </div>
         </div>
         <div class="category-item">
@@ -103,7 +107,7 @@
             <p class="category-description">We offer a range of beautiful and delicious cakes to make any occasion extra special!
             We offer a range of celebration cakes including anniversaries, graduations, baby showers, and much more.</p>
             <div class="category-button">
-                <button type="button">Select Cake</button>
+                <button type="button" onclick="window.location.href = '{{ route('customer.celebration-cakes') }}';">Select Cake</button>
             </div>
         </div>
         <div class="category-item">
@@ -112,7 +116,7 @@
             <p class="category-description">Discover our beautifully curated gift packs for all occasions! Available in various sizes and include a selection of our delicious treats that are perfect for gifting to your loved ones
             or for indulging yourself.</p>
             <div class="category-button">
-                <button type="button">Select Cake</button>
+                <button type="button" onclick="window.location.href = '{{ route('customer.gift-packs') }}';">Select Cake</button>
             </div>
         </div>
     </div>

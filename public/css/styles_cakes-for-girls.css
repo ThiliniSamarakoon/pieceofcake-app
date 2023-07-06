@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 600px;
+    height: 600px;
+    margin-left: 5px;
+    margin-top: 20px;
+    float: left;
+    margin-right: 20px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    width: auto;
+    margin-top: 12px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    margin-left:70px;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+    }
+
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.label {
+    font-weight: bold;
+    flex-basis: 30%; 
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.rating {
+    width: 208px;
+    height: 40px;
+    margin-top:-10px;
+    margin-left:0px;
+}
+
+    .rating label {
+        float: right;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+        .rating label:not(:first-of-type) {
+            padding-right: 2px;
+        }
+
+        .rating label:before {
+            content: "\2605";
+            font-size: 42px;
+            color: #ccc;
+            line-height: 1;
+        }
+
+    .rating input {
+        display: none;
+    }
+
+        .rating input:checked ~ label:before, .rating:not(:checked) > label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
+            color: #f9df4a;
+        }
+
+.add-to-cart-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .add-to-cart-button:hover {
+        background-color: purple;
+    }
+
+
+
+.image-details {
+    display: flex;
+    flex-wrap: wrap; /* Allow the elements to wrap when the container is not wide enough */
+    align-items: flex-start;
+}
+
+.text-input,
+.dropdown {
+    flex-basis: 70%; 
+    text-align: center;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: #dd8afa;
+    margin-top:-10px;
+    margin-left:-10px;
+    margin-right:-10px;
+}
+
+    .navbar button {
+        background-color: white;
+        color: purple;
+        border: none;
+        font-size: 14px;
+        border-radius: 12px;
+        width: 150px;
+        height: 40px;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+        .navbar button:hover {
+            background-color: purple;
+            color: white;
+        }
+
+    .navbar ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+.top-right {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    padding: 15px 10px;
+}
+
+    .top-right img {
+        margin-right: 20px;
+    }
+
+footer {
+    background-color: #dd8afa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:1000px;
+    margin-left:-10px;
+}
+
+.footer-left img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+    .footer-right p {
+        margin-right: 10px;
+    }
+
+    .footer-right a {
+        margin-right: 10px;
+        color: #333;
+    }
+
+        .footer-right a:hover {
+            color: #000;
+        }
+
+.fas.fa-shopping-cart:hover {
+    color: white;
+}
+
+.text-area {
+    text-align:left;
+}
+
+.feedback-label {
+    text-align: center;
+    margin-top: 300px;
+    float:left;
+    margin-left:-600px;
+}
+
+.feedbacks {
+    font-weight: bold;
+}
+
+.reviews {
+    margin-top: 320px;
+    float: left;
+    margin-left: -600px;
+}
+
+.rating-container label.checked:before {
+    color: gold;
+}

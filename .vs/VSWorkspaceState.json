@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\public",
+    "\\public\\css",
     "\\public\\images",
+    "\\public\\images\\Cakes-for-girls",
+    "\\public\\images\\Wedding_cakes",
+    "\\public\\images\\Wedding_Structures",
     "\\public\\js",
-    "\\public\\pdfs",
     "\\resources",
-    "\\resources\\views",
-    "\\resources\\views\\html",
-    "\\routes",
-    "\\storage"
+    "\\resources\\css"
   ],
+  "SelectedNode": "\\public\\images\\cake-slide1.jpg",
   "PreviewInSolutionExplorer": false
 }

@@ -56,7 +56,7 @@
     <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image1.jpg') }}" alt="Image 1" class="rounded-image" data-category="girls">
-            <button class="show-details-button">
+            <button class="show-details-button" onclick="window.location.href = '{{ route('customer.cakes-for-girls') }}';">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
@@ -211,7 +211,7 @@
     </div>
     <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image25.jpg') }}" alt="Image 25" class="rounded-image" data-category="common">
+            <img src="{{ asset('images/Birthday_Cakes/image25.jpg') }}" alt="Image 25" class="rounded-image" data-category="girls">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -269,6 +269,12 @@
             </button>
         </div>
         <div class="column">
+            <img src="{{ asset('images/Birthday_Cakes/image34.jpg') }}" alt="Image 34" class="rounded-image" data-category="boys girls">
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image35.jpg') }}" alt="Image 35" class="rounded-image" data-category="common">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
@@ -280,14 +286,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image37.jpg') }}" alt="Image 37" class="rounded-image" data-category="girls">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image38.jpg') }}" alt="Image 38" class="rounded-image" data-category="common">
             <button class="show-details-button">
@@ -306,14 +312,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image41.jpg') }}" alt="Image 41" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image42.jpg') }}" alt="Image 42" class="rounded-image" data-category="common">
             <button class="show-details-button">
@@ -327,19 +333,19 @@
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image44.jpg') }}" alt="Image 44" class="rounded-image" data-category="common">
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image45.jpg') }}" alt="Image 45" class="rounded-image" data-category="girls mothers">
+            <img src="{{ asset('images/Birthday_Cakes/image44.jpg') }}" alt="Image 44" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
     </div>
     <div class="image-grid">
+        <div class="column">
+            <img src="{{ asset('images/Birthday_Cakes/image45.jpg') }}" alt="Image 45" class="rounded-image" data-category="girls mothers">
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image46.jpg') }}" alt="Image 46" class="rounded-image" data-category="girls">
             <button class="show-details-button">
@@ -358,14 +364,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image49.jpg') }}" alt="Image 49" class="rounded-image" data-category="boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image50.jpg') }}" alt="Image 50" class="rounded-image" data-category="boys">
             <button class="show-details-button">
@@ -379,19 +385,19 @@
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image52.jpg') }}" alt="Image 52" class="rounded-image" data-category="boys girls">
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image53.jpg') }}" alt="Image 53" class="rounded-image" data-category="girls">
+            <img src="{{ asset('images/Birthday_Cakes/image52.jpg') }}" alt="Image 52" class="rounded-image" data-category="girls boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
     </div>
     <div class="image-grid">
+        <div class="column">
+            <img src="{{ asset('images/Birthday_Cakes/image53.jpg') }}" alt="Image 53" class="rounded-image" data-category="girls">
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image54.jpg') }}" alt="Image 54" class="rounded-image" data-category="girls">
             <button class="show-details-button">
@@ -410,14 +416,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image57.jpg') }}" alt="Image 57" class="rounded-image" data-category="common">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image58.jpg') }}" alt="Image 58" class="rounded-image" data-category="common">
             <button class="show-details-button">
@@ -431,13 +437,7 @@
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image60.jpg') }}" alt="Image 60" class="rounded-image" data-category="common">
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image61.jpg') }}" alt="Image 61" class="rounded-image" data-category="common">
+            <img src="{{ asset('images/Birthday_Cakes/image60.jpg') }}" alt="Image 60" class="rounded-image" data-category="boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -445,13 +445,19 @@
     </div>
     <div class="image-grid">
         <div class="column">
+            <img src="{{ asset('images/Birthday_Cakes/image61.jpg') }}" alt="Image 61" class="rounded-image" data-category="common">
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image62.jpg') }}" alt="Image 62" class="rounded-image" data-category="boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image63.jpg') }}" alt="Image 63" class="rounded-image" data-category="girls mothers">
+            <img src="{{ asset('images/Birthday_Cakes/image63.jpg') }}" alt="Image 63" class="rounded-image" data-category="girls">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -462,16 +468,16 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image65.jpg') }}" alt="Image 65" class="rounded-image" data-category="common">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image66.jpg') }}" alt="Image 66" class="rounded-image" data-category="mothers girls">
+            <img src="{{ asset('images/Birthday_Cakes/image66.jpg') }}" alt="Image 66" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -488,16 +494,16 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image69.jpg') }}" alt="Image 69" class="rounded-image" data-category="girls boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image70.jpg') }}" alt="Image 70" class="rounded-image" data-category="fathers">
+            <img src="{{ asset('images/Birthday_Cakes/image70.jpg') }}" alt="Image 70" class="rounded-image" data-category="common">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -514,22 +520,22 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image73.jpg') }}" alt="Image 73" class="rounded-image" data-category="fathers boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image74.jpg') }}" alt="Image 74" class="rounded-image" data-category="mothers girls">
+            <img src="{{ asset('images/Birthday_Cakes/image74.jpg') }}" alt="Image 74" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image75.jpg') }}" alt="Image 75" class="rounded-image" data-category="mothers girls">
+            <img src="{{ asset('images/Birthday_Cakes/image75.jpg') }}" alt="Image 75" class="rounded-image" data-category="common">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -540,14 +546,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image77.jpg') }}" alt="Image 77" class="rounded-image" data-category="girls">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image78.jpg') }}" alt="Image 78" class="rounded-image" data-category="boys">
             <button class="show-details-button">
@@ -555,7 +561,7 @@
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image79.jpg') }}" alt="Image 79" class="rounded-image" data-category="common">
+            <img src="{{ asset('images/Birthday_Cakes/image79.jpg') }}" alt="Image 79" class="rounded-image" data-category="girls boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -566,14 +572,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image81.jpg') }}" alt="Image 81" class="rounded-image" data-category="girls boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image82.jpg') }}" alt="Image 82" class="rounded-image" data-category="common">
             <button class="show-details-button">
@@ -587,19 +593,19 @@
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image84.jpg') }}" alt="Image 84" class="rounded-image" data-category="mothers girls">
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image85.jpg') }}" alt="Image 85" class="rounded-image" data-category="boys">
+            <img src="{{ asset('images/Birthday_Cakes/image84.jpg') }}" alt="Image 84" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
     </div>
     <div class="image-grid">
+        <div class="column">
+            <img src="{{ asset('images/Birthday_Cakes/image85.jpg') }}" alt="Image 85" class="rounded-image" data-category="boys">
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image86.jpg') }}" alt="Image 86" class="rounded-image" data-category="common">
             <button class="show-details-button">
@@ -613,19 +619,19 @@
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image88.jpg') }}" alt="Image 88" class="rounded-image" data-category="mothers girls">
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image89.jpg') }}" alt="Image 89" class="rounded-image" data-category="common">
+            <img src="{{ asset('images/Birthday_Cakes/image88.jpg') }}" alt="Image 88" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
     </div>
     <div class="image-grid">
+        <div class="column">
+            <img src="{{ asset('images/Birthday_Cakes/image89.jpg') }}" alt="Image 89" class="rounded-image" data-category="common">
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image90.jpg') }}" alt="Image 90" class="rounded-image" data-category="common">
             <button class="show-details-button">
@@ -644,16 +650,16 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image93.jpg') }}" alt="Image 93" class="rounded-image" data-category="boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image94.jpg') }}" alt="Image 94" class="rounded-image" data-category="mothers">
+            <img src="{{ asset('images/Birthday_Cakes/image94.jpg') }}" alt="Image 94" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
@@ -670,14 +676,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image97.jpg') }}" alt="Image 97" class="rounded-image" data-category="girls">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image98.jpg') }}" alt="Image 98" class="rounded-image" data-category="boys">
             <button class="show-details-button">
@@ -696,14 +702,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image101.jpg') }}" alt="Image 101" class="rounded-image" data-category="common">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image102.jpg') }}" alt="Image 102" class="rounded-image" data-category="boys fathers">
             <button class="show-details-button">
@@ -722,14 +728,14 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+    </div>
+    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image105.jpg') }}" alt="Image 105" class="rounded-image" data-category="common">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-    </div>
-    <div class="image-grid">
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image106.jpg') }}" alt="Image 106" class="rounded-image" data-category="boys">
             <button class="show-details-button">
@@ -743,19 +749,19 @@
             </button>
         </div>
         <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image108.jpg') }}" alt="Image 108" class="rounded-image" data-category="common">
-            <button class="show-details-button">
-                Show Details <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        <div class="column">
-            <img src="{{ asset('images/Birthday_Cakes/image109.jpg') }}" alt="Image 109" class="rounded-image" data-category="common">
+            <img src="{{ asset('images/Birthday_Cakes/image108.jpg') }}" alt="Image 108" class="rounded-image" data-category="boys">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
     </div>
     <div class="image-grid">
+        <div class="column">
+            <img src="{{ asset('images/Birthday_Cakes/image109.jpg') }}" alt="Image 109" class="rounded-image" data-category="boys fathers">
+            <button class="show-details-button">
+                Show Details <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image110.jpg') }}" alt="Image 110" class="rounded-image" data-category="boys">
             <button class="show-details-button">
@@ -768,12 +774,13 @@
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
         </div>
-        <div class="column">
+         <div class="column">
             <img src="{{ asset('images/Birthday_Cakes/image112.jpg') }}" alt="Image 112" class="rounded-image" data-category="girls mothers">
             <button class="show-details-button">
                 Show Details <i class="fas fa-arrow-right"></i>
             </button>
-        </div>
+        
+      </div>
     </div>
 
       <?php

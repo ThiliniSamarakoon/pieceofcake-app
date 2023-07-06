@@ -5,6 +5,7 @@ body {
     padding: 0;
     height: 100vh;
     overflow-x: hidden;
+
 }
 
 html {
@@ -75,7 +76,10 @@ html {
     width: 300%;
     margin-bottom: 20px;
     text-align: center;
-    margin-left:-100px;
+    margin-left: -100px;
+    margin-top: -60px;
+    position: relative; 
+    z-index: 1;
 }
 
 .slide {
@@ -402,3 +406,23 @@ footer {
 .fas.fa-shopping-cart:hover {
     color: white;
 }
+
+.discount-message {
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 1100px;
+    margin-top: -80px;
+    
+}
+
+
+
+
+
+
+
