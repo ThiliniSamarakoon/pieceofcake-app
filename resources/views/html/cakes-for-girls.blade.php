@@ -15,7 +15,7 @@
     ?>
     <div class="navbar">
         <ul>
-            <li><img src="{{ asset('images/piece_of_cake_logo.jpeg') }}" alt="Logo Icon" width="50" height="50" style="margin-top: 5px;">
+            <li><img src="{{ asset('images/piece_of_cake_logo.jpeg') }}" alt="Logo Icon" width="50" height="50" style="margin-top: 5px;"></li>
             <li><button type="button" id="home-button" onclick="window.location.href = '{{ route('cake-shop') }}';">Home</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#cake-categories'">Cake Categories</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
@@ -30,8 +30,12 @@
         </ul>
     </div>
 
+<?php
+//Image Description1
+?>
+
 <!-- Slideshow container -->
-<div class="slideshow-container">
+<div class="slideshow-container" id="image1" style="margin-top: 20px;">
 
   <!-- Slideshow Container-->
   <div class="mySlides fade active">
@@ -47,13 +51,13 @@
   </div>
 
   <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <a class="prev" onclick="plusSlides(-1)" style="margin-top: 12px;">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)" style="margin-top: 12px;">&#10095;</a>
 </div>
 <br>
-<div class="feedback-label">
+<div class="feedback-label" style="margin-top:300px;">
   <label class="feedbacks">Feedbacks:</label></div>
-<div class="reviews">
+<div class="reviews" style="margin-top: 320px;">
 <a href="https://www.facebook.com/Cakes.by.Shiranthi.DeSeram/posts/pfbid02VkGeUKP7H7de7KqZbjYwLtz9W2KqhbQ1KjD1UtF77iDyKXP2EJSsPk9s75nakTevl" target="_blank">Please click on this link to access the feedbacks shared on Facebook.</a>
 </div>
 
@@ -62,8 +66,8 @@
     @csrf
     <div class="image-details">
         <div><label class="label">Price:</label>
-        <span class="text-input" style="font-size:18px;">Rs.4,200.00</span>
-        <input type="hidden" name="price" value="4200.00"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="text-input" style="font-size:18px;" id="displayPrice">Rs.4200.00</span>
+        <input type="hidden" name="price" value="4200.00" id="price"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   <div><label class="label">Rating:</label></div>
     <div class="rating">
@@ -83,7 +87,8 @@
    </textarea>
 
  <div><label class="label">Weight:</label>
-        <select class="dropdown" style="width:100px; margin-left:25px;" name="weight">
+        <select class="dropdown" style="width:150px; margin-left:25px;" name="weight" onchange="updatePrice()" id="weight">
+            <option>Select Weight</option>
             <option value="0.5 kg" name="weight">0.5 kg</option>
             <option value="1 kg" name="weight">1 kg</option>
             <option value="1.5 kg" name="weight">1.5 kg</option>
@@ -92,10 +97,11 @@
     </div><br>
 
 <div><label class="label">Cake Type:</label>
-  <select class="dropdown" style="width:200px;" name="cake_type">
-    <option value="butter" name="cake_type">Butter</option>
-    <option value="chocolate" name="cake_type">Chocolate</option>
-    <option value="ribbon" name="cake_type">Ribbon</option>
+  <select class="dropdown" style="width:200px;" name="cake_type" id="cake_type" onchange="updatePrice()">
+    <option>Select Cake Type</option>
+    <option value="butter" id="butter_cake_type">Butter</option>
+    <option value="chocolate"  id="chocolate_cake_type">Chocolate</option>
+    <option value="ribbon"  id="ribbon_cake_type">Ribbon</option>
   </select>
 </div><br>
 
@@ -115,10 +121,7 @@
     </div>
 @endif
 
-<hr style="color: purple; border: 1px solid purple; width:100%;">
-
-
-     <?php
+   <?php
     //Footer Section
     ?>
  <footer>

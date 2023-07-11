@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\app\\Models",
     "\\public",
-    "\\public\\css",
-    "\\public\\images",
-    "\\public\\images\\Cakes-for-girls",
-    "\\public\\images\\Wedding_cakes",
-    "\\public\\images\\Wedding_Structures",
     "\\public\\js",
     "\\resources",
-    "\\resources\\css"
+    "\\resources\\views",
+    "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\public\\images\\cake-slide1.jpg",
+  "SelectedNode": "\\resources\\views\\html\\cakes-for-girls.blade.php",
   "PreviewInSolutionExplorer": false
 }

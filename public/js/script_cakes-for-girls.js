@@ -35,6 +35,33 @@ function scrollToSection(sectionId) {
     }
 }
 
+function updatePrice() {
+    let weight = document.getElementById("weight").value;
+    let cakeType = document.getElementById("cake_type").value;
+    let basePrice = 0;
+
+    // Define the base price for each weight option
+    if (weight === "0.5 kg") {
+        basePrice = 2100.00;
+    } else if (weight === "1 kg") {
+        basePrice = 4200.00;
+    } else if (weight === "1.5 kg") {
+        basePrice = 6300.00;
+    } else if (weight === "2 kg") {
+        basePrice = 8400.00;
+    }
+
+    let price = basePrice;
+
+    // Add additional cost for 'Chocolate' cake type
+    if (cakeType === "chocolate") {
+        price += 300.00;
+    }
+
+    // Update the hidden input field and the displayed price with the new price
+    document.getElementById("price").value = price.toFixed(2);
+    document.getElementById("displayPrice").textContent = "Rs." + price.toFixed(2);
+}
 
 
 

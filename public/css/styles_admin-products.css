@@ -1,0 +1,98 @@
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border:1px solid black;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+}
+
+button[type="submit"] {
+    background-color: lightgrey;
+    border-radius: 10px;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-left:200px;
+}
+
+button[type="submit"]:hover {
+    background-color: black;
+    color:white;
+}
+
+.text-area {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.rating {
+    width: 208px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 0px;
+}
+
+    .rating label {
+        float: right;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+        .rating label:not(:first-of-type) {
+            padding-right: 2px;
+        }
+
+        .rating label:before {
+            content: "\2605";
+            font-size: 42px;
+            color: #ccc;
+            line-height: 1;
+        }
+
+    .rating input {
+        display: none;
+    }
+
+        .rating input:checked ~ label:before, .rating:not(:checked) > label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
+            color: #f9df4a;
+        }
+
+.rating-container label.checked:before {
+    color: gold;
+}

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('Description');
             $table->string('Weight');
             $table->string('Cake_type');
-            $table->text('Message_on_cake')->nullable();;
+            $table->text('Message_on_cake')->nullable();
             $table->text('Review')->nullable();
             $table->timestamps();
         });

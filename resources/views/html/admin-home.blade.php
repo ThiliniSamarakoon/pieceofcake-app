@@ -16,7 +16,7 @@
             <li><img src="{{ asset('images/piece_of_cake_logo.jpeg') }}" alt="Logo Icon" width="50" height="50" style="margin-top: 5px;">
             <li><button id="dashboard-button" type="button" onclick="window.location.href = '{{ route('admin.home') }}';">Dashboard</button></li>
             <li><button type="button" >Inventory</button></li>
-            <li><button type="button">Products</button></li>
+            <li><button type="button" onclick="window.location.href = '{{ route('admin.admin-products') }}';">Products</button></li>
             <li><button type="button" >Orders</button></li>
             <li><button type="button" >Delivery</button></li>
             <li><button type="button" >Reports</button></li>

@@ -1,19 +1,27 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const categorySelect = document.getElementById('sort-select');
-    const images = document.querySelectorAll('.rounded-image');
+function filterImages() {
+    var selectElement = document.getElementById("sort-select");
+    var selectedCategory = selectElement.value;
 
-    categorySelect.addEventListener('change', function () {
-        const selectedOption = categorySelect.options[categorySelect.selectedIndex];
-        const selectedCategory = selectedOption.getAttribute('data-category');
+    var columns = document.getElementsByClassName("column");
 
-        images.forEach(function (image) {
-            const imageCategories = image.getAttribute('data-category').split(' ');
+    // Hide all columns
+    for (var i = 0; i < columns.length; i++) {
+        columns[i].style.display = "none";
+  }
 
-            if (selectedCategory === 'all' || imageCategories.includes(selectedCategory)) {
-                image.parentElement.style.display = 'block';
-            } else {
-                image.parentElement.style.display = 'none';
-            }
-        });
-    });
-});
+    // Show columns with the selected category
+    if (selectedCategory === "All") {
+    // Show all columns if "All" is selected
+    for (var i = 0; i < columns.length; i++) {
+        columns[i].style.display = "block";
+    }
+  } else {
+    // Show columns matching the selected category
+    var categoryColumns = document.getElementsByClassName(selectedCategory);
+    for (var i = 0; i < categoryColumns.length; i++) {
+        categoryColumns[i].style.display = "block";
+    }
+  }
+}
+
+
