@@ -103,7 +103,7 @@ Route::get('/admin-products', function () {
 
 Route::get('/cake-details', function () {
     return view('html.cake-details');
-})->name('customer.cake-details');
+})->name('customer.cakes-details');
 
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
@@ -133,6 +133,7 @@ Route::post('/products', [ProductController::class, 'store'])->name('admin.produ
 //Route::get('/birthday-cakes', [ProductController::class, 'index'])->name('customer.birthday-cakes-page');
 
 //Route::post('/customer-cake-details', [CakeController::class, 'showCakeDetails'])->name('customer.cake-details.post');
-Route::match(['get', 'post'], '/cake-details', [CakeController::class, 'showCakeDetails'])->name('customer.cake-details');
+Route::match(['get', 'post'], '/cake-details', [CakeController::class, 'showCakeDetails'])->name('customer.cakes-details');
+
 
 

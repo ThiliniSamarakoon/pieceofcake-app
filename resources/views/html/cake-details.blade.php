@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles_cakes-for-girls.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_cake-details.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('js/script_cakes-for-girls.js') }}"></script>
+    <script src="{{ asset('js/script_cake-details.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
@@ -32,11 +32,76 @@
     </div>
 
     <div class="cake-details">
-        <h2 class="cake-name">{{ $product->item_name }}</h2>
+      <h2 class="cake-name">{{ $product->item_name }}</h2>
+      <div class="cake-image-container">
         <img src="{{ $product->image }}" alt="{{ $product->item_name }}" class="cake-image">
-        <p class="cake-description">{{ $product->description }}</p>
-        <!-- Add more details as needed -->
+        <div class="product-details">
+                <p class="product-id">Product ID&nbsp;&nbsp;&nbsp;   : {{ $product->ProductID }}</p>
+                <!-- <p class="price">Price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            : ${{ $product->price }}</p>-->
+                <p class="price">Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="text-input"  id="displayPrice">Rs.&nbsp;{{ $product->price }}</span></p>
+
+                <p class="item-weight">Item Weight&nbsp; : {{ $product->item_weight }}</p>
+                <p class="cake-type">Cake Type&nbsp;&nbsp;&nbsp;     : {{ $product->cake_type }}</p>
+                <p class="icing-type">Icing Type&nbsp;&nbsp;&nbsp;   : {{ $product->icing_type }}</p>
+                <!-- <p class="rating">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           : {{ $product->rating }}</p>-->
+                
+                <p class="feedbacks">Feedbacks&nbsp;&nbsp;&nbsp;&nbsp;: <a href="['id' => $product->id]) }}">{{ $product->feedbacks }}</a></p>
+
+                
+                <p class="rating-stars label" style="font-weight:lighter;">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+  <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5" {{ $product->rating == 5 ? 'checked' : '' }}>
+    <label for="star5"></label>
+    <input type="radio" id="star4" name="rating" value="4" {{ $product->rating == 4 ? 'checked' : '' }}>
+    <label for="star4"></label>
+    <input type="radio" id="star3" name="rating" value="3" {{ $product->rating == 3 ? 'checked' : '' }}>
+    <label for="star3"></label>
+    <input type="radio" id="star2" name="rating" value="2" {{ $product->rating == 2 ? 'checked' : '' }}>
+    <label for="star2"></label>
+    <input type="radio" id="star1" name="rating" value="1" {{ $product->rating == 1 ? 'checked' : '' }}>
+    <label for="star1"></label>
+</div><br>
+<!-- Cake Weight -->
+<div class="weight">
+    <label for="cake-weight">Cake Weight:</label>
+    <select id="cake-weight" name="cake-weight" onchange="updatePrice()">
+        <option >Select Weight</option>
+        <option value="0.5 kg" data-weight="0.5" data-price="{{ $product->price }}">0.5 kg</option>
+        <option value="1 kg" data-weight="1" data-price="{{ $product->price }}">1 kg</option>
+        <option value="1.5 kg" data-weight="1.5" data-price="{{ $product->price }}">1.5 kg</option>
+        <option value="2 kg" data-weight="2" data-price="{{ $product->price }}">2 kg</option>
+        <option value="2.5 kg" data-weight="2.5" data-price="{{ $product->price }}">2.5 kg</option>
+        <option value="3 kg" data-weight="3" data-price="{{ $product->price }}">3 kg</option>
+    </select>
+</div>
+<!-- Cake Type -->
+<div class="cake_type"><br>
+    <label for="cake-type">Cake Type&nbsp;&nbsp;&nbsp;:</label>
+    <select id="cake-type" name="cake-type" onchange="updatePrice()">
+        <option >Select Cake Type</option>
+        <option value="butter" id="butter_cake_type">Butter</option>
+        <option value="chocolate"  id="chocolate_cake_type">Chocolate</option>
+        <option value="ribbon"  id="ribbon_cake_type">Ribbon</option>
+        <option value="red_velvet"  id="red-velvet_cake_type">Red Velvet</option>
+        <option value="cheese_cake"  id="cheese-cake_cake_type">Cheese Cake</option>
+        <option value="coffee_cake"  id="coffee-cake_cake_type">Coffee Cake</option>
+    </select>
+</div><br>
+<!-- Message on Cake -->
+<div class="message">
+    <label for="message-on-cake">Message on Cake:</label>
+    <textarea class="text-area" style="width:200px; height:50px;" maxlength="30" name="message_on_cake"></textarea>
+</div><br>
+<!-- Review -->
+    <label for="review">Write a review&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+    <textarea id="review" name="review" style="width:400px; height:100px;" ></textarea>
+
+    <!-- Add to Cart button -->
+    <button type="submit" onclick="addToCart()" class="add-to-cart-button">Add to Cart</button>
     </div>
+   </div>
+  </div>
+
 
    <?php
     //Footer Section

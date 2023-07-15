@@ -66,4 +66,7 @@ class ProductController extends Controller
          // Pass the products to the view
         //return view('html.birthday-cakes-page.blade.php', compact('products'))->with('success', 'Product added successfully.');
     }
+
+
+
 }

@@ -24,13 +24,8 @@ class CakeController extends Controller
         // Display the product details
         return view('html.cake-details', ['product' => $product]);
 
-    } else {
-        // Handle GET request
-        // You can add any necessary logic for the GET request here
-        // For example, if you want to display a form to input the product ID
-        return view('customer.cake-details');
 
-    }
+
+    } 
 }
-
 }
