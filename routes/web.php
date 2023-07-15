@@ -9,6 +9,8 @@ use App\Http\Controllers\CustomizedOrderController;
 use App\Http\Controllers\CustomOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CakeController;
+
 
 
 /*
@@ -99,6 +101,10 @@ Route::get('/admin-products', function () {
     return view('html.admin-products');
 })->name('admin.admin-products');
 
+Route::get('/cake-details', function () {
+    return view('html.cake-details');
+})->name('customer.cake-details');
+
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('customer.login');
@@ -124,7 +130,9 @@ Route::post('/orders', [OrderController::class, 'store'])->name('customer.orders
 Route::post('/products', [ProductController::class, 'store'])->name('admin.products.store');
 
 //Route::post('/birthday-cake', [ProductController::class, 'store'])->name('customer.store-birthday-cake');
-Route::get('/birthday-cakes', [ProductController::class, 'index'])->name('customer.birthday-cakes-page');
+//Route::get('/birthday-cakes', [ProductController::class, 'index'])->name('customer.birthday-cakes-page');
 
+//Route::post('/customer-cake-details', [CakeController::class, 'showCakeDetails'])->name('customer.cake-details.post');
+Route::match(['get', 'post'], '/cake-details', [CakeController::class, 'showCakeDetails'])->name('customer.cake-details');
 
 

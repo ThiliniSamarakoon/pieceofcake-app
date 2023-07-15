@@ -61,14 +61,18 @@
         // Display the products
         foreach ($products as $product) {
             echo '<div class="column ' . $product->data_category . '">';
+            echo '<form id="cake-details-form' . $product->id . '" action="' . route('customer.cake-details') . '" method="POST">';
+            echo '<input type="hidden" name="_token" value="' . csrf_token() . '">';
+            echo '<input type="hidden" name="product_id" value="' . $product->id . '">';
             echo '<img src="' . $product->image . '" alt="' . $product->item_name . '" class="rounded-image" data-category="' . $product->data_category . '">';
-            echo '<a href="' . route('customer.cakes-for-girls') . '" class="show-details-button">';
-            echo 'Show Details <i class="fas fa-arrow-right"></i>';
-            echo '</a>';
+            echo '<button type="submit" class="show-details-button">Show Details <i class="fas fa-arrow-right"></i></button>';
+            //echo 'Show Details <i class="fas fa-arrow-right"></i>';
+            echo '</form>';
             echo '</div>';
         }
         ?>
     </div>
+
 
 <?php
     //Footer Section
