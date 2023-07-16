@@ -30,22 +30,24 @@
             </li>
         </ul>
     </div>
+<form action="{{ route('customer.orders.store') }}" method="POST">
+   @csrf
 
     <div class="cake-details">
-      <h2 class="cake-name">{{ $product->item_name }}</h2>
+      <h2 class="cake-name"><input type="text" name="cake-name" value="{{ $product->item_name }}" style="border:none; font-size:26px; font-weight:bold; width:600px;" ></h2>
       <div class="cake-image-container">
         <img src="{{ $product->image }}" alt="{{ $product->item_name }}" class="cake-image">
         <div class="product-details">
-                <p class="product-id">Product ID&nbsp;&nbsp;&nbsp;   : {{ $product->ProductID }}</p>
+                <p class="product-id" >Product ID&nbsp;&nbsp;&nbsp;   :<input type="text" name="product_id" value="{{ $product->ProductID }}" style="border:none;"></p>
                 <!-- <p class="price">Price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            : ${{ $product->price }}</p>-->
-                <p class="price">Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="text-input"  id="displayPrice">Rs.&nbsp;{{ $product->price }}</span></p>
+                <p class="price">Price:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:Rs.<input type="text" id="displayPrice" name="price" style="border:none;" value="{{ $product->price }}"></p>
 
-                <p class="item-weight">Item Weight&nbsp; : {{ $product->item_weight }}</p>
-                <p class="cake-type">Cake Type&nbsp;&nbsp;&nbsp;     : {{ $product->cake_type }}</p>
-                <p class="icing-type">Icing Type&nbsp;&nbsp;&nbsp;   : {{ $product->icing_type }}</p>
+                <p class="item-weight">Item Weight&nbsp; :<input type="text" name="item_weight" value="{{ $product->item_weight }}" style="border:none;"></p>
+                <p class="cake-type">Cake Type&nbsp;&nbsp;&nbsp;     :<input type="text" name="cake_type" value="{{ $product->cake_type }}" style="border:none;"></p>
+                <p class="icing-type">Icing Type&nbsp;&nbsp;&nbsp;   :<input type="text" name="icing_type" value="{{ $product->icing_type }}" style="border:none;"></p>
                 <!-- <p class="rating">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           : {{ $product->rating }}</p>-->
                 
-                <p class="feedbacks">Feedbacks&nbsp;&nbsp;&nbsp;&nbsp;: <a href="['id' => $product->id]) }}">{{ $product->feedbacks }}</a></p>
+                <p class="feedbacks">Feedbacks&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" name="feedbacks" value="{{ $product->feedbacks }}" style="border:none;"><a href="['id' => $product->id]) }}"></a></p>
 
                 
                 <p class="rating-stars label" style="font-weight:lighter;">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
@@ -60,6 +62,10 @@
     <label for="star2"></label>
     <input type="radio" id="star1" name="rating" value="1" {{ $product->rating == 1 ? 'checked' : '' }}>
     <label for="star1"></label>
+</div><br>
+<div class="user_name">
+    <label for="user_name">User Name&nbsp;&nbsp;&nbsp;:</label>
+    <input id="user_name" name="user_name"><br><span style="color:red;">(Please enter if you have a registered account. You will receive 10% discount for every 3 Orders)</span>
 </div><br>
 <!-- Cake Weight -->
 <div class="weight">
@@ -97,10 +103,16 @@
     <textarea id="review" name="review" style="width:400px; height:100px;" ></textarea>
 
     <!-- Add to Cart button -->
-    <button type="submit" onclick="addToCart()" class="add-to-cart-button">Add to Cart</button>
+    <button type="submit" class="add-to-cart-button" name="add_to_cart_btn">Add to Cart</button>
     </div>
    </div>
   </div>
+</form>
+   @if (session('error'))
+        <div class="error-message">
+            {{ session('error') }}
+        </div>
+    @endif
 
 
    <?php
@@ -121,6 +133,7 @@
     <a href="https://wa.me/+94714925742"><i class="fab fa-whatsapp"></i></a>
   </div>
 </footer>
+
 
 
 </body>

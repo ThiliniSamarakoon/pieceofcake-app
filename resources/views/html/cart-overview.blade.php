@@ -36,6 +36,7 @@
     <h1 style="text-align:center;">My Cart</h1>
 
 
+
     <?php
     //Footer Section
     ?>

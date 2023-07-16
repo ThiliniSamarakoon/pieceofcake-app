@@ -4,13 +4,13 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\public",
-    "\\public\\css",
-    "\\public\\js",
+    "\\app\\Models",
+    "\\database",
+    "\\database\\migrations",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\public\\js\\script_cake-details.js",
+  "SelectedNode": "\\database\\migrations\\2023_06_03_184250_create_admins_table.php",
   "PreviewInSolutionExplorer": false
 }

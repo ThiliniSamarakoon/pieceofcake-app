@@ -29,8 +29,9 @@ function updatePrice() {
     }
 
     // Display the updated price
-    priceDisplay.innerText = "Rs. " + updatedPrice.toFixed(2);
+    priceDisplay.value = updatedPrice.toFixed(2);
 }
+
 
 
 

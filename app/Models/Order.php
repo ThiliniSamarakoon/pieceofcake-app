@@ -12,15 +12,16 @@ class Order extends Model
     protected $fillable = [
         'OrderID',
         'ProductID',
+        'Cake_Name',
         'Price',
-        'Item_weight',
-        'Cake_type',
-        'Icing_type',
+        'Item_Weight',
+        'Cake_Type',
+        'Icing_Type',
         'Input_Cake_Weight',
         'Input_Cake_Type',
         'Message_on_cake',
         'Rating',
         'Feedbacks',
-        'Review',
+        'Reviews',
     ];
 }

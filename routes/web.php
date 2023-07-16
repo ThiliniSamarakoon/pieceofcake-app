@@ -135,5 +135,6 @@ Route::post('/products', [ProductController::class, 'store'])->name('admin.produ
 //Route::post('/customer-cake-details', [CakeController::class, 'showCakeDetails'])->name('customer.cake-details.post');
 Route::match(['get', 'post'], '/cake-details', [CakeController::class, 'showCakeDetails'])->name('customer.cakes-details');
 
+Route::post('/submit-form', [OrderController::class, 'store'])->middleware('web');
 
 

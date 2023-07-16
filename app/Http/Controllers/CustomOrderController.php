@@ -28,12 +28,12 @@ class CustomOrderController extends Controller
         $pdf->SetFont('Helvetica', '', 12);
 
         // Display the form inputs in the PDF
-$pdf->Cell(0, 10, 'Choose a Cake: ' . implode(', ', $cakeOptions), 0, 1);
-$pdf->Cell(0, 10, 'Icing Options: ' . implode(', ', $icingOptions), 0, 1);
-$pdf->Cell(0, 10, 'Cake Board Shape: ' . implode(', ', $boardShape), 0, 1);
-$pdf->Cell(0, 10, 'Quantity: ' . $quantity, 0, 1);
-$pdf->Cell(0, 10, 'Weight: ' . ($otherWeight ? $otherWeightInput : $weight), 0, 1);
-$pdf->Cell(0, 10, 'Description: ' . $description, 0, 1);
+        $pdf->Cell(0, 10, 'Choose a Cake: ' . implode(', ', $cakeOptions), 0, 1);
+        $pdf->Cell(0, 10, 'Icing Options: ' . implode(', ', $icingOptions), 0, 1);
+        $pdf->Cell(0, 10, 'Cake Board Shape: ' . implode(', ', $boardShape), 0, 1);
+        $pdf->Cell(0, 10, 'Quantity: ' . $quantity, 0, 1);
+        $pdf->Cell(0, 10, 'Weight: ' . ($otherWeight ? $otherWeightInput : $weight), 0, 1);
+        $pdf->Cell(0, 10, 'Description: ' . $description, 0, 1);
 
         // Save the PDF
         $pdf->Output(public_path('pdfs/custom_order.pdf'), 'I');
