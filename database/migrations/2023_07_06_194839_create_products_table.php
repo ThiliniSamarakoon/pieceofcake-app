@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('item_weight');
             $table->string('cake_type');
             $table->string('icing_type');
-            $table->integer('rating');
+            $table->integer('rating',0);
             $table->text('feedbacks')->nullable();
             $table->string('data_category');
             $table->string('alt_text');

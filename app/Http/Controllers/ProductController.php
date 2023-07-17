@@ -18,6 +18,31 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+
+        // Retrieve the selected category from the form
+        $category = $request->input('category');
+
+         // Define the folder based on the selected category
+        $folder = '';
+
+        if ($category === 'Birthday_Cakes') {
+            $folder = 'Birthday_Cakes';
+        } elseif ($category === 'Wedding_Structures') {
+            $folder = 'Wedding_Structures';
+        } elseif ($category === 'Cup_cakes') {
+            $folder = 'Cup_cakes';
+        } elseif ($category === 'Wedding_cakes') {
+            $folder = 'Wedding_cakes';
+        } elseif ($category === 'Celebration_cakes') {
+            $folder = 'Celebration_cakes';
+        } elseif ($category === 'Gift_packs') {
+            $folder = 'Gift_packs';
+        }
+
+        // Store the image in the selected folder
+        $imagePath = $request->file('image')->store('public/images/' . $folder);
+        $imagePath = str_replace('public/', '', $imagePath);
+
         $product = new Product();
 
         $product->ProductID = $request->input('ProductID');
@@ -31,30 +56,18 @@ class ProductController extends Controller
         $product->feedbacks = $request->input('feedbacks', null);
         $product->data_category = $request->input('data_category');
         $product->alt_text = $request->input('alt_text');
+        $product->image = $imagePath;
 
-        // Retrieve the selected category from the form
-        $category = $request->input('category');
 
-        // Define the folder based on the selected category
-        $folder = '';
+     
 
-        if ($category === 'Birthday_Cakes') {
-            $folder = 'Birthday_Cakes';
-        } elseif ($category === 'Wedding_Structures') {
-            $folder = 'Wedding_Structures';
-        } elseif ($category === 'Cup_Cakes') {
-            $folder = 'Cup_cakes';
-        } elseif ($category === 'Wedding_Cakes') {
-            $folder = 'Wedding_cakes';
-        } elseif ($category === 'Celebration_Cakes') {
-            $folder = 'Celebration_cakes';
-        } elseif ($category === 'Gift_Packs') {
-            $folder = 'Gift_packs';
-        }
+       
 
         // Store the image in the selected folder
-        $imagePath = $request->file('image')->store('images/' . $folder, 'public');
-        $product->image = $imagePath;
+        //$imagePath = $request->file('image')->store('images/' . $folder, 'public');
+        //$product->image = $imagePath;
+
+         
 
         $product->save();
 

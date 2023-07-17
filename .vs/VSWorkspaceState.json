@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\app\\Models",
     "\\database",
     "\\database\\migrations",
+    "\\public",
+    "\\public\\css",
+    "\\public\\images",
+    "\\public\\js",
     "\\resources",
+    "\\resources\\css",
     "\\resources\\views",
     "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\database\\migrations\\2023_06_03_184250_create_admins_table.php",
+  "SelectedNode": "\\public\\images\\Gift_packs",
   "PreviewInSolutionExplorer": false
 }

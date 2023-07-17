@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CustomizedOrder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CustomizedOrderController extends Controller
@@ -15,7 +16,6 @@ class CustomizedOrderController extends Controller
             'UserName' => 'required',
             'Email' => 'required|email',
             'Password' => 'required',
-            'Image'=> 'nullable|image',
         ]);
 
         // Create a new CustomizedOrder instance
@@ -23,18 +23,17 @@ class CustomizedOrderController extends Controller
         $customizedOrder->UserName = $request->input('UserName');
         $customizedOrder->Email = $request->input('Email');
         $customizedOrder->Password = $request->input('Password');
-        $customizedOrder->Image = $request->input('image');
+
+    
+        // Store the uploaded image in the "public/images" directory
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/images');
+            $imagePath = str_replace('public/', '', $imagePath);
+            $customizedOrder->Image = $imagePath;
+        }
 
         // Save the CustomizedOrder to the database
         $customizedOrder->save();
-
-        // Store the image file if it exists
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $path = Storage::putFile('images', $image); // Store the image file in the 'images' folder
-            $customizedOrder->Image = $path; 
-            $customizedOrder->save(); // Save the updated order with the image path
-    }
 
         // Redirect the user to a success page or perform any other actions
         return redirect()->route('customer.customized_orders');

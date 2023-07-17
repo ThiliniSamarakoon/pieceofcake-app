@@ -47,18 +47,18 @@ class OrderController extends Controller
         $order->Item_Weight = $request->input('item_weight');
         $order->Cake_Type = $request->input('cake_type');
         $order->Icing_Type = $request->input('icing_type');
-        $order->UserName = $request->input('user_name');
+        $order->UserName = $request->input('user_name', null);
         $order->Input_Cake_Weight = $request->input('cake-weight');
         $order->Input_Cake_Type = $request->input('cake-type');
         $order->Message_on_cake = $request->input('message_on_cake');
-        $order->Rating = $request->input('rating');
+        $order->Rating = $request->input('rating',0);
         $order->Feedbacks = $request->input('feedbacks');
-        $order->Reviews = $request->input('review');
+        $order->Reviews = $request->input('review', null);
         //$order->save();
 
          // Check if the username exists in the customer table
          //$customer = Customer::where('UserName', $request->input('user_name'))->first();
-         $customer = Customer::where('UserName', $request->input('user_name'))->first();
+         /*$customer = Customer::where('UserName', $request->input('user_name'))->first();
 
          if (!$customer) {
             // Username does not exist, handle the error by storing the error message in the session
@@ -67,10 +67,30 @@ class OrderController extends Controller
             echo "<script>alert('$errorMessage');</script>";
             dd('Invalid User Name');
             return redirect()->back();
-}
+}*/
+
+ // Check if the username exists in the customer table
+    $username = $request->input('user_name');
+    if ($username) {
+        $customer = Customer::where('UserName', $username)->first();
+
+        if (!$customer) {
+            // Username does not exist, handle the error by storing the error message in the session
+            $errorMessage = 'Invalid username. Please enter a valid username.';
+            session()->flash('error', $errorMessage);
+            return redirect()->back()->withInput();
+        }
+    }
+
+        // Associate the order with the customer if it exists
+       
+        //$order->customer()->associate($customer);
+    
+
          // Redirect to the cart page
         //return redirect()->route('customer.cart.overview');
 
+         // Save the order
         if ($order->save()) {
         // Success message or redirect
             return redirect()->route('customer.cart.overview')->with('success', 'Order added to cart successfully!');
