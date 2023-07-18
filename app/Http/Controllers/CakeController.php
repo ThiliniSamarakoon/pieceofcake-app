@@ -24,8 +24,6 @@ class CakeController extends Controller
         // Display the product details
         return view('html.cake-details', ['product' => $product]);
 
-
-
     } 
 }
 }

@@ -3,6 +3,7 @@
 <head>
     <title>My Cart</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_cart-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_choose-cakeoptions.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/script_choose-cakeoptions.js') }}"></script>
@@ -35,7 +36,44 @@
     ?>
     <h1 style="text-align:center;">My Cart</h1>
 
-
+    <div class="cart-container">
+    <form action="{{ route('cart.store') }}" method="POST">
+       @csrf
+        <table>
+            <thead>
+                <tr>
+                    <th>OrderID</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Weight</th>
+                    <th>Order Date</th>
+                    <th>Delivery</th>
+                    <th>User Name</th>
+                    <th>Registered/Not</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="hidden" name="order_id" value="{{ $cart->order_id }}"></td>
+                    <td><input type="hidden" name="image" value="{{ $cart->image }}" width="50" height="50"></td>
+                    <td><input type="hidden" name="price" value="{{ $cart->price }}"></td>
+                    <td><input type="number" name="order_qty" value="{{ old('order_qty') }}"></td>
+                    <td><input type="hidden" name="weight" value="{{ $cart->weight }}"></td>
+                    <td><input type="date" name="order_date" value="{{ $cart->order_date }}"></td>
+                    <td><input type="checkbox" name="delivery" value="1"></td>
+                    <td><input type="text" name="user_name" value="{{ $cart->user_name }}"></td>
+                    <td><input type="checkbox" name="registered" value="1"></td>
+                    <td><input type="number" name="total_price" value="{{ $cart->total_price }}"></td>
+                    <td><a href="#" class="delete-icon"><i class="fas fa-trash"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="submit">Proceed to Checkout</button>
+</form>
 
     <?php
     //Footer Section

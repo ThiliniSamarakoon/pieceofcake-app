@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'OrderID';
 
     protected $fillable = [
         'OrderID',
@@ -26,6 +27,14 @@ class Order extends Model
         'Reviews',
     ];
 
+ /*  public function customer()
+{
+    return $this->belongsTo(Customer::class, 'CustomerID');
+}*/
 
+   public function cart()
+    {
+       return $this->hasOne(Cart::class);
+    }
 
 }

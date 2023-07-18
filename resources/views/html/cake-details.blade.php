@@ -83,7 +83,7 @@
 <!-- Cake Type -->
 <div class="cake_type"><br>
     <label for="cake-type">Cake Type&nbsp;&nbsp;&nbsp;:</label>
-    <select id="cake-type" name="cake-type" onchange="updatePrice()">
+    <select id="cake-type" name="input_cake_type" onchange="updatePrice('{{ $product->cake_type }}')">
         <option >Select Cake Type</option>
         <option value="butter" id="butter_cake_type">Butter</option>
         <option value="chocolate"  id="chocolate_cake_type">Chocolate</option>

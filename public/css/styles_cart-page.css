@@ -1,0 +1,32 @@
+.cart-container {
+    max-width: 800px;
+    padding: 20px;
+    margin-left:150px;
+    align-content:center;
+    margin-top:-50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.delete-icon {
+    color: red;
+    text-decoration: none;
+}
+
+    .delete-icon:hover {
+        color: darkred;
+    }

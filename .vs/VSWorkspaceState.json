@@ -1,17 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\database",
-    "\\database\\migrations",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\app\\Models",
     "\\public",
-    "\\public\\css",
-    "\\public\\images",
     "\\public\\js",
     "\\resources",
     "\\resources\\css",
     "\\resources\\views",
     "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\public\\images\\Gift_packs",
+  "SelectedNode": "\\app\\Models\\Order.php",
   "PreviewInSolutionExplorer": false
 }

@@ -49,7 +49,7 @@ class OrderController extends Controller
         $order->Icing_Type = $request->input('icing_type');
         $order->UserName = $request->input('user_name', null);
         $order->Input_Cake_Weight = $request->input('cake-weight');
-        $order->Input_Cake_Type = $request->input('cake-type');
+        $order->Input_Cake_Type = $request->input('input_cake_type');
         $order->Message_on_cake = $request->input('message_on_cake');
         $order->Rating = $request->input('rating',0);
         $order->Feedbacks = $request->input('feedbacks');
