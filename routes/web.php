@@ -10,7 +10,7 @@ use App\Http\Controllers\CustomOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CakeController;
-use App\Http\Controllers\CartController;
+
 
 
 
@@ -66,10 +66,6 @@ Route::get('/choose-cakeoptions', function () {
     return view('html.choose-cakeoptions');
 })->name('customer.choose-cakeoptions');
 
-Route::get('/cart-overview', function () {
-    return view('html.cart-overview');
-})->name('customer.cart.overview');
-
 Route::get('/birthday-cake', function () {
     return view('html.birthday-cakes-page');
 })->name('customer.birthday-cakes');
@@ -94,9 +90,9 @@ Route::get('/gift-packs', function () {
     return view('html.gift-packs');
 })->name('customer.gift-packs');
 
-Route::get('/cakes-for-girls', function () {
+/*Route::get('/cakes-for-girls', function () {
     return view('html.cakes-for-girls');
-})->name('customer.cakes-for-girls');
+})->name('customer.cakes-for-girls');*/
 
 Route::get('/admin-products', function () {
     return view('html.admin-products');
@@ -105,6 +101,10 @@ Route::get('/admin-products', function () {
 Route::get('/cake-details', function () {
     return view('html.cake-details');
 })->name('customer.cakes-details');
+
+Route::get('/cart', function () {
+    return view('html.cart-page');
+})->name('cart.page');
 
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
@@ -138,9 +138,9 @@ Route::match(['get', 'post'], '/cake-details', [CakeController::class, 'showCake
 
 Route::post('/submit-form', [OrderController::class, 'store'])->middleware('web');
 
-//Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
 //Route::get('/cart-overview', [CartController::class, 'cart'])->name('customer.cart.overview');
 
 //Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
-Route::get('/cart-overview', [CartController::class, 'store'])->name('customer.cart.overview');
+//Route::get('/cart-overview', [OrderController::class, 'store'])->name('customer.cart.overview');
+
 

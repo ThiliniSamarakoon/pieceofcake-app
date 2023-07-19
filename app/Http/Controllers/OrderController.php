@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Customer;
 
+
 class OrderController extends Controller
 {
     /**
@@ -18,29 +19,9 @@ class OrderController extends Controller
      public function store(Request $request)
     {
        
-
-        // Validate the request data
-        /*$request->validate([
-            'product_id' => 'required',
-            'cake-name'=> 'required',
-            'price' => 'required',
-            'item_weight' => 'required',
-            'cake_type' => 'required',
-            'icing_type' => 'required',
-            'cake-weight' => 'required',
-            'cake-type' => 'required',
-            'message_on_cake' => 'nullable|string|max:30',
-            'rating' => 'nullable|integer',
-            'feedbacks' => 'nullable|string',
-            'review' => 'nullable|string',
-        ]);*/
-
-        
-
         // Create a new order record
        
         $order = new Order();
-        //dd($request->input('product_id'));
         $order->ProductID = $request->input('product_id');
         $order->Cake_Name = $request->input('cake-name');
         $order->Price = $request->input('price');
@@ -54,51 +35,31 @@ class OrderController extends Controller
         $order->Rating = $request->input('rating',0);
         $order->Feedbacks = $request->input('feedbacks');
         $order->Reviews = $request->input('review', null);
-        //$order->save();
+ 
 
          // Check if the username exists in the customer table
-         //$customer = Customer::where('UserName', $request->input('user_name'))->first();
-         /*$customer = Customer::where('UserName', $request->input('user_name'))->first();
+         $username = $request->input('user_name');
+         if ($username) {
+              $customer = Customer::where('UserName', $username)->first();
 
          if (!$customer) {
             // Username does not exist, handle the error by storing the error message in the session
             $errorMessage = 'Invalid username. Please enter a valid username.';
             session()->flash('error', $errorMessage);
-            echo "<script>alert('$errorMessage');</script>";
-            dd('Invalid User Name');
-            return redirect()->back();
-}*/
-
- // Check if the username exists in the customer table
-    $username = $request->input('user_name');
-    if ($username) {
-        $customer = Customer::where('UserName', $username)->first();
-
-        if (!$customer) {
-            // Username does not exist, handle the error by storing the error message in the session
-            $errorMessage = 'Invalid username. Please enter a valid username.';
-            session()->flash('error', $errorMessage);
             return redirect()->back()->withInput();
-        }
-    }
+            }
+          }
 
-        // Associate the order with the customer if it exists
-       
-        //$order->customer()->associate($customer);
-    
-
-         // Redirect to the cart page
-        //return redirect()->route('customer.cart.overview');
-
+         
          // Save the order
         if ($order->save()) {
-        // Success message or redirect
-            return redirect()->route('customer.cart.overview')->with('success', 'Order added to cart successfully!');
+            // Success message or further processing
+            session()->flash('success', 'Order saved successfully!');
+            return redirect()->back();
+        } else {
+            // Error message or redirect back with error
+            $errorMessage = $order->getConnection()->getPdo()->errorInfo();
+            return back()->withErrors(['error' => 'Failed to add order to cart. Please try again.']);
         }
-        else {
-        // Error message or redirect back with error
-        return redirect()->back()->with('error', 'Failed to add order to cart.');
-        }
-        
     }
 }

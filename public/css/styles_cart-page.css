@@ -1,9 +1,9 @@
 .cart-container {
     max-width: 800px;
     padding: 20px;
-    margin-left:150px;
-    align-content:center;
-    margin-top:-50px;
+    margin-left: 150px;
+    align-content: center;
+    margin-top: -50px;
 }
 
 table {
@@ -22,11 +22,11 @@ th {
     background-color: #f2f2f2;
 }
 
-.delete-icon {
+/*.delete-icon {
     color: red;
     text-decoration: none;
 }
 
     .delete-icon:hover {
         color: darkred;
-    }
+    }*/

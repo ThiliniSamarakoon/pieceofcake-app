@@ -4,9 +4,7 @@
     <title>My Cart</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_cart-page.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styles_choose-cakeoptions.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('js/script_choose-cakeoptions.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
@@ -24,7 +22,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section'">Contact Us</button></li>
             <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register</button></li>
             <li class="top-right">
-                <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('customer.cart.overview') }}';" title="My Cart" ></i>
+                <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('cart.page') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
                 <i class="fas fa-search"></i>
             </li>
@@ -36,10 +34,8 @@
     ?>
     <h1 style="text-align:center;">My Cart</h1>
 
-    <div class="cart-container">
-    <form action="{{ route('cart.store') }}" method="POST">
-       @csrf
-        <table>
+     <div class="cart-container">
+     <table>
             <thead>
                 <tr>
                     <th>OrderID</th>
@@ -57,25 +53,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="hidden" name="order_id" value="{{ $cart->order_id }}"></td>
-                    <td><input type="hidden" name="image" value="{{ $cart->image }}" width="50" height="50"></td>
-                    <td><input type="hidden" name="price" value="{{ $cart->price }}"></td>
-                    <td><input type="number" name="order_qty" value="{{ old('order_qty') }}"></td>
-                    <td><input type="hidden" name="weight" value="{{ $cart->weight }}"></td>
-                    <td><input type="date" name="order_date" value="{{ $cart->order_date }}"></td>
-                    <td><input type="checkbox" name="delivery" value="1"></td>
-                    <td><input type="text" name="user_name" value="{{ $cart->user_name }}"></td>
-                    <td><input type="checkbox" name="registered" value="1"></td>
-                    <td><input type="number" name="total_price" value="{{ $cart->total_price }}"></td>
-                    <td><a href="#" class="delete-icon"><i class="fas fa-trash"></i></a></td>
                 </tr>
             </tbody>
-        </table>
+    </table>
     </div>
     <button type="submit">Proceed to Checkout</button>
-</form>
 
-    <?php
+     <?php
     //Footer Section
     ?>
  <footer>
