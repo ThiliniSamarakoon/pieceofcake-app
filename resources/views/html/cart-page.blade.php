@@ -61,9 +61,9 @@
                             <img src="{{ asset('images/default.jpeg') }}" alt="Default Image" width="500" height="500">
                         @endif
                     </td>
-                    <td></td>
+                    <td>Rs.{{ number_format($price, 2) }}</td>
                     <td>
-                        <input type="number" name="quantity" value="1" min="1" >
+                        <input type="number" name="quantity" value="1" min="1" style="width: 50px;">
                     </td>
                 </tr>
             </tbody>
