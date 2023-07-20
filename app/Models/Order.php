@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\Customer;
+use App\Models\Product;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -38,4 +39,11 @@ class Order extends Model
        return $this->hasOne(Cart::class);
     }
 
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'ProductID','ProductID');
+    }
+
 }
+
+

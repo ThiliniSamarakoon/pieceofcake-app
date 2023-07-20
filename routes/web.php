@@ -10,6 +10,7 @@ use App\Http\Controllers\CustomOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CakeController;
+use App\Http\Controllers\CartController;
 
 
 
@@ -143,4 +144,5 @@ Route::post('/submit-form', [OrderController::class, 'store'])->middleware('web'
 //Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
 //Route::get('/cart-overview', [OrderController::class, 'store'])->name('customer.cart.overview');
 
+Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart.page');
 

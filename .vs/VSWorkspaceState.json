@@ -2,17 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Models",
-    "\\app\\Models\\Models",
-    "\\database",
-    "\\database\\migrations",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\public",
-    "\\public\\css",
-    "\\public\\images",
+    "\\public\\js",
     "\\resources",
+    "\\resources\\js",
     "\\resources\\views",
     "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\public\\css",
   "PreviewInSolutionExplorer": false
 }

@@ -30,7 +30,7 @@
             </li>
         </ul>
     </div>
-<form action="{{ route('customer.orders.store') }}" method="POST">
+<form action="{{ route('customer.orders.store') }}" method="POST" id="add-to-cart-form">
    @csrf
 
     <div class="cake-details">

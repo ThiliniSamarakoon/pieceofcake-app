@@ -53,6 +53,18 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>{{ $latestOrderID->OrderID }}</td>
+                    <td>
+                        @if ($imagePath)
+                            <img src="{{ $imagePath }}" alt="Order Image" width="100" height="100">
+                        @else
+                            <img src="{{ asset('images/default.jpeg') }}" alt="Default Image" width="500" height="500">
+                        @endif
+                    </td>
+                    <td></td>
+                    <td>
+                        <input type="number" name="quantity" value="1" min="1" >
+                    </td>
                 </tr>
             </tbody>
     </table>

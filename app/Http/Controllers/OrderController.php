@@ -55,7 +55,7 @@ class OrderController extends Controller
         if ($order->save()) {
             // Success message or further processing
             session()->flash('success', 'Order saved successfully!');
-            return redirect()->back();
+            return redirect()->route('cart.page');
         } else {
             // Error message or redirect back with error
             $errorMessage = $order->getConnection()->getPdo()->errorInfo();

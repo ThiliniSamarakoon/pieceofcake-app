@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Models\Order;
 
 class Product extends Model
 {
@@ -32,4 +33,11 @@ class Product extends Model
         return $products;
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'ProductID','ProductID');
+    }
+
 }
+
+
