@@ -54,29 +54,32 @@ class CartController extends Controller
                 $totalPrice += 200;
             }
 
-        // Check if the same user has made 3 orders and apply discount if needed
+        // Check if the user name field is filled
+        if ($userName) {
+            // Check if the same user has made 3 orders and apply discount if needed
             $userOrdersCount = Order::where('UserName', $userName)->count();
             if ($userOrdersCount >= 3) {
                 // Reduce 10% from the total price
                 $discountedPrice = $totalPrice * 0.1;
                 $totalPrice -= $discountedPrice;
             }
+        }
     }
-    else {
-        // Default image path if order is not found
-        $imagePath = asset('images/default2.jpeg');
+        else {
+            // Default image path if order is not found
+            $imagePath = asset('images/default2.jpeg');
 
-        // Default price if order is not found
-        $price = 0;
+            // Default price if order is not found
+            $price = 0;
 
-        // Default weight if order is not found
-        $weight = 0;
+            // Default weight if order is not found
+            $weight = 0;
 
-        // Default user name if order is not found
-        $userName = 'Unknown User';
+            // Default user name if order is not found
+            $userName = 'Unknown User';
 
-        // Default total price if order is not found
-        $totalPrice = 0;
+            // Default total price if order is not found
+            $totalPrice = 0;
         
     }
 
