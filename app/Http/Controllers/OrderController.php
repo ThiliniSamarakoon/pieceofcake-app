@@ -62,4 +62,21 @@ class OrderController extends Controller
             return back()->withErrors(['error' => 'Failed to add order to cart. Please try again.']);
         }
     }
+
+    public function deleteOrder($orderId)
+    {
+        // Find the order by ID
+        $order = Order::find($orderId);
+
+        if (!$order) {
+            // If the order with the provided ID doesn't exist, return an error response
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        // Delete the order
+        $order->delete();
+
+        // Return a success response
+        return response()->json(['message' => 'Order deleted successfully']);
+    }
 }

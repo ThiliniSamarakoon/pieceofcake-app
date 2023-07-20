@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_cart-page.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/script_cart-page.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
@@ -44,7 +46,7 @@
                     <th>Quantity</th>
                     <th>Weight</th>
                     <th>Order Date</th>
-                    <th>Delivery</th>
+                    <th>Delivery<br><span style="color:red;">(Rs.200.00)</span></th>
                     <th>User Name</th>
                     <th>Registered/Not</th>
                     <th>Total Price</th>
@@ -52,7 +54,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr data-order-id="{{ $latestOrderID->OrderID }}">
                     <td>{{ $latestOrderID->OrderID }}</td>
                     <td>
                         @if ($imagePath)
@@ -61,10 +63,21 @@
                             <img src="{{ asset('images/default.jpeg') }}" alt="Default Image" width="500" height="500">
                         @endif
                     </td>
-                    <td>Rs.{{ number_format($price, 2) }}</td>
+                    <td><input type="text" name="price" id="priceInput" style="border:none; display: none;" value="{{ $price }}">Rs.{{ number_format($price, 2) }}</td>
                     <td>
-                        <input type="number" name="quantity" value="1" min="1" style="width: 50px;">
+                        <input type="number" name="quantity" id="quantityInput" onchange="updateTotalPrice()" value="1" min="1" style="width: 50px;">
                     </td>
+                    <td>{{ $weight }}</td>
+                    <td>
+                        <input type="date" name="order_date" min="{{ date('Y-m-d', strtotime('+1 day')) }}" max="{{ date('Y-m-d', strtotime('+90 day')) }}" required>
+                     </td>
+                     <td><input type="checkbox" name="delivery" value="1" onchange="updateTotalPrice()"></td>
+                     <td>{{ $userName }}</td>
+                     <td><input type="checkbox" name="registered" value="1"></td>
+                     <td>
+                        <span><input type="text" name="total_price" id="totalPriceInput" data-original-total="{{ $totalPrice }}" value="Rs.{{ $totalPrice }}.00" style="border:none;"  readonly></span>
+                     </td>
+                      <td><a href="#" class="delete-icon" onclick="deleteOrderDetail(this)"><i class="fas fa-trash"></i></a></td>
                 </tr>
             </tbody>
     </table>
@@ -89,6 +102,8 @@
     <a href="https://wa.me/+94714925742"><i class="fab fa-whatsapp"></i></a>
   </div>
 </footer>
-  
+
+
+
 </body>
 </html>
