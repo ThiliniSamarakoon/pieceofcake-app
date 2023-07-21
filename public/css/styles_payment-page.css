@@ -1,0 +1,68 @@
+.heading {
+    text-align: center;
+}
+
+form {
+    width: 32%;
+    margin: 0 auto;
+    padding: 30px;
+    border:1px solid black;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left:155px;
+}
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+label[for="accountNo"],
+label[for="accountName"],
+label[for="bankName"] {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 80%;
+    }
+}
+
+.bankAccDetails {
+    margin-left:1250px;
+    margin-top: -700px;
+    border:1px solid mediumpurple;
+    padding:5px;
+    width: 250px;
+}
+
+footer {
+    margin-top: 600px;
+}

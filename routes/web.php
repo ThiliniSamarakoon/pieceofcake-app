@@ -11,7 +11,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CakeController;
 use App\Http\Controllers\CartController;
-
+use App\Http\Controllers\CheckoutController;
 
 
 
@@ -120,6 +120,10 @@ Route::get('/customized-orders', function () {
     return view('html.login-customized-order');
 })->name('login.customized.orders');
 
+Route::get('/payment', function () {
+    return view('html.payment-page');
+})->name('payment.page');
+
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
 Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');
@@ -149,3 +153,5 @@ Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart.page');
 Route::delete('/cart/{orderId}', [CartController::class, 'deleteOrder'])->name('cart.delete');
 
 Route::post('/cart/proceed-to-checkout', [CartController::class, 'proceedToCheckout'])->name('cart.proceedToCheckout');
+
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');

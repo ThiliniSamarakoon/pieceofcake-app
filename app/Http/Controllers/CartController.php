@@ -143,8 +143,8 @@ class CartController extends Controller
                 'updated_at' => now(),
         ]);
 
-        // Redirect back to the cart page or to the checkout page
-        return redirect()->route('cart.page')->with('success', 'Order has been added to cart.');
+        // Redirect to the checkout page
+        return redirect()->route('payment.page')->with('success', 'Order has been added to cart.');
         }
     }
         public function deleteOrder($orderId)
