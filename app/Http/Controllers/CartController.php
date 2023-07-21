@@ -117,27 +117,36 @@ class CartController extends Controller
         $registered = $request->input('registered', 0);
         $totalPrice = $request->input('total_price');
 
+        // Check if there are already 3 orders for the same date in the cart table
+        $maxOrderLimit = 3;
+        $ordersCount = DB::table('cart')
+            ->whereDate('order_date', $orderDate)
+            ->count();
 
-        // Save the data in the "cart" table
-        DB::table('cart')->insert([
-            'order_id' => $orderId,
-            'image_path' => $imagePath,
-            'price' => $price,
-            'quantity' => $quantity,
-            'weight' => $weight,
-            'order_date' => $orderDate,
-            'delivery' => $delivery,
-            'user_name' => $userName,
-            'registered' => $registered,
-            'total_price' => $totalPrice,
-            'created_at' => now(),
-            'updated_at' => now(),
+        if ($ordersCount > $maxOrderLimit) {
+            // If there are already 3 orders for the same date, display an alert and prevent proceeding to checkout
+            echo '<script>alert("There are already ' . $maxOrderLimit . ' orders for this date. Please select another date.");</script>';
+        }else {
+            // Save the data in the "cart" table
+            DB::table('cart')->insert([
+                'order_id' => $orderId,
+                'image_path' => $imagePath,
+                'price' => $price,
+                'quantity' => $quantity,
+                'weight' => $weight,
+                'order_date' => $orderDate,
+                'delivery' => $delivery,
+                'user_name' => $userName,
+                'registered' => $registered,
+                'total_price' => $totalPrice,
+                'created_at' => now(),
+                'updated_at' => now(),
         ]);
 
         // Redirect back to the cart page or to the checkout page
         return redirect()->route('cart.page')->with('success', 'Order has been added to cart.');
+        }
     }
-
         public function deleteOrder($orderId)
     {
         $order = Order::find($orderId);

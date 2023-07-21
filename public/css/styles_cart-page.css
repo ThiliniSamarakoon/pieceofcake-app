@@ -55,16 +55,18 @@ footer {
 .backbtn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: rebeccapurple;
-    color: #fff;
-    border: none;
+    background-color: white;
+    color: black;
+    border: 1 px solid black;
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
     margin-left:5px;
+    border-radius:10px;
 }
 
 
     .backbtn:hover {
         background-color: black;
+        color:white;
     }
