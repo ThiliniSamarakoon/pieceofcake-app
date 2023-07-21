@@ -33,15 +33,13 @@ function updateTotalPrice() {
 // Call the updateTotalPrice function on page load to initialize the total price
 updateTotalPrice();
 
-function deleteOrderDetail(deleteIcon) {
-const row = deleteIcon.closest('tr'); // Get the parent row of the delete icon
-
-    // Remove the row from the table without backend deletion
-    row.remove();
-}
 
 
 
+
+
+
+   
 
 
 

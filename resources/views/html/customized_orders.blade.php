@@ -36,7 +36,7 @@
         <p class="para1">Transform your cake into a masterpiece with our vast selection of elements!</p>
         <p style="text-align:center; color:red;"><b>Click on Save Button to Send the Order to the Owner</b></p>
         <button class="button-choose-options" title="Choose your favourite Cake type, frostings, shapes and others" onclick="window.location.href = '{{ route('customer.choose-cakeoptions') }}';">Choose Options</button>
-        <button class="button-add-to-cart" title="Please click on this after owner accept the order via SMS" onclick="window.location.href = '{{ route('customer.cart.overview') }}';">Add to Cart</button>
+        <button class="button-add-to-cart" title="Please click on this after owner accept the order via SMS" onclick="window.location.href = '{{ route('cart.page') }}';">Add to Cart</button>
     </div>
     </div>
 

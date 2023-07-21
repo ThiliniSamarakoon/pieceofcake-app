@@ -8,6 +8,11 @@
     <script src="{{ asset('js/script_cart-page.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>
+        // Define a global variable to hold the route URL for deleting the order
+        const deleteOrderRoute = '{{ route('cart.delete', ['orderId' => '__orderId__']) }}';
+    </script>
 
 </head>
 <body>
@@ -34,8 +39,11 @@
     <?php
     //Heading
     ?>
-    <h1 style="text-align:center;">My Cart</h1>
+    <button type="button" class="backbtn" onclick="window.location.href = '{{ route('cake-shop') }}';">Back to Home</button>
+    <h1 style="text-align:center; margin-top:-20px;">My Cart</h1>
 
+<form id="checkoutForm" method="POST" action="{{ route('cart.proceedToCheckout') }}">
+   @csrf
      <div class="cart-container">
      <table>
             <thead>
@@ -53,9 +61,12 @@
                     <th></th>
                 </tr>
             </thead>
+
             <tbody>
+            
                 <tr data-order-id="{{ $latestOrderID->OrderID }}">
-                    <td>{{ $latestOrderID->OrderID }}</td>
+                    <td><input type="text" name="order_id" value="{{ $latestOrderID->OrderID }}" style="border:none;" readonly></td>
+                    <input type="hidden" name="image_path" value="{{ $imagePath }}">
                     <td>
                         @if ($imagePath)
                             <img src="{{ $imagePath }}" alt="Order Image" width="100" height="100">
@@ -67,22 +78,47 @@
                     <td>
                         <input type="number" name="quantity" id="quantityInput" onchange="updateTotalPrice()" value="1" min="1" style="width: 50px;">
                     </td>
-                    <td>{{ $weight }}</td>
+                    <td><input type="text" name="weight" value="{{ $weight }}" style="border:none;" readonly></td>
                     <td>
                         <input type="date" name="order_date" min="{{ date('Y-m-d', strtotime('+1 day')) }}" max="{{ date('Y-m-d', strtotime('+90 day')) }}" required>
                      </td>
                      <td><input type="checkbox" name="delivery" value="1" onchange="updateTotalPrice()"></td>
-                     <td>{{ $userName }}</td>
+                     <td><input type="text" name="user_name" value="{{ $userName }}" style="border:none;" readonly></td>
                      <td><input type="checkbox" name="registered" value="1"></td>
                      <td>
                         <span><input type="text" name="total_price" id="totalPriceInput" data-original-total="{{ $totalPrice }}" value="Rs.{{ $totalPrice }}.00" style="border:none;"  readonly></span>
                      </td>
-                      <td><a href="#" class="delete-icon" onclick="deleteOrderDetail(this)"><i class="fas fa-trash"></i></a></td>
-                </tr>
+                      <td><button class="reset-icon" onclick="deleteOrder({{ $latestOrderID->OrderID }})"><i class="fas fa-trash"></i></button></td>
+                     </tr>
+            
             </tbody>
     </table>
-    </div>
-    <button type="submit">Proceed to Checkout</button>
+   </div>
+        <button type="submit" id="proceedButton">Proceed to Checkout</button>
+</form>
+
+<script>
+    function deleteOrder(orderId) {
+        if (confirm('Are you sure you want to delete this order?')) {
+            $.ajax({
+                url: '{{ route('cart.delete', ['orderId' => '__orderId__']) }}'.replace('__orderId__', orderId),
+                type: 'DELETE',
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    // Reload the page after successful deletion
+                    location.reload();
+                },
+                error: function (error) {
+                    // Handle error here (if any)
+                    console.error(error);
+                }
+            });
+        }
+    }
+</script>
+
 
      <?php
     //Footer Section

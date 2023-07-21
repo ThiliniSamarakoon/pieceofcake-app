@@ -146,3 +146,6 @@ Route::post('/submit-form', [OrderController::class, 'store'])->middleware('web'
 
 Route::get('/cart', [CartController::class, 'showCartPage'])->name('cart.page');
 
+Route::delete('/cart/{orderId}', [CartController::class, 'deleteOrder'])->name('cart.delete');
+
+Route::post('/cart/proceed-to-checkout', [CartController::class, 'proceedToCheckout'])->name('cart.proceedToCheckout');
