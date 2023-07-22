@@ -88,7 +88,7 @@
                      <td>
                         <span><input type="text" name="total_price" id="totalPriceInput" data-original-total="{{ $totalPrice }}" value="Rs.{{ $totalPrice }}.00" style="border:none;"  readonly></span>
                      </td>
-                      <td><button class="reset-icon" onclick="deleteOrder({{ $latestOrderID->OrderID }})"><i class="fas fa-trash"></i></button></td>
+                      <td><button type="button" class="reset-icon" onclick="deleteOrder({{ $latestOrderID->OrderID }})" ><i class="fas fa-trash"></i></button></td>
                      </tr>
             
             </tbody>
@@ -99,25 +99,28 @@
 
 <script>
     function deleteOrder(orderId) {
-        if (confirm('Are you sure you want to delete this order?')) {
-            $.ajax({
-                url: '{{ route('cart.delete', ['orderId' => '__orderId__']) }}'.replace('__orderId__', orderId),
-                type: 'DELETE',
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function (response) {
-                    // Reload the page after successful deletion
-                    location.reload();
-                },
-                error: function (error) {
-                    // Handle error here (if any)
-                    console.error(error);
-                }
-            });
-        }
+        // Send a DELETE request using AJAX
+        fetch(`/cart/${orderId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Process the response data (e.g., show a success message, update the cart view, etc.)
+            console.log(data.message);
+            // Reload the page to update the cart view
+            location.reload();
+        })
+        .catch(error => {
+            // Handle any errors that occur during the request
+            console.error('Error:', error);
+        });
     }
 </script>
+
 
 
      <?php

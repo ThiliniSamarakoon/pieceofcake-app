@@ -147,19 +147,30 @@ class CartController extends Controller
         return redirect()->route('payment.page')->with('success', 'Order has been added to cart.');
         }
     }
-        public function deleteOrder($orderId)
-    {
-        $order = Order::find($orderId);
-        if (!$order) {
-            return Redirect::back()->with('error', 'Order not found.');
-        }
 
-        // If the order exists, delete it
-        $deleted = $order->delete();
-        if ($deleted) {
-            return Redirect::back()->with('success', 'Order deleted successfully.');
-        } else {
-            return Redirect::back()->with('error', 'Failed to delete the order.');
-        }
+    public function deleteOrder($orderId)
+    {
+        // Find the order by ID
+        $order = Order::find($orderId);
+
+        if (!$order) {
+        // If the order with the provided ID doesn't exist, return an error response
+        return response()->json(['message' => 'Order not found'], 404);
     }
+
+    // Delete the order
+    $order->delete();
+
+    // Delete the corresponding entry from the "cart" table if it exists
+    $deleted = DB::table('cart')->where('order_id', $orderId)->delete();
+
+    if ($deleted) {
+        // Return a success response
+        return response()->json(['message' => 'Order deleted successfully']);
+    } else {
+        // If there was an error or the order was not found in the "cart" table, return an error response
+        return response()->json(['error' => 'Failed to delete order'], 500);
+    }
+   }
+
 }

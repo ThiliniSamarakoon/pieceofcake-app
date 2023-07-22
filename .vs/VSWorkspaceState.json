@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\app\\Models",
-    "\\public",
-    "\\public\\css",
-    "\\public\\js",
+    "\\database",
+    "\\database\\migrations",
     "\\resources",
     "\\resources\\js",
     "\\resources\\views",
     "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\public\\css\\styles.css",
+  "SelectedNode": "\\resources\\views\\html\\cake-details.blade.php",
   "PreviewInSolutionExplorer": false
 }
