@@ -66,3 +66,11 @@ label[for="bankName"] {
 footer {
     margin-top: 600px;
 }
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}

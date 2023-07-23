@@ -29,4 +29,10 @@ class Cart extends Model
     {
         return $this->belongsTo(Order::class);
     }
+
+    // Define the relationship with Checkout model
+    public function checkout()
+    {
+        return $this->hasOne(Checkout::class, 'order_id', 'order_id');
+    }
 }

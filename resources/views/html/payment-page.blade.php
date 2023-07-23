@@ -37,7 +37,7 @@
 
     <h1 class="heading">Checkout</h1>
 
-    <form method="POST" action="{{ route('checkout.store') }}">
+    <form method="POST" id="checkoutForm" action="{{ route('checkout.store') }}">
       @csrf
         <label for="name"><b>Name:</b></label>
         <input type="text" id="name" name="name" pattern="[A-Za-z ]+" required><!-- Allow only letters and spaces in the Name field.-->
@@ -48,7 +48,24 @@
         <br>
 
         <label for="deliveryAddress"><b>Delivery Address:</b></label>
-        <textarea id="deliveryAddress" name="deliveryAddress" ></textarea>
+        <label for="streetAddress">Street Address:</label>
+        <textarea id="streetAddress" name="streetAddress"></textarea><br>
+        <label for="city">City:</label>
+        <select id="city" name="city" >
+            <option value="">Select City</option>
+            <option value="Homagama">Homagama</option>
+            <option value="Kesbewa">Kesbewa</option>
+            <option value="Maharagama">Maharagama</option>
+            <option value="Moratuwa">Moratuwa</option>
+            <option value="Piliyandala">Piliyandala</option>
+            <option value="Kottawa">Kottawa</option>
+        </select>
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Select a Country</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+        </select>
+        <br>
         <br>
 
         <label><b>Payment Method:</b></label>
@@ -95,7 +112,9 @@
         <br>
         <label>Branch Name: Colombo Branch</label>
         <br>
+        <img src="{{ asset('images/QR_Code.png') }}" alt="qr_code" style="width:50px; height:50px; margin-left:100px;">
     </div>
+
 
      <?php
     //Footer Section
@@ -115,7 +134,6 @@
     <a href="https://wa.me/+94714925742"><i class="fab fa-whatsapp"></i></a>
   </div>
 </footer>
-
 
 
 </body>

@@ -124,6 +124,14 @@ Route::get('/payment', function () {
     return view('html.payment-page');
 })->name('payment.page');
 
+Route::match(['get', 'post'], '/pay-advance', function () {
+    return view('html.pay-advance-page'); 
+})->name('pay-advance.page');
+
+Route::match(['get', 'post'], '/order-summary', function () {
+    return view('html.order-summary-page'); 
+})->name('order.summary');
+
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
 Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');
@@ -155,4 +163,11 @@ Route::delete('/cart/{orderId}', [CartController::class, 'deleteOrder'])->name('
 
 Route::post('/cart/proceed-to-checkout', [CartController::class, 'proceedToCheckout'])->name('cart.proceedToCheckout');
 
+// Route for handling the form submission when Pay Advance is selected
+Route::post('/checkout/pay-advance', [CheckoutController::class, 'payAdvance'])->name('checkout.pay-advance');
+
+// Route for handling the form submission for other cases (Order Summary)
+Route::post('/checkout/order-summary', [CheckoutController::class, 'orderSummary'])->name('checkout.order-summary');
+
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+
