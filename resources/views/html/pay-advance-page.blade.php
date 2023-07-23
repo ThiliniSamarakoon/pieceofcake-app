@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_pay-advance.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/script_pay-advance.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -33,20 +34,36 @@
 
     <h1 class="heading">Pay Advance Form</h1>
 
-    <form id="paymentForm">
+    <form id="paymentForm" method="POST">
+      @csrf
+
         <div class="form-group">
             <label for="nextPaymentDate">Next Payment Date:</label>
-            <input type="date" id="nextPaymentDate" name="nextPaymentDate" min="{{ date('Y-m-d', strtotime('+1 day')) }}"  required>
+            <input type="date" id="nextPaymentDate" name="nextPaymentDate" min="{{ date('Y-m-d', strtotime('+1 day')) }}"  max="{{ date('Y-m-d', strtotime('+30 day')) }}"  required>
         </div>
 
         <div class="form-group">
-            <label for="dueAmount">Due Amount:</label>
-            <input type="text" id="dueAmount" name="dueAmount" required>
+            <label for="dueAmount">Due Amount:</label><br>
+            <span id="dueAmount" name="dueAmount">
+                <?php
+                // Include the Product model
+                use App\Models\Cart;
+
+                // Get the latest order ID
+                $latestOrderId = Cart::latest()->first()->id;
+
+                // Get the total price of the latest order
+                $totalPrice = Cart::where('id', $latestOrderId)->get()->first()->total_price;
+
+                // Display the total price in the due amount
+                echo $totalPrice;
+                ?>
+            </span>
         </div>
 
         <div class="form-group">
             <label for="payAmount">Pay Amount:</label>
-            <input type="text" id="payAmount" name="payAmount" required>
+            <input type="number" id="payAmount" name="payAmount" min="500" step="any" required>
         </div>
 
         <div class="form-group">
@@ -54,15 +71,8 @@
             <input type="text" id="remainingAmount" name="remainingAmount" required>
         </div>
 
-        <button type="submit" id="confirmButton">Confirm</button>
+        <button type="submit" id="confirmButton" onclick="calculateRemainingAmount()">Confirm</button>
     </form>
-
-
-
-
-
-
-
 
          <?php
     //Footer Section

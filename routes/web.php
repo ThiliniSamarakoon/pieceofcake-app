@@ -12,7 +12,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CakeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-
+use App\Http\Controllers\PayAdvanceController;
 
 
 /*
@@ -171,3 +171,5 @@ Route::post('/checkout/order-summary', [CheckoutController::class, 'orderSummary
 
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
+//Route::get('/pay-advance', [PayAdvanceController::class, 'showPayAdvanceForm'])->name('pay-advance.page');
+Route::get('/pay-advance', 'PayAdvanceController@index');

@@ -80,7 +80,7 @@
                     </td>
                     <td><input type="text" name="weight" value="{{ $weight }}" style="border:none;" readonly></td>
                     <td>
-                        <input type="date" name="order_date" min="{{ date('Y-m-d', strtotime('+1 day')) }}" max="{{ date('Y-m-d', strtotime('+90 day')) }}" required>
+                        <input type="date" name="order_date" min="{{ date('Y-m-d', strtotime('+2 day')) }}" max="{{ date('Y-m-d', strtotime('+90 day')) }}" required>
                      </td>
                      <td><input type="checkbox" name="delivery" value="1" onchange="updateTotalPrice()"></td>
                      <td><input type="text" name="user_name" value="{{ $userName }}" style="border:none;" readonly></td>
