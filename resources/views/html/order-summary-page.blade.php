@@ -33,43 +33,54 @@
 
     <h1 class="heading">Order Summary</h1>
 
-@section('content')
 <div class="order-summary">
-    <h1>Order Summary</h1>
-
     <form>
         <label for="orderID">Order ID:</label>
-        <input type="text" id="orderID" value="{{ $order->id }}" readonly>
+        <input type="text" id="orderID" value="{{ $latestOrderId }}" readonly>
 
         <label for="productID">Product ID:</label>
-        <input type="text" id="productID" value="{{ $product->id }}" readonly>
+        <input type="text" id="productID" value="{{ $latestProductId }}" readonly>
 
         <label for="name">Name:</label>
-        <input type="text" id="name" value="{{ $product->name }}" readonly>
+        <input type="text" id="name" value="{{ $latestName }}" readonly>
 
-        <!-- Add other labels and fields for the remaining data -->
         <label for="image">Image:</label>
-        <input type="text" id="image" value="{{ $product->image }}" readonly>
+        <img src="{{ $latestImage }}" alt="Product Image">
 
         <label for="cakeType">Cake Type:</label>
-        <input type="text" id="cakeType" value="{{ $product->cake_type }}" readonly>
-
-        <label for="icingType">Icing Type:</label>
-        <input type="text" id="icingType" value="{{ $product->icing_type }}" readonly>
+        <input type="text" id="cakeType" value="{{ $latestCakeType }}" readonly>
 
         <label for="quantity">Quantity:</label>
-        <input type="text" id="quantity" value="{{ $order->quantity }}" readonly>
+        <input type="text" id="quantity" value="{{ $latestQuantity }}" readonly>
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" value="{{ $latestWeight }}" readonly>
+
+         <label for="delivery">Delivery Status:</label>
+         <input type="text" id="delivery" value="{{ $latestDeliveryStatus }}" readonly>
+
+         <label for="price">Price:</label>
+         <input type="text" id="price" value="{{ $latestPrice }}" readonly>
+
+         <label for="OrderDate">Order Date:</label>
+         <input type="text" id="OrderDate" value="{{ $latestOrderDate }}" readonly>
+
+         <label for="Next_Payment_Date">Next Payment Date:</label>
+         <input type="text" id="Next_Payment_Date" value="{{ $latestNextPaymentDate }}" readonly>
+
+         <label for="Remaining_Amount">Remaining Amount:</label>
+         <input type="text" id="Remaining_Amount" value="{{ $latestRemainingAmount }}" readonly>
+
+         <label for="Payment_Method">Payment Method:</label>
+         <input type="text" id="Payment_Method" value="{{ $latestPaymentMethod }}" readonly>
+
+         <label for="Payment_Option">Payment Option:</label>
+         <input type="text" id="Payment_Option" value="{{  $latestPaymentOption }}" readonly>
+
 
         <button type="submit">Confirm Order</button>
     </form>
 </div>
-@endsection
-
-
-
-
-
-
 
 
          <?php

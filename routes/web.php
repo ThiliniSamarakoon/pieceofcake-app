@@ -14,6 +14,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PayAdvanceController;
 use App\Http\Controllers\InstallmentController;
+use App\Http\Controllers\OrderSummaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -177,3 +178,5 @@ Route::get('/pay-advance', 'PayAdvanceController@index');
 Route::post('/store-installment', [InstallmentController::class, 'store'])->name('installment.store');
 
 //Route::get('/get-order-id', [InstallmentController::class, 'getOrderId'])->name('get.order.id');
+
+Route::get('/order-summary', [OrderSummaryController::class, 'showOrderSummary'])->name('order.summary');

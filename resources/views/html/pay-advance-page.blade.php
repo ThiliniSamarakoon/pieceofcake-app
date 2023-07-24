@@ -33,7 +33,7 @@
     </div>
 
     <h1 class="heading">Pay Advance Form</h1>
-
+    <h3 style="color:red; text-align:center;">(When making the next installment payment, click on the 'Pay Advance' button available on the Profile page)</h3>
     <form id="paymentForm" method="POST" action="{{ route('installment.store') }}">
       @csrf
 

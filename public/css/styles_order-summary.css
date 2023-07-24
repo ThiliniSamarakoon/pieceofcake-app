@@ -2,3 +2,59 @@
  {
     text-align:center;
 }
+
+
+.order-summary {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+    .order-summary h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .order-summary form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order-summary label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .order-summary input[type="text"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .order-summary img {
+        max-width: 400px;
+        margin-bottom: 15px;
+    }
+
+    .order-summary button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .order-summary button:hover {
+            background-color: #45a049;
+        }
+
+footer {
+    margin-top: 70px;
+}
