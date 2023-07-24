@@ -16,6 +16,7 @@ function calculateRemainingAmount() {
     var remainingAmount = dueAmount - payAmount;
 
     // Update the remaining amount field with the calculated value
+    document.getElementById('displayRemainingAmount').value = remainingAmount.toFixed(2);
     document.getElementById('remainingAmount').value = remainingAmount.toFixed(2);
 }
 

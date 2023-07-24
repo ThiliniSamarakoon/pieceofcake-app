@@ -47,5 +47,10 @@ button {
     }
 
 footer {
-    margin-top: 90px;
+    margin-top: 370px;
+}
+
+.form-group-due-amount {
+    margin-left: 1300px;
+    margin-top: -300px;
 }

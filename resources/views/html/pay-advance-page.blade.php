@@ -34,7 +34,7 @@
 
     <h1 class="heading">Pay Advance Form</h1>
 
-    <form id="paymentForm" method="POST">
+    <form id="paymentForm" method="POST" action="{{ route('installment.store') }}">
       @csrf
 
         <div class="form-group">
@@ -42,11 +42,27 @@
             <input type="date" id="nextPaymentDate" name="nextPaymentDate" min="{{ date('Y-m-d', strtotime('+1 day')) }}"  max="{{ date('Y-m-d', strtotime('+30 day')) }}"  required>
         </div>
 
+
         <div class="form-group">
+            <label for="payAmount">Pay Amount:</label>
+            <input type="number" id="payAmount" name="payAmount" min="500" step="any" required>
+        </div>
+
+        <div class="form-group">
+            <label for="remainingAmount">Remaining Amount:</label>
+            <input type="text" id="displayRemainingAmount" name="remainingAmount" readonly>
+            <input type="hidden" id="remainingAmount" name="remainingAmount" >
+        </div>
+
+        <button type="submit" id="confirmButton" onclick="calculateRemainingAmount()">Confirm</button>
+    </form>
+
+    <div class="form-group-due-amount">
             <label for="dueAmount">Due Amount:</label><br>
             <span id="dueAmount" name="dueAmount">
+             
                 <?php
-                // Include the Product model
+                // Include the Cart model
                 use App\Models\Cart;
 
                 // Get the latest order ID
@@ -60,19 +76,6 @@
                 ?>
             </span>
         </div>
-
-        <div class="form-group">
-            <label for="payAmount">Pay Amount:</label>
-            <input type="number" id="payAmount" name="payAmount" min="500" step="any" required>
-        </div>
-
-        <div class="form-group">
-            <label for="remainingAmount">Remaining Amount:</label>
-            <input type="text" id="remainingAmount" name="remainingAmount" required>
-        </div>
-
-        <button type="submit" id="confirmButton" onclick="calculateRemainingAmount()">Confirm</button>
-    </form>
 
          <?php
     //Footer Section

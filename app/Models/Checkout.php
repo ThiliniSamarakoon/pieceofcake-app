@@ -27,4 +27,10 @@ class Checkout extends Model
     {
         return $this->belongsTo(Cart::class, 'order_id', 'order_id');
     }
+
+    public function installments()
+    {
+        //hasMany method specifies that an order can have multiple installments
+        return $this->hasMany(Installment::class, 'order_id');
+    }
 }

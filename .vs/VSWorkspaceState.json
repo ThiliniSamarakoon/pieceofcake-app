@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\config",
-    "\\database",
-    "\\database\\migrations",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
+    "\\app\\Models",
     "\\public",
-    "\\public\\js",
+    "\\public\\css",
+    "\\public\\images",
     "\\resources",
-    "\\resources\\js",
-    "\\resources\\views",
-    "\\resources\\views\\html"
+    "\\resources\\css"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\CartController.php",
+  "SelectedNode": "\\public\\js\\script_pay-advance.js",
   "PreviewInSolutionExplorer": false
 }

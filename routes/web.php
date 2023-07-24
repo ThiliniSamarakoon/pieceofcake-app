@@ -13,7 +13,7 @@ use App\Http\Controllers\CakeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PayAdvanceController;
-
+use App\Http\Controllers\InstallmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -173,3 +173,7 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 
 //Route::get('/pay-advance', [PayAdvanceController::class, 'showPayAdvanceForm'])->name('pay-advance.page');
 Route::get('/pay-advance', 'PayAdvanceController@index');
+
+Route::post('/store-installment', [InstallmentController::class, 'store'])->name('installment.store');
+
+//Route::get('/get-order-id', [InstallmentController::class, 'getOrderId'])->name('get.order.id');

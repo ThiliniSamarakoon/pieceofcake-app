@@ -3,6 +3,7 @@
 <head>
     <title>Order Summary</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles_order-summary.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -32,7 +33,37 @@
 
     <h1 class="heading">Order Summary</h1>
 
+@section('content')
+<div class="order-summary">
+    <h1>Order Summary</h1>
 
+    <form>
+        <label for="orderID">Order ID:</label>
+        <input type="text" id="orderID" value="{{ $order->id }}" readonly>
+
+        <label for="productID">Product ID:</label>
+        <input type="text" id="productID" value="{{ $product->id }}" readonly>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="{{ $product->name }}" readonly>
+
+        <!-- Add other labels and fields for the remaining data -->
+        <label for="image">Image:</label>
+        <input type="text" id="image" value="{{ $product->image }}" readonly>
+
+        <label for="cakeType">Cake Type:</label>
+        <input type="text" id="cakeType" value="{{ $product->cake_type }}" readonly>
+
+        <label for="icingType">Icing Type:</label>
+        <input type="text" id="icingType" value="{{ $product->icing_type }}" readonly>
+
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" value="{{ $order->quantity }}" readonly>
+
+        <button type="submit">Confirm Order</button>
+    </form>
+</div>
+@endsection
 
 
 
