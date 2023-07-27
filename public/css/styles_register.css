@@ -48,11 +48,11 @@ body {
         font-size: 14px;
     }
 
-.button-group {
+/*.button-group {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
-}
+}*/
 
     .button-group button[type="submit"] {
         padding: 10px 20px;
@@ -62,6 +62,7 @@ body {
         border-radius: 4px;
         cursor: pointer;
         font-size: 14px;
+        margin-left:150px;
     }
 
     .button-group button[type="reset"] {
@@ -88,3 +89,39 @@ body {
         color: white;
     }
 
+hr {
+    color: dimgrey;
+    width: 500px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.login {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.or-text {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.guest-button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .guest-button:hover {
+        background-color: #e6e6e6;
+        color:black;
+    }
