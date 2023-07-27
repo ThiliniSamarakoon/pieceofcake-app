@@ -78,6 +78,12 @@
 <!-- Hidden input field method -->
 <input type="hidden" id="error-message-input" value="{{ session('errorMessage') }}">
 
+<div id="error-messages">
+  @if(session('errorMessage'))
+    <p class="error-message">{{ session('errorMessage') }}</p>
+  @endif
+</div>
+
 
 </body>
 </html>

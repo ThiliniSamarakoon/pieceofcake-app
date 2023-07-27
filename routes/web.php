@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminRegisterController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\CustomizedOrderController;
@@ -15,6 +14,8 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PayAdvanceController;
 use App\Http\Controllers\InstallmentController;
 use App\Http\Controllers\OrderSummaryController;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -110,8 +111,8 @@ Route::get('/cart', function () {
 
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('customer.login');
-Route::post('/login', [LoginController::class, 'login'])->name('user.login.submit');
+//Route::get('/login', [LoginController::class, 'showLoginForm'])->name('customer.login');
+//Route::post('/login', [LoginController::class, 'login'])->name('user.login.submit');
 
 Route::post('/admin/register', [AdminRegisterController::class, 'admin_register'])->name('admin.register.submit');
 
@@ -180,3 +181,5 @@ Route::post('/store-installment', [InstallmentController::class, 'store'])->name
 //Route::get('/get-order-id', [InstallmentController::class, 'getOrderId'])->name('get.order.id');
 
 Route::get('/order-summary', [OrderSummaryController::class, 'showOrderSummary'])->name('order.summary');
+
+Route::post('/user/login', [LoginController::class, 'loginSubmit'])->name('user.login.submit');
