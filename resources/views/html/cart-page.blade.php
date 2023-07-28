@@ -27,7 +27,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#About-Us-Section'">About Us</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section'">Contact Us</button></li>
-            <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register / Login</button></li>
+           <!-- <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register / Login</button></li> -->
             <li class="top-right">
                 <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('cart.page') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
@@ -39,8 +39,7 @@
     <?php
     //Heading
     ?>
-    <button type="button" class="backbtn" onclick="window.location.href = '{{ route('cake-shop') }}';">Back to Home</button>
-    <h1 style="text-align:center; margin-top:-20px;">My Cart</h1>
+    <h1 style="text-align:center; margin-top:10px;">My Cart</h1>
 
 <form id="checkoutForm" method="POST" action="{{ route('cart.proceedToCheckout') }}">
    @csrf
@@ -54,9 +53,9 @@
                     <th>Quantity</th>
                     <th>Weight</th>
                     <th>Order Date</th>
-                    <th>Delivery<br><span style="color:red;">(Rs.200.00)</span></th>
-                    <th>User Name</th>
-                    <th>Registered/Not</th>
+                    <th>Delivery<br>(Rs.200.00)</th>
+                    <!-- <th>User Name<br><span style="color:red;">(Enjoy a 10% discount for registered accounts after every 3 orders)</span></th> -->
+                    <!-- <th>Registered/Not</th> -->
                     <th>Total Price</th>
                     <th></th>
                 </tr>
@@ -83,19 +82,39 @@
                         <input type="date" name="order_date" min="{{ date('Y-m-d', strtotime('+2 day')) }}" max="{{ date('Y-m-d', strtotime('+90 day')) }}" required>
                      </td>
                      <td><input type="checkbox" name="delivery" value="1" onchange="updateTotalPrice()"></td>
-                     <td><input type="text" name="user_name" value="{{ $userName }}" style="border:none;" readonly></td>
-                     <td><input type="checkbox" name="registered" value="1"></td>
+
                      <td>
                         <span><input type="text" name="total_price" id="totalPriceInput" data-original-total="{{ $totalPrice }}" value="Rs.{{ $totalPrice }}.00" style="border:none;"  readonly></span>
                      </td>
                       <td><button type="button" class="reset-icon" onclick="deleteOrder({{ $latestOrderID->OrderID }})" ><i class="fas fa-trash"></i></button></td>
                      </tr>
-            
             </tbody>
     </table>
    </div>
         <button type="submit" id="proceedButton">Proceed to Checkout</button>
 </form>
+
+
+     <?php
+    //Footer Section
+    ?>
+ <footer>
+  <div class="footer-left">
+    <img src="{{ asset('images/piece_of_cake_logo.jpeg') }}" alt="Logo">
+  </div>
+  <div class="footer-center">
+    <p>&copy;2023 Piece Of Cake - All Rights Reserved</p>
+
+  </div>
+  <div class="footer-right">
+    <p>Feedbacks</p>
+    <a href="https://www.facebook.com/Cakes.by.Shiranthi.DeSeram"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com/piece.of.cake.20?igshid=YmMyMTA2M2Y"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/+94714925742"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</footer>
+
+
 
 <script>
     function deleteOrder(orderId) {
@@ -120,28 +139,6 @@
         });
     }
 </script>
-
-
-
-     <?php
-    //Footer Section
-    ?>
- <footer>
-  <div class="footer-left">
-    <img src="{{ asset('images/piece_of_cake_logo.jpeg') }}" alt="Logo">
-  </div>
-  <div class="footer-center">
-    <p>&copy;2023 Piece Of Cake - All Rights Reserved</p>
-
-  </div>
-  <div class="footer-right">
-    <p>Feedbacks</p>
-    <a href="https://www.facebook.com/Cakes.by.Shiranthi.DeSeram"><i class="fab fa-facebook"></i></a>
-    <a href="https://instagram.com/piece.of.cake.20?igshid=YmMyMTA2M2Y"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/+94714925742"><i class="fab fa-whatsapp"></i></a>
-  </div>
-</footer>
-
 
 
 </body>

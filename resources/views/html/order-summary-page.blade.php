@@ -22,7 +22,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#About-Us-Section'">About Us</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section'">Contact Us</button></li>
-            <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register / Login</button></li>
+            <!-- <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register / Login</button></li> -->
             <li class="top-right">
                 <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('cart.page') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
@@ -35,6 +35,7 @@
 
 <div class="order-summary">
     <form>
+
         <label for="orderID">Order ID:</label>
         <input type="text" id="orderID" value="{{ $latestOrderId }}" readonly>
 
@@ -56,10 +57,7 @@
         <label for="weight">Weight:</label>
         <input type="text" id="weight" value="{{ $latestWeight }}" readonly>
 
-         <label for="delivery">Delivery Status:</label>
-         <input type="text" id="delivery" value="{{ $latestDeliveryStatus }}" readonly>
-
-         <label for="price">Price:</label>
+          <label for="price">Grand Total:</label>
          <input type="text" id="price" value="{{ $latestPrice }}" readonly>
 
          <label for="OrderDate">Order Date:</label>
@@ -68,7 +66,7 @@
          <label for="Next_Payment_Date">Next Payment Date:</label>
          <input type="text" id="Next_Payment_Date" value="{{ $latestNextPaymentDate }}" readonly>
 
-         <label for="Remaining_Amount">Remaining Amount:</label>
+         <label for="Remaining_Amount">Next Payment Amount:</label>
          <input type="text" id="Remaining_Amount" value="{{ $latestRemainingAmount }}" readonly>
 
          <label for="Payment_Method">Payment Method:</label>
@@ -77,8 +75,9 @@
          <label for="Payment_Option">Payment Option:</label>
          <input type="text" id="Payment_Option" value="{{  $latestPaymentOption }}" readonly>
 
-
-        <button type="submit">Confirm Order</button>
+ 
+        <button type="submit" class="confirmBtn">Confirm Order</button><br>
+        <button type="submit" class="billPrint">Print Bill</button>
     </form>
 </div>
 

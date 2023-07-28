@@ -18,7 +18,6 @@ class Order extends Model
         'ProductID',
         'Cake_Name',
         'Price',
-        'Item_Weight',
         'Cake_Type',
         'Icing_Type',
         'Input_Cake_Weight',

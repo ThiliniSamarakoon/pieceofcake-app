@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\database",
-    "\\database\\migrations",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\public",
-    "\\public\\images",
+    "\\public\\css",
+    "\\public\\js",
     "\\resources",
-    "\\resources\\css",
     "\\resources\\views",
     "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\resources\\views\\html\\pay-advance-page.blade.php",
+  "SelectedNode": "\\resources\\views\\html\\login.blade.php",
   "PreviewInSolutionExplorer": false
 }

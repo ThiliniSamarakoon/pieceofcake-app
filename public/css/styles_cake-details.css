@@ -42,12 +42,11 @@
     display: inline-block;
     font-size: 24px;
     font-weight:lighter;
-    cursor: pointer;
 }
 
-    .rating-stars input:checked ~ label {
+ /*   .rating-stars input:checked ~ label {
         color: #ff9800;
-    }
+    }*/
 
 .rating {
     margin-left:90px;

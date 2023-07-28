@@ -34,7 +34,7 @@ class OrderSummaryController extends Controller
         $latestWeight = Order::latest()->value('Input_Cake_Weight');
 
         // Retrieve the latest delivery status from the cart table
-        $latestDeliveryStatus = Cart::latest()->value('delivery');
+        //$latestDeliveryStatus = Cart::latest()->value('delivery');
 
         // Retrieve the latest price from the cart table
         $latestPrice = Cart::latest()->value('total_price');
@@ -54,6 +54,19 @@ class OrderSummaryController extends Controller
         // Retrieve the latest payment option from the checkout table
         $latestPaymentOption = Checkout::latest()->value('payment_option');
 
+        // If the latest payment option is "Pay Full Payment" 
+        if ($latestPaymentOption === 'payFullPayment') {
+            // Set the "Next payment date" to null and "Remaining amount" to Rs. 0.00
+            $latestNextPaymentDate = null;
+            $latestRemainingAmount = 0.00;
+        } else {
+            // Retrieve the latest Next payment date from the installments table
+            $latestNextPaymentDate = Installment::latest()->value('next_payment_date');
+
+            // Retrieve the latest remaining amount from the installments table
+            $latestRemainingAmount = Installment::latest()->value('remaining_amount');
+        }
+
         // Pass the latest order ID to the view
         return view('html.order-summary-page', compact('latestOrderId',
         'latestProductId',
@@ -62,7 +75,6 @@ class OrderSummaryController extends Controller
         'latestCakeType',
         'latestQuantity',
         'latestWeight',
-        'latestDeliveryStatus',
         'latestPrice',
         'latestOrderDate',
         'latestNextPaymentDate',

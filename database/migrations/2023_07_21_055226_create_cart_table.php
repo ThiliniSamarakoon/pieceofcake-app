@@ -20,8 +20,8 @@ return new class extends Migration
             $table->decimal('weight', 8, 2);
             $table->date('order_date');
             $table->boolean('delivery')->default(false);
-            $table->string('user_name');
-            $table->boolean('registered')->default(false);
+            //$table->string('user_name');
+            //$table->boolean('registered')->default(false);
             $table->decimal('total_price', 8, 2);
             $table->timestamps();
         });

@@ -22,7 +22,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#About-Us-Section'">About Us</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section'">Contact Us</button></li>
-            <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';">Register / Login</button></li>
+            <!-- <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';">Register / Login</button></li> -->
             <li class="top-right">
                 <i class="fas fa-shopping-cart"  title="My Cart" onclick="window.location.href = '{{ route('cart.page') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
@@ -42,7 +42,7 @@
                 <!-- <p class="price">Price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            : ${{ $product->price }}</p>-->
                 <p class="price">Price:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:Rs.<input type="text" id="displayPrice" name="price" style="border:none;" value="{{ $product->price }}"></p>
 
-                <p class="item-weight">Item Weight&nbsp; :<input type="text" name="item_weight" value="{{ $product->item_weight }}" style="border:none;"></p>
+                <!-- <p class="item-weight">Item Weight&nbsp; :<input type="text" name="item_weight" value="{{ $product->item_weight }}" style="border:none;"></p> -->
                 <p class="cake-type">Cake Type&nbsp;&nbsp;&nbsp;     :<input type="text" name="cake_type" value="{{ $product->cake_type }}" style="border:none;"></p>
                 <p class="icing-type">Icing Type&nbsp;&nbsp;&nbsp;   :<input type="text" name="icing_type" value="{{ $product->icing_type }}" style="border:none;"></p>
                 <!-- <p class="rating">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           : {{ $product->rating }}</p>-->
@@ -50,23 +50,25 @@
                 <p class="feedbacks">Feedbacks&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" name="feedbacks" value="{{ $product->feedbacks }}" style="border:none;"><a href="['id' => $product->id]) }}"></a></p>
 
                 
-                <p class="rating-stars label" style="font-weight:lighter;">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
+              <p class="rating-stars label" style="font-weight:lighter;">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</p>
   <div class="rating">
-    <input type="radio" id="star5" name="rating" value="5" {{ $product->rating == 5 ? 'checked' : '' }}>
+    <input type="radio" id="star5" name="rating" value="5" {{ $product->rating == 5 ? 'checked' : '' }} disabled>
     <label for="star5"></label>
-    <input type="radio" id="star4" name="rating" value="4" {{ $product->rating == 4 ? 'checked' : '' }}>
+    <input type="radio" id="star4" name="rating" value="4" {{ $product->rating == 4 ? 'checked' : '' }} disabled>
     <label for="star4"></label>
-    <input type="radio" id="star3" name="rating" value="3" {{ $product->rating == 3 ? 'checked' : '' }}>
+    <input type="radio" id="star3" name="rating" value="3" {{ $product->rating == 3 ? 'checked' : '' }} disabled>
     <label for="star3"></label>
-    <input type="radio" id="star2" name="rating" value="2" {{ $product->rating == 2 ? 'checked' : '' }}>
+    <input type="radio" id="star2" name="rating" value="2" {{ $product->rating == 2 ? 'checked' : '' }} disabled>
     <label for="star2"></label>
-    <input type="radio" id="star1" name="rating" value="1" {{ $product->rating == 1 ? 'checked' : '' }}>
+    <input type="radio" id="star1" name="rating" value="1" {{ $product->rating == 1 ? 'checked' : '' }} disabled>
     <label for="star1"></label>
 </div><br>
-<div class="user_name">
+
+<!-- <div class="user_name">
     <label for="user_name">User Name&nbsp;&nbsp;&nbsp;:</label>
     <input id="user_name" name="user_name"><br><span style="color:red;">(Please enter if you have a registered account. You will receive 10% discount for every 3 Orders)</span>
-</div><br>
+</div><br> -->
+
 <!-- Cake Weight -->
 <div class="weight">
     <label for="cake-weight">Cake Weight:</label>
@@ -95,12 +97,12 @@
 </div><br>
 <!-- Message on Cake -->
 <div class="message">
-    <label for="message-on-cake">Message on Cake:</label>
+    <label for="message-on-cake">Label on Cake:</label>
     <textarea class="text-area" style="width:200px; height:50px;" maxlength="30" name="message_on_cake"></textarea>
 </div><br>
-<!-- Review -->
+<!-- Review 
     <label for="review">Write a review&nbsp;&nbsp;&nbsp;&nbsp;:</label>
-    <textarea id="review" name="review" style="width:400px; height:100px;" ></textarea>
+    <textarea id="review" name="review" style="width:400px; height:100px;" ></textarea> -->
 
     <!-- Add to Cart button -->
     <button type="submit" class="add-to-cart-button" name="add_to_cart_btn">Add to Cart</button>

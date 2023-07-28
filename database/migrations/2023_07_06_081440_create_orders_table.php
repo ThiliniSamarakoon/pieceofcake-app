@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('ProductID');
             $table->foreign('ProductID')->references('id')->on('products');
             $table->decimal('Price', 8, 2);
-            $table->string('Item_weight');
+            //$table->string('Item_weight');
             $table->string('Cake_type');
             $table->string('Icing_type');
-            $table->string('UserName')->nullable();
+            //$table->string('UserName')->nullable();
             $table->string('Input_Cake_Weight');
             $table->string('Input_Cake_Type');
             $table->text('Message_on_cake')->nullable();

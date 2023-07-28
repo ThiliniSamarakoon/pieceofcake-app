@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const streetAddressInput = document.getElementById('streetAddress');
     const citySelect = document.getElementById('city');
     const countrySelect = document.getElementById('country');
-    const payAdvanceOption = document.getElementById('payAdvance');
-    const paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
+    //const payAdvanceOption = document.getElementById('payAdvance');
+    //const paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
 
     streetAddressInput.addEventListener('input', function () {
         // Check if the Street Address field has a value
@@ -46,11 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Order submitted Successfully');
             }
 
-            // Check if Pay Advance option is selected with Cash on Delivery or Bank Deposit as payment method
-            if (payAdvanceOption.checked && (document.querySelector('input[name="paymentMethod"]:checked').value === 'cashOnDelivery' || document.querySelector('input[name="paymentMethod"]:checked').value === 'bankDeposit')) {
-                alert('Error: Pay Advance is only available for Online Payment Users.');
-                event.preventDefault(); // Prevent form submission
+            // Get the selected payment method and payment option
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+            const paymentOption = document.querySelector('input[name="paymentOption"]:checked');
+
+            // Check if the selected payment method is debit/credit card and the selected payment option is pay advance
+            if (paymentMethod && paymentOption && paymentMethod.value === 'debitCreditCard' && paymentOption.value === 'payAdvance') {
+                // Redirect the user to the pay advance page
+                window.location.href = payAdvanceUrl;
             }
+
         });
 
     });

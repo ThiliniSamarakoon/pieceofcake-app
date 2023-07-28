@@ -79,7 +79,7 @@ html {
     margin-left: -100px;
     margin-top: -60px;
     position: relative; 
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .slide {
@@ -324,7 +324,7 @@ html {
     background-color: white;
 }
 
-#Contact-Us-Section::after {
+/*#Contact-Us-Section::after {
         content: '';
         position: absolute;
         top: 2000px;
@@ -332,9 +332,9 @@ html {
         width: 100%;
         height: 100%;
         position: absolute;
-}
+}*/
 
- #About-Us-Section::after {
+ /*#About-Us-Section::after {
         content: '';
         position: absolute;
         top: 1550px;
@@ -343,7 +343,7 @@ html {
         height: 100%;
         position: absolute;
         z-index: -1;
- }
+ }*/
 
 .reach-us-section h4 {
     font-size: 20px;
@@ -407,7 +407,7 @@ footer {
     color: white;
 }
 
-.discount-message {
+/*.discount-message {
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -418,6 +418,51 @@ footer {
     margin-left: 1100px;
     margin-top: -80px;
     
+}*/
+
+.rating {
+    width: 500px;
+    height: 40px;
+    margin-top: -30px;
+    margin-left: -170px;
+}
+
+    .rating label {
+        float: right;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+        .rating label:not(:first-of-type) {
+            padding-right: 2px;
+        }
+
+        .rating label:before {
+            content: "\2605";
+            font-size: 42px;
+            color: white;
+            line-height: 1;
+        }
+
+    .rating input {
+        display: none;
+    }
+
+        .rating input:checked ~ label:before, .rating:not(:checked) > label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
+            color: #f9df4a;
+        }
+
+.rating-container label.checked:before {
+    color: gold;
+}
+
+.text-area {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 

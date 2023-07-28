@@ -19,20 +19,20 @@ class OrderController extends Controller
         $order->ProductID = $request->input('product_id');
         $order->Cake_Name = $request->input('cake-name');
         $order->Price = $request->input('price');
-        $order->Item_Weight = $request->input('item_weight');
+        //$order->Item_Weight = $request->input('item_weight');
         $order->Cake_Type = $request->input('cake_type');
         $order->Icing_Type = $request->input('icing_type');
-        $order->UserName = $request->input('user_name', null);
+        //$order->UserName = $request->input('user_name', null);
         $order->Input_Cake_Weight = $request->input('cake-weight');
         $order->Input_Cake_Type = $request->input('input_cake_type');
         $order->Message_on_cake = $request->input('message_on_cake');
         $order->Rating = $request->input('rating',0);
         $order->Feedbacks = $request->input('feedbacks');
-        $order->Reviews = $request->input('review', null);
+        //$order->Reviews = $request->input('review', null);
  
 
          // Check if the username exists in the customer table
-         $username = $request->input('user_name');
+         /*$username = $request->input('user_name');
          if ($username) {
               $customer = Customer::where('UserName', $username)->first();
 
@@ -42,7 +42,7 @@ class OrderController extends Controller
             session()->flash('error', $errorMessage);
             return redirect()->back()->withInput();
             }
-          }
+          }*/
 
          
          // Save the order

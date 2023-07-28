@@ -14,7 +14,6 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PayAdvanceController;
 use App\Http\Controllers\InstallmentController;
 use App\Http\Controllers\OrderSummaryController;
-use App\Http\Controllers\LoginController;
 
 
 /*
@@ -134,6 +133,10 @@ Route::match(['get', 'post'], '/order-summary', function () {
     return view('html.order-summary-page'); 
 })->name('order.summary');
 
+Route::match(['get', 'post'], '/online-payment-gateway', function () {
+    return view('html.online-payment-gateway');
+})->name('online.payment.gateway');
+
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
 Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');
@@ -166,15 +169,17 @@ Route::delete('/cart/{orderId}', [CartController::class, 'deleteOrder'])->name('
 Route::post('/cart/proceed-to-checkout', [CartController::class, 'proceedToCheckout'])->name('cart.proceedToCheckout');
 
 // Route for handling the form submission when Pay Advance is selected
-Route::post('/checkout/pay-advance', [CheckoutController::class, 'payAdvance'])->name('checkout.pay-advance');
+Route::match(['get', 'post'], '/checkout/pay-advance', [CheckoutController::class, 'payAdvance'])->name('checkout.pay-advance');
 
 // Route for handling the form submission for other cases (Order Summary)
 Route::post('/checkout/order-summary', [CheckoutController::class, 'orderSummary'])->name('checkout.order-summary');
 
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+//Route::match(['get', 'post'], '/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
 //Route::get('/pay-advance', [PayAdvanceController::class, 'showPayAdvanceForm'])->name('pay-advance.page');
-Route::get('/pay-advance', 'PayAdvanceController@index');
+//Route::get('/pay-advance', 'PayAdvanceController@index');
+Route::get('/pay-advance', [PayAdvanceController::class, 'index']);
 
 Route::post('/store-installment', [InstallmentController::class, 'store'])->name('installment.store');
 
@@ -182,4 +187,4 @@ Route::post('/store-installment', [InstallmentController::class, 'store'])->name
 
 Route::get('/order-summary', [OrderSummaryController::class, 'showOrderSummary'])->name('order.summary');
 
-Route::post('/user/login', [LoginController::class, 'loginSubmit'])->name('user.login.submit');
+//Route::match(['get', 'post'], '/pay-advance', [CheckoutController::class, 'payAdvance'])->name('pay-advance.page');

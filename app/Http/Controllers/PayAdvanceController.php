@@ -23,7 +23,8 @@ class PayAdvanceController extends Controller
         session()->put('totalPrice', $totalPrice);
 
         // Return the view
-        return view('html.pay-advance-page', with('totalPrice', $totalPrice));
+        //return view('html.pay-advance-page', with('totalPrice', $totalPrice));
+        return view('html.pay-advance-page', ['totalPrice' => $totalPrice]);
 }
 
 

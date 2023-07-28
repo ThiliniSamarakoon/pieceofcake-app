@@ -53,7 +53,7 @@ class CartController extends Controller
             
         }
         // Get the user name from the latest order
-        $userName = $latestOrderID->UserName;
+        //$userName = $latestOrderID->UserName;
 
         // Get user input quantity from the request
         //$quantity = request('quantity', 1);
@@ -70,7 +70,7 @@ class CartController extends Controller
      
 
         // Check if the user name field is filled
-        if ($userName) {
+        /*if ($userName) {
             // Check if the same user has made 3 orders and apply discount if needed
             $userOrdersCount = Order::where('UserName', $userName)->count();
             if ($userOrdersCount >= 3) {
@@ -78,7 +78,7 @@ class CartController extends Controller
                 $discountedPrice = $totalPrice * 0.1;
                 $totalPrice -= $discountedPrice;
             }
-        }
+        }*/
     }
         else {
             // Default image path if order is not found
@@ -91,7 +91,7 @@ class CartController extends Controller
             $weight = 0;
 
             // Default user name if order is not found
-            $userName = 'Unknown User';
+            //$userName = 'Unknown User';
 
             // Default total price if order is not found
             $totalPrice = 0;
@@ -100,7 +100,7 @@ class CartController extends Controller
 
 
         // Pass the latest order's OrderID to the view
-        return view('html.cart-page', compact('latestOrderID','imagePath','price','weight','userName','totalPrice'));
+        return view('html.cart-page', compact('latestOrderID','imagePath','price','weight','totalPrice'));
     }
 
     public function proceedToCheckout(Request $request)
@@ -113,8 +113,7 @@ class CartController extends Controller
         $weight = $request->input('weight');
         $orderDate = $request->input('order_date');
         $delivery = $request->input('delivery', 0);
-        $userName = $request->input('user_name');
-        $registered = $request->input('registered', 0);
+        //$userName = $request->input('user_name');
         $totalPrice = $request->input('total_price');
 
         // Check if there are already 3 orders for the same date in the cart table
@@ -136,8 +135,8 @@ class CartController extends Controller
                 'weight' => $weight,
                 'order_date' => $orderDate,
                 'delivery' => $delivery,
-                'user_name' => $userName,
-                'registered' => $registered,
+                //'user_name' => $userName,
+                //'registered' => $registered,
                 'total_price' => $totalPrice,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -172,5 +171,7 @@ class CartController extends Controller
         return response()->json(['error' => 'Failed to delete order'], 500);
     }
    }
+
+
 
 }

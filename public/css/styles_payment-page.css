@@ -3,7 +3,7 @@
 }
 
 form {
-    width: 32%;
+    width: 35%;
     margin: 0 auto;
     padding: 30px;
     border:1px solid black;
@@ -50,8 +50,12 @@ label[for="bankName"] {
 }
 
 @media (max-width: 768px) {
-    form {
-        width: 80%;
+    .form-container {
+        flex-direction: column;
+    }
+
+    .form-column {
+        width: 100%;
     }
 }
 
@@ -74,3 +78,7 @@ select {
     border-radius: 4px;
     margin-bottom: 10px;
 }
+
+
+
+ 

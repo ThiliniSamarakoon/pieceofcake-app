@@ -8,10 +8,7 @@
     <script src="{{ asset('js/script_payment-page.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // Define a global variable to hold the route URL for deleting the order
-        const deleteOrderRoute = '{{ route('cart.delete', ['orderId' => '__orderId__']) }}';
-    </script>
+    
 
 </head>
 <body>
@@ -26,7 +23,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#About-Us-Section'">About Us</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('cake-shop') }}#Contact-Us-Section'">Contact Us</button></li>
-            <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register / Login</button></li>
+            <!-- <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';"  >Register / Login</button></li> -->
             <li class="top-right">
                 <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('cart.page') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
@@ -39,8 +36,9 @@
 
     <form method="POST" id="checkoutForm" action="{{ route('checkout.store') }}">
       @csrf
+
         <label for="name"><b>Name:</b></label>
-        <input type="text" id="name" name="name" pattern="[A-Za-z ]+" required><!-- Allow only letters and spaces in the Name field.-->
+        <input type="text" id="name" name="name"  required>
         <br>
 
         <label for="contactNo"><b>Contact No:</b></label>
@@ -68,6 +66,7 @@
         <br>
         <br>
 
+  
         <label><b>Payment Method:</b></label>
         <br>
         <label for="debitCreditCard">

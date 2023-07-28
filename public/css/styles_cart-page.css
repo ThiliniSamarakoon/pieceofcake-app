@@ -1,7 +1,7 @@
 .cart-container {
-    max-width: 800px;
+    max-width: 900px;
     padding: 20px;
-    margin-left: 10px;
+    margin-left: 15px;
     align-content: center;
     margin-top: -50px;
 }
@@ -13,7 +13,7 @@ table {
 }
 
 th, td {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -52,21 +52,4 @@ footer {
     margin-top: 170px;
 }
 
-.backbtn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    border: 1 px solid black;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-left:5px;
-    border-radius:10px;
-}
 
-
-    .backbtn:hover {
-        background-color: black;
-        color:white;
-    }

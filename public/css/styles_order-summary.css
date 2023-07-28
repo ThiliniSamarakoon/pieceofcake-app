@@ -41,20 +41,34 @@
         margin-bottom: 15px;
     }
 
-    .order-summary button {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
+.confirmBtn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-        .order-summary button:hover {
-            background-color: #45a049;
-        }
+    .confirmBtn:hover {
+        background-color: #45a049;
+    }
 
 footer {
     margin-top: 70px;
 }
+
+.billPrint {
+    background-color: black;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .billPrint:hover {
+        background-color: grey;
+    }

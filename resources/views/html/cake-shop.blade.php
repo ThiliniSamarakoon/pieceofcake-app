@@ -20,7 +20,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('login.customized.orders') }}';">Customized Orders</button></li>
             <li><button type="button" onclick="scrollToSection('#About-Us-Section')">About Us</button></li>
             <li><button type="button" onclick="scrollToSection('#Contact-Us-Section')">Contact Us</button></li>
-            <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';" >Register / Login</button></li>
+            <!-- <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';" >Register / Login</button></li> -->
             <li class="top-right">
                 <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('cart.page') }}';" title="My Cart" ></i>
                 <i class="fas fa-user"></i>
@@ -36,9 +36,9 @@
             <p class="tagline"> SWEETEST SLICE OF PARADISE </P>
     </div>
 
-    <div class="discount-message" style="background-image: url('{{ asset('images/discount.png') }}'); background-position: right;">
+    <!-- <div class="discount-message" style="background-image: url('{{ asset('images/discount.png') }}'); background-position: right;">
         <p><b><span style="color:red;">Unlock a special offer!</span><br><br> Register on our site and enjoy a 10% <br>discount for every 3 orders you place.</b></p>
-    </div>
+    </div> -->
 
     <?php
     //Slideshow container
@@ -177,7 +177,16 @@
                     <label for="comments">Comments:</label>
                     <textarea id="comments" name="comments"></textarea>
 
-                    <button type="submit">Submit</button>
+                    <label for="rating">Rating:</label>
+                    <div class="rating" name="rating" >
+                        <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+                    </div>
+
+                        <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
