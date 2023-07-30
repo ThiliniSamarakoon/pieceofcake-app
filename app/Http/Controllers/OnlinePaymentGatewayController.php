@@ -64,7 +64,9 @@ class OnlinePaymentGatewayController extends Controller
             Order::where('OrderID', $orderId)->update(['PaymentStatus' => 'Completed']);
         }
 
-        // Redirect back to the order summary page or any other desired page
-        return redirect()->route('online.payment.gateway')->with('success', 'Payment successful!');
+        // Redirect back to the order summary page 
+        return redirect()->route('thank-you.page')->with('success', 'Payment successful!');
         }
+
+     
 }

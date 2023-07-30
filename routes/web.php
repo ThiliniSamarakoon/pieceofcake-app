@@ -108,6 +108,8 @@ Route::get('/cart', function () {
     return view('html.cart-page');
 })->name('cart.page');
 
+Route::view('/thank-you', 'html.thank-you-page')->name('thank-you.page');
+
 Route::post('/register', [RegisterController::class, 'register'])->name('customer.register.submit');
 
 //Route::get('/login', [LoginController::class, 'showLoginForm'])->name('customer.login');

@@ -59,7 +59,10 @@
                 <label class="order-details">Next Payment Date:</label>
                 <span class="value">{{ $latestNextPaymentDate }}</span>
             @endif
-         </div>                 
+         </div><br><br>
+         <div style="border:3px solid red;text-align: justify;padding:5px;">
+            <h3 style="color:black;">When making the next installment payment, please proceed to the Profile page.</h3>
+        </div>
         </form>
         </div>
 
