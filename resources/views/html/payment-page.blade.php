@@ -67,7 +67,7 @@
         <br>
 
   
-        <label><b>Payment Method:</b></label>
+        <label for="Payment_Method"><b>Payment Method:</b></label>
         <br>
         <label for="debitCreditCard">
             <input type="radio" id="debitCreditCard" name="paymentMethod" value="debitCreditCard" >

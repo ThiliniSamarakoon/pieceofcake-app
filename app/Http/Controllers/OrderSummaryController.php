@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
+use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Cart;
@@ -70,6 +72,7 @@ class OrderSummaryController extends Controller
         // Pass the latest order ID to the view
         return view('html.order-summary-page', compact('latestOrderId',
         'latestProductId',
+        'latestOrderId',
         'latestName',
         'latestImage',
         'latestCakeType',
@@ -82,4 +85,67 @@ class OrderSummaryController extends Controller
         'latestPaymentMethod',
         'latestPaymentOption'));
     }
+
+    public function processOrder(Request $request)
+    {
+        // Retrieve the data that want to include in the PDF
+        $latestOrderId = Cart::latest()->value('order_id');
+        $latestProductId = Order::latest()->value('ProductID');
+        $latestName = Checkout::latest()->value('name');
+        $latestWeight = Order::latest()->value('Input_Cake_Weight');
+        $latestPrice = Cart::latest()->value('total_price');
+        $latestOrderDate = Cart::latest()->value('order_date');
+        $latestNextPaymentDate = Installment::latest()->value('next_payment_date');
+        $latestRemainingAmount = Installment::latest()->value('remaining_amount');
+        $latestPaymentMethod = Checkout::latest()->value('payment_method');
+        $latestPaymentOption = Checkout::latest()->value('payment_option');
+
+        // Retrieve the latest payment method from the checkout table
+        $latestPaymentMethod = Checkout::latest()->value('payment_method');
+
+        if ($latestPaymentMethod === 'debitCreditCard') {
+            // Redirect to the Online Payment Gateway page
+            return redirect()->route('online.payment.gateway');
+        } else {
+            // Load the view with the retrieved data
+           $html = View::make('pdf.order-summary-pdf', compact(
+                'latestName',
+                'latestOrderDate',
+                'latestOrderId',
+                'latestPaymentMethod',
+                'latestNextPaymentDate',
+                'latestRemainingAmount',
+                'latestProductId',
+                'latestWeight',
+                'latestPrice',
+                'latestPaymentOption'
+            ))->render();
+
+            // Create a new DOMPDF instance
+            $dompdf = new Dompdf();
+
+            // Load the HTML into DOMPDF
+            $dompdf->loadHtml($html);
+
+            // (Optional) Set PDF options (e.g., paper size, orientation, etc.)
+            $dompdf->setPaper('A4', 'portrait');
+
+            // Render the PDF
+            $dompdf->render();
+
+            // Output the generated PDF to the browser
+            //return $dompdf->stream('order_summary.pdf');
+
+             // Output the generated PDF to the browser
+            $pdfContent = $dompdf->output();
+        
+            // Display an alert message to the user
+            echo "<script>alert('Order submitted successfully.');</script>";
+
+            // Return the PDF content as a response to download the PDF
+            return response($pdfContent)
+                ->header('Content-Type', 'application/pdf')
+                ->header('Content-Disposition', 'inline; filename="order_summary.pdf"');
+    }
+  }
 }

@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (paymentMethod && paymentOption && paymentMethod.value === 'debitCreditCard' && paymentOption.value === 'payAdvance') {
                 // Redirect the user to the pay advance page
                 window.location.href = payAdvanceUrl;
+            } else if ((paymentMethod && paymentMethod.value !== 'debitCreditCard') && paymentOption && paymentOption.value === 'payAdvance') {
+                // Display an error message if Cash on Delivery or Bank Deposit is selected with Pay Advance option
+                alert('Error: Pay Advance option is only available for Debit/Credit Card payment method.');
+                event.preventDefault(); // Prevent form submission
             }
 
         });

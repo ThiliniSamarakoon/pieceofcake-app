@@ -3,10 +3,29 @@
 <head>
     <title>Order Summary</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/styles_order-summary.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_order-summary.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            document.getElementById('selectedPaymentMethod').value = paymentMethod;
+
+            if (paymentMethod === 'debitCreditCard') {
+                // Redirect to the Online Payment Gateway page
+                window.location.href = "{{ route('online.payment.gateway') }}";
+            } else {
+                // Submit the form to generate PDF
+                this.submit();
+                alert('Order submitted successfully.');
+            }
+        });
+    </script>
+
+
 
 
 </head>
@@ -34,8 +53,8 @@
     <h1 class="heading">Order Summary</h1>
 
 <div class="order-summary">
-    <form>
-
+    <form id="orderForm" action="{{ route('process.order') }}" method="POST">
+      @csrf
         <label for="orderID">Order ID:</label>
         <input type="text" id="orderID" value="{{ $latestOrderId }}" readonly>
 
@@ -71,13 +90,13 @@
 
          <label for="Payment_Method">Payment Method:</label>
          <input type="text" id="Payment_Method" value="{{ $latestPaymentMethod }}" readonly>
+         <input type="hidden" name="selectedPaymentMethod" id="selectedPaymentMethod" value="">
 
          <label for="Payment_Option">Payment Option:</label>
          <input type="text" id="Payment_Option" value="{{  $latestPaymentOption }}" readonly>
 
  
         <button type="submit" class="confirmBtn">Confirm Order</button><br>
-        <button type="submit" class="billPrint">Print Bill</button>
     </form>
 </div>
 

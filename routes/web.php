@@ -188,3 +188,6 @@ Route::post('/store-installment', [InstallmentController::class, 'store'])->name
 Route::get('/order-summary', [OrderSummaryController::class, 'showOrderSummary'])->name('order.summary');
 
 //Route::match(['get', 'post'], '/pay-advance', [CheckoutController::class, 'payAdvance'])->name('pay-advance.page');
+
+// Route for processing the order form and generating PDF
+Route::post('/process-order', [OrderSummaryController::class, 'processOrder'])->name('process.order');
