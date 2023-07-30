@@ -14,7 +14,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PayAdvanceController;
 use App\Http\Controllers\InstallmentController;
 use App\Http\Controllers\OrderSummaryController;
-
+use App\Http\Controllers\OnlinePaymentGatewayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -191,3 +191,5 @@ Route::get('/order-summary', [OrderSummaryController::class, 'showOrderSummary']
 
 // Route for processing the order form and generating PDF
 Route::post('/process-order', [OrderSummaryController::class, 'processOrder'])->name('process.order');
+
+Route::get('/online-payment-gateway', [OnlinePaymentGatewayController::class, 'showOrderSummary'])->name('online.payment.gateway');

@@ -16,4 +16,9 @@ class Installment extends Model
         'pay_amount',
         'remaining_amount',
     ];
+
+    public function checkout()
+    {
+        return $this->belongsTo(Checkout::class, 'order_id', 'id');
+    }
 }

@@ -35,7 +35,8 @@ class Order extends Model
 
    public function cart()
     {
-       return $this->hasOne(Cart::class);
+       //return $this->hasOne(Cart::class);
+       return $this->hasOne(Cart::class, 'order_id', 'OrderID');
     }
 
     public function product()

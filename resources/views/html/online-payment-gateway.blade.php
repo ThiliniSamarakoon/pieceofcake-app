@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cup Cakes</title>
+    <title>Online Payment Gateway</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_online-payment-gateway.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -27,7 +28,68 @@
         </ul>
     </div>
 
+    <div class="container">
+        <div class="left-section">
+        <h2>Order Details</h2><br>
+        <form>
+        <div class="order-details">
+            <label class="order-details">Order ID:</label>
+            <span class="value">{{ $latestOrderId }}</span><br>
+        </div><br>
+        <div class="order-details">
+            <label class="order-details">Grand Total:</label>
+            <span class="value">{{ $latestGrandTotal }}</span>
+            <hr>
+        </div><br>
+        <div class="order-details">
+            @if($latestPayAmount !== null)
+                <label class="order-details">Pay Amount:</label>
+                <span class="value">{{ $latestPayAmount }}</span>
+            @endif
+        </div><br>
+        <div class="order-details">
+            @if($latestRemainingAmount !== null)
+                <label class="order-details">Remaining Amount:</label>
+                <span class="value">{{ $latestRemainingAmount }}</span>
+            @endif
+        </div><br>
+        <div class="order-details">
+            @if($latestNextPaymentDate !== null)
+                <label class="order-details">Next Payment Date:</label>
+                <span class="value">{{ $latestNextPaymentDate }}</span>
+            @endif
+         </div>                 
+        </form>
+        </div>
 
+        <div class="right-section">
+            <h2>Payment Details</h2>
+          <form  method="POST">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" >
+
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM / YY" >
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="CVV" >
+
+            <label for="cardHolderName">Cardholder Name:</label>
+            <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Enter cardholder name" >
+
+            <label for="payAmount">Pay Amount:</label>
+            @if($latestPayAmount !== null)
+                <!-- Display Pay Amount -->
+                <input type="text" id="payAmount" name="payAmount" placeholder="Enter Pay Amount" value="{{ $latestPayAmount }}" readonly>
+            @else
+                <!-- Display Grand Total -->
+                <input type="text" id="payAmount" name="payAmount" placeholder="Enter Pay Amount" value="{{ $latestGrandTotal }}" readonly>
+            @endif
+
+            <button type="submit">Pay Now</button>
+        </form>
+        </div>
+    </div>
 
 
 

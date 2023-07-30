@@ -32,5 +32,11 @@ class Checkout extends Model
     {
         //hasMany method specifies that an order can have multiple installments
         return $this->hasMany(Installment::class, 'order_id');
+
+    }
+
+    public function installment()
+    {
+        return $this->hasOne(Installment::class, 'order_id', 'id');
     }
 }
