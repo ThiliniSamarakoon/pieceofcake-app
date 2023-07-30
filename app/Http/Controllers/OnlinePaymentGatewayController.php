@@ -46,4 +46,25 @@ class OnlinePaymentGatewayController extends Controller
         'latestNextPaymentDate'
     ));
     }
+
+    public function payNow(Request $request)
+    {
+        // Retrieve the order ID from the form submission
+        $orderId = $request->input('order_id');
+
+        // Retrieve the payment_option from the Checkout table for the relevant order ID
+        $paymentOption = Checkout::where('order_id', $orderId)->value('payment_option');
+
+        // Update the PaymentStatus based on payment_option 
+        if ($paymentOption === 'payAdvance') {
+            // Payment_option is payAdvance, update PaymentStatus to "1st_Installment"
+            Order::where('OrderID', $orderId)->update(['PaymentStatus' => '1st_Installment']);
+        } else {
+            // For any other case, update PaymentStatus to "Completed"
+            Order::where('OrderID', $orderId)->update(['PaymentStatus' => 'Completed']);
+        }
+
+        // Redirect back to the order summary page or any other desired page
+        return redirect()->route('online.payment.gateway')->with('success', 'Payment successful!');
+        }
 }

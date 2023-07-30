@@ -31,7 +31,8 @@
     <div class="container">
         <div class="left-section">
         <h2>Order Details</h2><br>
-        <form>
+     <form>
+       @csrf
         <div class="order-details">
             <label class="order-details">Order ID:</label>
             <span class="value">{{ $latestOrderId }}</span><br>
@@ -64,7 +65,8 @@
 
         <div class="right-section">
             <h2>Payment Details</h2>
-          <form  method="POST">
+          <form  method="POST" action="{{ route('pay-now') }}">
+           @csrf
             <label for="cardNumber">Card Number:</label>
             <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" >
 
@@ -85,23 +87,11 @@
                 <!-- Display Grand Total -->
                 <input type="text" id="payAmount" name="payAmount" placeholder="Enter Pay Amount" value="{{ $latestGrandTotal }}" readonly>
             @endif
-
+            <input type="hidden" name="order_id" value="{{ $latestOrderId }}">
             <button type="submit">Pay Now</button>
         </form>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
  //Footer Section

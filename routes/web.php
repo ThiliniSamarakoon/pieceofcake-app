@@ -193,3 +193,5 @@ Route::get('/order-summary', [OrderSummaryController::class, 'showOrderSummary']
 Route::post('/process-order', [OrderSummaryController::class, 'processOrder'])->name('process.order');
 
 Route::get('/online-payment-gateway', [OnlinePaymentGatewayController::class, 'showOrderSummary'])->name('online.payment.gateway');
+
+Route::post('/pay-now', [OnlinePaymentGatewayController::class, 'payNow'])->name('pay-now');
