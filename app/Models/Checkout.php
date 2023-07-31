@@ -13,7 +13,7 @@ class Checkout extends Model
 
     protected $fillable = [
         'order_id',
-        'name',
+        'email',
         'contact_no',
         'street_address',
         'city',

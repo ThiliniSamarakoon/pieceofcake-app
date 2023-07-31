@@ -17,7 +17,7 @@ class CheckoutController extends Controller
     
         // Validate the form inputs
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
             'contactNo' => 'required|string|max:15',
             'streetAddress' => 'nullable|string',
             'city' => 'nullable|string',
@@ -32,7 +32,7 @@ class CheckoutController extends Controller
         if ($cartData) {
             $checkout = new Checkout([
                 'order_id' => $cartData->order_id,
-                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
                 'contact_no' => $validatedData['contactNo'],
                 'street_address' => $validatedData['streetAddress'],
                 'city' => $validatedData['city'],
@@ -79,8 +79,8 @@ class CheckoutController extends Controller
         // Retrieve the latest product ID from the orders table
         $latestProductId = Order::where('order_id', $latestOrderId)->value('ProductID');
 
-        // Retrieve the latest name from the checkout table
-        $latestName = Checkout::where('order_id', $latestOrderId)->value('name');
+        // Retrieve the latest email from the checkout table
+        $latestName = Checkout::where('order_id', $latestOrderId)->value('email');
 
         // Retrieve the latest image from the cart table
         $latestImage = Cart::where('order_id', $latestOrderId)->value('image_path');

@@ -139,6 +139,11 @@ Route::match(['get', 'post'], '/online-payment-gateway', function () {
     return view('html.online-payment-gateway');
 })->name('online.payment.gateway');
 
+Route::get('/customer-profile', function () {
+    return view('html.customer-profile');
+})->name('customer.profile');
+
+
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
 Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');

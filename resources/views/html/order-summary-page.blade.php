@@ -61,7 +61,7 @@
         <label for="productID">Product ID:</label>
         <input type="text" id="productID" value="{{ $latestProductId }}" readonly>
 
-        <label for="name">Name:</label>
+        <label for="name">Email:</label>
         <input type="text" id="name" value="{{ $latestName }}" readonly>
 
         <label for="image">Image:</label>

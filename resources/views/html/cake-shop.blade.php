@@ -23,7 +23,7 @@
             <!-- <li><button type="button" id="login-button" onclick="window.location.href = '{{ route('customer.register') }}';" >Register / Login</button></li> -->
             <li class="top-right">
                 <i class="fas fa-shopping-cart" onclick="window.location.href = '{{ route('cart.page') }}';" title="My Cart" ></i>
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user" onclick="window.location.href = '{{ route('customer.profile') }}';" title="My Profile"></i>
                 <i class="fas fa-search"></i>
             </li>
         </ul>

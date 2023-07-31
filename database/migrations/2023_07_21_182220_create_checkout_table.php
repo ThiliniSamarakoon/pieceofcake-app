@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('checkout', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id');
-            $table->string('name');
+            $table->string('email');
             $table->string('contact_no');
             $table->text('delivery_address')->nullable();
             $table->string('payment_method');
@@ -34,7 +34,7 @@ return new class extends Migration
 
         DB::table('checkout')->insert([
                 'order_id' => $cartData->order_id,
-                'name' => $_POST['name'], 
+                'email' => $_POST['email'], 
                 'contact_no' => $_POST['contactNo'],
                 'delivery_address'=>$_POST['deliveryAddress'],
                 'payment_method' => $paymentMethod,

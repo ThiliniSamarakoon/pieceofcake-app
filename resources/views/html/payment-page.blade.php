@@ -37,8 +37,8 @@
     <form method="POST" id="checkoutForm" action="{{ route('checkout.store') }}">
       @csrf
 
-        <label for="name"><b>Name:</b></label>
-        <input type="text" id="name" name="name"  required>
+        <label for="email"><b>Email:</b></label>
+        <input type="email" id="email" name="email"  required>
         <br>
 
         <label for="contactNo"><b>Contact No:</b></label>

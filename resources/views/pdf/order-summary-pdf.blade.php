@@ -93,7 +93,7 @@
         <div class="details-left">
             <p>Issue Date: {{ date('Y-m-d') }}</p>
             <p>Order Date: {{ $latestOrderDate }}</p>
-            <p>Name: {{ $latestName }}</p>
+            <p>Email: {{ $latestName }}</p>
             <p>Order ID: {{ $latestOrderId }}</p>
         </div>
         <div class="details-right">

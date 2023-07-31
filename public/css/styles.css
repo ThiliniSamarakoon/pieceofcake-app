@@ -407,6 +407,11 @@ footer {
     color: white;
 }
 
+.fas fa-user:hover {
+    color:white;
+}
+
+
 /*.discount-message {
     background-size: auto;
     background-position: center;
@@ -419,7 +424,6 @@ footer {
     margin-top: -80px;
     
 }*/
-
 .rating {
     width: 500px;
     height: 40px;

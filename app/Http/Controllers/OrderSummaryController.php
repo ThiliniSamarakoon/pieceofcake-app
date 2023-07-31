@@ -21,7 +21,7 @@ class OrderSummaryController extends Controller
         $latestProductId = Order::latest()->value('ProductID');
 
         // Retrieve the latest name from the checkout table
-        $latestName = Checkout::latest()->value('name');
+        $latestName = Checkout::latest()->value('email');
 
         // Retrieve the latest image from the cart table
         $latestImage = Cart::latest()->value('image_path');
@@ -91,7 +91,7 @@ class OrderSummaryController extends Controller
         // Retrieve the data that want to include in the PDF
         $latestOrderId = Cart::latest()->value('order_id');
         $latestProductId = Order::latest()->value('ProductID');
-        $latestName = Checkout::latest()->value('name');
+        $latestName = Checkout::latest()->value('email');
         $latestWeight = Order::latest()->value('Input_Cake_Weight');
         $latestPrice = Cart::latest()->value('total_price');
         $latestOrderDate = Cart::latest()->value('order_date');
