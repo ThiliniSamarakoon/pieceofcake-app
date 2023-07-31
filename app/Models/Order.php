@@ -44,6 +44,26 @@ class Order extends Model
         return $this->belongsTo(Product::class, 'ProductID','ProductID');
     }
 
+    /*public function installment()
+    {
+        return $this->hasOne(Installment::class, 'order_id');
+    }*/
+
+    /*public function order()
+    {
+        return $this->belongsTo(Order::class, 'order_id');
+    }
+
+    public function installment()
+    {
+        return $this->hasOne(Installment::class, 'order_id', 'OrderID');
+    }
+
+    public function checkout()
+    {
+        return $this->hasOne(Checkout::class, 'order_id', 'OrderID');
+    }*/
+
 }
 
 

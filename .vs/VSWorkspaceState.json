@@ -5,11 +5,12 @@
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\public",
-    "\\public\\images",
+    "\\public\\css",
+    "\\public\\js",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\html",
-    "\\resources\\views\\pdf"
+    "\\resources\\views\\html"
   ],
+  "SelectedNode": "\\app\\Http\\Controllers\\SecondInstallmentController.php",
   "PreviewInSolutionExplorer": false
 }

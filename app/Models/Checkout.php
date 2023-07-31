@@ -39,4 +39,14 @@ class Checkout extends Model
     {
         return $this->hasOne(Installment::class, 'order_id', 'id');
     }
+
+    /*public function order()
+    {
+        return $this->belongsTo(Order::class, 'order_id');
+    }*/
+
+    /*public function order()
+    {
+        return $this->belongsTo(Order::class, 'order_id', 'OrderID');
+    }*/
 }

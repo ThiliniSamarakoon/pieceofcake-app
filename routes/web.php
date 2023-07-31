@@ -15,6 +15,8 @@ use App\Http\Controllers\PayAdvanceController;
 use App\Http\Controllers\InstallmentController;
 use App\Http\Controllers\OrderSummaryController;
 use App\Http\Controllers\OnlinePaymentGatewayController;
+use App\Http\Controllers\CustomerProfileController;
+use App\Http\Controllers\SecondInstallmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,6 +145,9 @@ Route::get('/customer-profile', function () {
     return view('html.customer-profile');
 })->name('customer.profile');
 
+Route::get('/second-installment-pay', function () {
+    return view('html.second-installment-pay');
+})->name('second.installment.pay');
 
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
@@ -202,3 +207,7 @@ Route::post('/process-order', [OrderSummaryController::class, 'processOrder'])->
 Route::get('/online-payment-gateway', [OnlinePaymentGatewayController::class, 'showOrderSummary'])->name('online.payment.gateway');
 
 Route::post('/pay-now', [OnlinePaymentGatewayController::class, 'payNow'])->name('pay-now');
+
+Route::post('/submit', [CustomerProfileController::class, 'processCustomerProfile'])->name('customer.profile.submit');
+
+Route::post('/process-second-installment', [SecondInstallmentController::class, 'processSecondInstallment'])->name('process.second.installment');
