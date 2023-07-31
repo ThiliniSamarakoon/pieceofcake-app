@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
+    "\\app\\Models",
+    "\\database",
+    "\\database\\migrations",
     "\\public",
-    "\\public\\css",
     "\\public\\js",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\html"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\SecondInstallmentController.php",
+  "SelectedNode": "\\public\\css\\styles_admin-orders-page.css",
   "PreviewInSolutionExplorer": false
 }

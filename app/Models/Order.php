@@ -44,6 +44,11 @@ class Order extends Model
         return $this->belongsTo(Product::class, 'ProductID','ProductID');
     }
 
+    /*public function checkout()
+    {
+        return $this->belongsTo(Checkout::class, 'order_id', 'OrderID');
+    }*/
+
     /*public function installment()
     {
         return $this->hasOne(Installment::class, 'order_id');
@@ -63,6 +68,12 @@ class Order extends Model
     {
         return $this->hasOne(Checkout::class, 'order_id', 'OrderID');
     }*/
+
+    public function checkout()
+    {
+        return $this->hasOne(Checkout::class, 'order_id', 'OrderID');
+    }
+
 
 }
 

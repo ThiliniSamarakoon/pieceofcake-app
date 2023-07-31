@@ -17,6 +17,8 @@ use App\Http\Controllers\OrderSummaryController;
 use App\Http\Controllers\OnlinePaymentGatewayController;
 use App\Http\Controllers\CustomerProfileController;
 use App\Http\Controllers\SecondInstallmentController;
+use App\Http\Controllers\AdminOrdersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -222,3 +224,6 @@ Route::post('/submit', [CustomerProfileController::class, 'processCustomerProfil
 
 Route::post('/process-second-installment', [SecondInstallmentController::class, 'processSecondInstallment'])->name('process.second.installment');
 
+Route::get('/admin-orders', [AdminOrdersController::class, 'displayOrders'])->name('admin.orders');
+
+Route::patch('/admin-orders/update-payment-status/{order}', [AdminOrdersController::class, 'updatePaymentStatus'])->name('admin.updatePaymentStatus');
