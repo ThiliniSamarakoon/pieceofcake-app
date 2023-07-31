@@ -74,6 +74,10 @@ class Order extends Model
         return $this->hasOne(Checkout::class, 'order_id', 'OrderID');
     }
 
+    /*public function cart()
+    {
+    return $this->belongsTo(Cart::class, 'OrderID', 'order_id');
+    }*/
 
 }
 

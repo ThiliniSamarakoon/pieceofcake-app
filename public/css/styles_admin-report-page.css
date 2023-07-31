@@ -1,0 +1,52 @@
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -150px;
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 10px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 250px;
+    height: 40px;
+}
+
+    .button:hover {
+        background-color: black;
+        color: red;
+    }
+
+.heading {
+    margin-top:-100px;
+}
+
+.date-picker-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .date-picker-container label {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .date-picker-container input[type="date"] {
+        padding: 6px 12px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+.date-picker-gap {
+    margin-right: 20px;
+}

@@ -19,7 +19,7 @@
             <li><button type="button" onclick="window.location.href = '{{ route('admin.admin-products') }}';">Products</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('admin.orders') }}';">Orders</button></li>
             <li><button type="button" >Delivery</button></li>
-            <li><button type="button" >Reports</button></li>
+            <li><button type="button" onclick="window.location.href = '{{ route('admin.reports') }}';">Reports</button></li>
             <li><button type="button" >Accounts</button></li>
             <li><button type="button" >Messages</button></li>
 

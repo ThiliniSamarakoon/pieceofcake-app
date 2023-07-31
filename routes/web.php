@@ -18,6 +18,8 @@ use App\Http\Controllers\OnlinePaymentGatewayController;
 use App\Http\Controllers\CustomerProfileController;
 use App\Http\Controllers\SecondInstallmentController;
 use App\Http\Controllers\AdminOrdersController;
+use App\Http\Controllers\AdminReportsController;
+
 
 
 /*
@@ -161,6 +163,18 @@ Route::get('/admin-orders', function () {
     return view('html.admin-orders-page', compact('header', 'footer'));
 })->name('admin.orders');
 
+Route::get('/admin-reports', function () {
+    $header = view('html.admin-header')->render();
+    $footer = view('html.admin-footer')->render();
+    return view('html.admin-reports-page', compact('header', 'footer'));
+})->name('admin.reports');
+
+Route::get('/admin-dailyTransactionReports', function () {
+    $header = view('html.admin-header')->render();
+    $footer = view('html.admin-footer')->render();
+    return view('html.daily-transaction-reports', compact('header', 'footer'));
+})->name('admin.dailyTransactionReports');
+
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
 Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');
@@ -227,3 +241,7 @@ Route::post('/process-second-installment', [SecondInstallmentController::class, 
 Route::get('/admin-orders', [AdminOrdersController::class, 'displayOrders'])->name('admin.orders');
 
 Route::patch('/admin-orders/update-payment-status/{order}', [AdminOrdersController::class, 'updatePaymentStatus'])->name('admin.updatePaymentStatus');
+
+//Route::get('/daily-transaction-reports', [AdminReportsController::class, 'dailyTransactionReports'])->name('admin_dailyTransactionReports');
+Route::match(['get', 'post'], '/daily-transaction-reports', [AdminReportsController::class, 'dailyTransactionReports'])
+    ->name('admin_dailyTransactionReports');

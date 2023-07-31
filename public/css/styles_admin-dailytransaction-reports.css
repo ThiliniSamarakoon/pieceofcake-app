@@ -1,0 +1,47 @@
+.table-container {
+    margin: 50px auto; 
+    width: 80%; 
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.date-picker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .date-picker-container label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .date-picker-container input[type="date"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    table tr:hover {
+        background-color: #f2f2f2;
+    }
