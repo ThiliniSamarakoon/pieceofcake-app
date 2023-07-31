@@ -18,7 +18,7 @@
             <li><button id="dashboard-button" type="button" onclick="window.location.href = '{{ route('admin.home') }}';">Dashboard</button></li>
             <li><button type="button" >Inventory</button></li>
             <li><button type="button">Products</button></li>
-            <li><button type="button" >Orders</button></li>
+            <li><button type="button" onclick="window.location.href = '{{ route('admin.orders') }}';">Orders</button></li>
             <li><button type="button" >Delivery</button></li>
             <li><button type="button" >Reports</button></li>
             <li><button type="button" >Accounts</button></li>
@@ -92,7 +92,7 @@
             <option value="Buttercream_Icing" >Buttercream Icing/Fondant</option>
         </select>
 
-    <label for="rating">Rating:</label>
+    <!-- <label for="rating">Rating:</label>
     <div class="rating" name="rating">
         <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
         <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
@@ -102,7 +102,7 @@
     </div> 
 
     <label for="feedbacks">Enter Feedbacks:</label>
-    <textarea class="text-area" name="feedbacks" id="feedbacks"></textarea>
+    <textarea class="text-area" name="feedbacks" id="feedbacks"></textarea> -->
 
     <label for="data_category">Enter Data Category:</label>
     <select id="data_category" name="data_category">
@@ -116,8 +116,8 @@
             <option value="Cakes for Girls/Boys" data-category="girls boys">Cakes for Girls/Boys</option>
         </select>
 
-    <label for="alt_text">Alt Text:</label>
-    <input type="text" name="alt_text" id="alt_text">
+   <!--  <label for="alt_text">Alt Text:</label>
+    <input type="text" name="alt_text" id="alt_text"> -->
 
     <button type="submit">Add Product</button>
 </form>
@@ -141,3 +141,6 @@
     <a href="https://wa.me/+94714925742"><i class="fab fa-whatsapp"></i></a>
   </div>
 </footer>
+
+</body>
+</html>

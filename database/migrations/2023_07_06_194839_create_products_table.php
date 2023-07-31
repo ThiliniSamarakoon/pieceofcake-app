@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('rating',0);
             $table->text('feedbacks')->nullable();
             $table->string('data_category');
-            $table->string('alt_text');
+            //$table->string('alt_text');
             $table->timestamps();
         });
     }

@@ -23,7 +23,7 @@ class Product extends Model
         'rating',
         'feedbacks',
         'data_category',
-        'alt_text',
+        //'alt_text',
     ];
 
     // Method to retrieve products from the database

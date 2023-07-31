@@ -149,6 +149,16 @@ Route::get('/second-installment-pay', function () {
     return view('html.second-installment-pay');
 })->name('second.installment.pay');
 
+/*Route::get('/admin-orders', function () {
+    return view('html.admin-orders-page')->with('header', view('html.admin-header')->render());
+})->name('admin.orders');*/
+
+Route::get('/admin-orders', function () {
+    $header = view('html.admin-header')->render();
+    $footer = view('html.admin-footer')->render();
+    return view('html.admin-orders-page', compact('header', 'footer'));
+})->name('admin.orders');
+
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
 Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');
@@ -211,3 +221,4 @@ Route::post('/pay-now', [OnlinePaymentGatewayController::class, 'payNow'])->name
 Route::post('/submit', [CustomerProfileController::class, 'processCustomerProfile'])->name('customer.profile.submit');
 
 Route::post('/process-second-installment', [SecondInstallmentController::class, 'processSecondInstallment'])->name('process.second.installment');
+

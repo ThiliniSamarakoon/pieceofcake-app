@@ -55,7 +55,7 @@ class ProductController extends Controller
         $product->rating = $request->input('rating',0);
         $product->feedbacks = $request->input('feedbacks', null);
         $product->data_category = $request->input('data_category');
-        $product->alt_text = $request->input('alt_text');
+        //$product->alt_text = $request->input('alt_text');
         $product->image = $imagePath;
 
 

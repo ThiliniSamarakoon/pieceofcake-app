@@ -5,8 +5,8 @@ body {
 }
 
 .navbar {
-    background-image: linear-gradient(to bottom, purple, white);
     padding: 5px;
+    background-color:black;
 }
 
     .navbar ul {
@@ -37,8 +37,8 @@ body {
             }
 
                 .navbar ul li button:hover {
-                    background-color: #6666B3;
-                    color: white;
+                    background-color: white;
+                    color: black;
                 }
 
 .top-right {

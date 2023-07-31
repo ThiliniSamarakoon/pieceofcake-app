@@ -17,7 +17,7 @@
             <li><button id="dashboard-button" type="button" onclick="window.location.href = '{{ route('admin.home') }}';">Dashboard</button></li>
             <li><button type="button" >Inventory</button></li>
             <li><button type="button" onclick="window.location.href = '{{ route('admin.admin-products') }}';">Products</button></li>
-            <li><button type="button" >Orders</button></li>
+            <li><button type="button" onclick="window.location.href = '{{ route('admin.orders') }}';">Orders</button></li>
             <li><button type="button" >Delivery</button></li>
             <li><button type="button" >Reports</button></li>
             <li><button type="button" >Accounts</button></li>
@@ -33,7 +33,7 @@
     //Heading
     ?>
     <div class="center-content">
-            <h1 id="Admin-Panel">Admin Panel</h1>
+            <h1 id="Admin-Panel">Dashboard</h1>
     </div>
 
     <?php
