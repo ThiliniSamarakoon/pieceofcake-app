@@ -35,6 +35,7 @@
     ?>
     <div class="center-content">
             <h1 id="Admin-Panel">Add Products</h1>
+            <button class="productBtn" id="productCatalogBtn">Product Catalog</button>
     </div>
 
 <?php
@@ -141,6 +142,14 @@
     <a href="https://wa.me/+94714925742"><i class="fab fa-whatsapp"></i></a>
   </div>
 </footer>
+
+<script>
+    // JavaScript function to handle the click event and redirect to the product catalog page
+    document.getElementById('productCatalogBtn').addEventListener('click', function () {
+        window.location.href = "{{ route('product.catalog') }}";
+    });
+</script>
+
 
 </body>
 </html>

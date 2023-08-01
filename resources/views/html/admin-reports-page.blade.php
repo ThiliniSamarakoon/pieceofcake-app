@@ -26,13 +26,6 @@
 </form>
 
 
-
-
-
-
-
-
-
    {!! $footer !!}
 </body>
 </html>

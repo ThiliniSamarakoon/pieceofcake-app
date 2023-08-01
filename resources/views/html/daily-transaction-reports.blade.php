@@ -5,17 +5,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/styles_admin-home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_admin-dailytransaction-reports.css') }}">
+  <style>
+    @media print {
+        #header-container {
+            display: none;
+        }
+        #generate-reports-btn {
+            display: none;
+        }
+        .footer-right{
+            display: none;
+        }
+        
+    }
+</style>
+
 </head>
 <body>
-    {!! $header !!}
+    <div id="header-container">
+        {!! $header !!}
+    </div>
+
+    <div class="date-picker-container">
+        <p><b>From:</b> {{ $fromDate }}</p>
+        <p style="margin-left: 500px;"><b>To:</b> {{ $toDate }}</p>
+      </div>
 
     <div class="table-container">
         <h1 class="heading">Daily Transaction Reports</h1>
-
-        <div class="date-picker-container">
-            <!-- Your date picker input fields -->
-        </div>
-
+                
         <table>
             <thead>
                 <tr>
@@ -37,9 +55,32 @@
                     </tr>
                 @endforeach
             </tbody>
+            <tfoot>
+        <tr>
+            <td colspan="4" class="grand-total-label"><b>Grand Total:</b></td>
+            <td><b>Rs.{{ $grandTotal }}.00</b></td>
+        </tr>
+    </tfoot>
         </table>
     </div>
 
-    {!! $footer !!} 
+    <button type="button" id="generate-reports-btn">Generate Reports</button>
+
+    {!! $footer !!}
+
+<script>
+    document.getElementById('generate-reports-btn').addEventListener('click', function() {
+        // Hide the button before printing to prevent it from being printed
+        document.getElementById('generate-reports-btn').style.display = 'none';
+        
+        // Trigger the print dialog
+        window.print();
+
+        // After printing, show the button again
+        document.getElementById('generate-reports-btn').style.display = 'block';
+    });
+</script>
+
+
 </body>
 </html>

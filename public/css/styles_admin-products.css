@@ -32,10 +32,10 @@ select {
 }
 
 button[type="submit"] {
-    background-color: lightgrey;
+    background-color: black;
     border-radius: 10px;
-    color: black;
-    padding: 5px 10px;
+    color: white;
+    padding: 10px 10px;
     text-align: center;
     width: 150px;
     text-decoration: none;
@@ -44,11 +44,11 @@ button[type="submit"] {
     margin-top: 10px;
     cursor: pointer;
     margin-left:200px;
+    border:none;
 }
 
 button[type="submit"]:hover {
-    background-color: black;
-    color:white;
+    background-color: green;
 }
 
 .text-area {
@@ -59,7 +59,7 @@ button[type="submit"]:hover {
     resize: vertical;
 }
 
-.rating {
+/*.rating {
     width: 208px;
     height: 40px;
     margin-top: -10px;
@@ -95,4 +95,22 @@ button[type="submit"]:hover {
 
 .rating-container label.checked:before {
     color: gold;
+}*/
+
+
+.productBtn {
+    background-color: forestgreen;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: -100px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom:10px;
+    border: none;
 }

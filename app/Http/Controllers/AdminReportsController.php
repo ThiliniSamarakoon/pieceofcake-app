@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Dompdf\Dompdf;
+use Illuminate\Support\Facades\View;
 
 class AdminReportsController extends Controller
 {
@@ -24,6 +26,14 @@ class AdminReportsController extends Controller
                ->with(['cart'])
                ->get();
 
-        return view('html.daily-transaction-reports', compact('orders','header', 'footer'));
+        // Calculate the Grand Total of total_price
+        $grandTotal = 0;
+        foreach ($orders as $order) {
+            $priceWithoutPrefix = str_replace('Rs.', '', $order->cart->total_price);
+            $grandTotal += (float) $priceWithoutPrefix;
+        }
+
+        return view('html.daily-transaction-reports', compact('orders', 'grandTotal', 'header', 'footer', 'fromDate', 'toDate'));
     }
-}
+
+    }

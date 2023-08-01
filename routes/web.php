@@ -19,7 +19,7 @@ use App\Http\Controllers\CustomerProfileController;
 use App\Http\Controllers\SecondInstallmentController;
 use App\Http\Controllers\AdminOrdersController;
 use App\Http\Controllers\AdminReportsController;
-
+use App\Http\Controllers\ProductCatalogController;
 
 
 /*
@@ -175,6 +175,12 @@ Route::get('/admin-dailyTransactionReports', function () {
     return view('html.daily-transaction-reports', compact('header', 'footer'));
 })->name('admin.dailyTransactionReports');
 
+/*Route::get('/admin-product-catalog', function () {
+    $header = view('html.admin-header')->render();
+    $footer = view('html.admin-footer')->render();
+    return view('html.admin-product-catalog', compact('header', 'footer'));
+})->name('admin.product-catalog');*/
+
 Route::post('/customized-orders', [CustomizedOrderController::class, 'store'])->name('customized.orders.store');
 
 Route::post('/save-image', [CustomizedOrderController::class, 'saveImage'])->name('save.image')->middleware('auth');
@@ -245,3 +251,5 @@ Route::patch('/admin-orders/update-payment-status/{order}', [AdminOrdersControll
 //Route::get('/daily-transaction-reports', [AdminReportsController::class, 'dailyTransactionReports'])->name('admin_dailyTransactionReports');
 Route::match(['get', 'post'], '/daily-transaction-reports', [AdminReportsController::class, 'dailyTransactionReports'])
     ->name('admin_dailyTransactionReports');
+
+Route::get('/product-catalog', [ProductCatalogController::class, 'showProductCatalog'])->name('product.catalog');

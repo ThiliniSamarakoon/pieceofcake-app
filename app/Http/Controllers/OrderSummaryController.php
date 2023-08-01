@@ -127,7 +127,7 @@ class OrderSummaryController extends Controller
             // Load the HTML into DOMPDF
             $dompdf->loadHtml($html);
 
-            // (Optional) Set PDF options (e.g., paper size, orientation, etc.)
+            // Set PDF options 
             $dompdf->setPaper('A4', 'portrait');
 
             // Render the PDF
