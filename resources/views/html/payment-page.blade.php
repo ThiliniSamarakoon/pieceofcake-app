@@ -36,7 +36,7 @@
 
     <form method="POST" id="checkoutForm" action="{{ route('checkout.store') }}">
       @csrf
-
+       <div class="left-section">
         <label for="email"><b>Email:</b></label>
         <input type="email" id="email" name="email"  required>
         <br>
@@ -45,8 +45,8 @@
         <input type="text" id="contactNo" name="contactNo" required>
         <br>
 
-        <label for="deliveryAddress"><b>Delivery Address:</b></label>
-        <label for="streetAddress">Street Address:</label>
+        <label for="deliveryAddress"><b>Delivery Address:</b></label><br>
+        <label for="streetAddress" style="font-weight:lighter;">Street Address:</label>
         <textarea id="streetAddress" name="streetAddress"></textarea><br>
         <label for="city">City:</label>
         <select id="city" name="city" >
@@ -57,7 +57,7 @@
             <option value="Moratuwa">Moratuwa</option>
             <option value="Piliyandala">Piliyandala</option>
             <option value="Kottawa">Kottawa</option>
-        </select>
+        </select><br>
         <label for="country">Country:</label>
         <select id="country" name="country">
             <option value="">Select a Country</option>
@@ -65,54 +65,52 @@
         </select>
         <br>
         <br>
-
-  
+       </div>
+       <div class="right-section">
         <label for="Payment_Method"><b>Payment Method:</b></label>
         <br>
         <label for="debitCreditCard">
-            <input type="radio" id="debitCreditCard" name="paymentMethod" value="debitCreditCard" >
-            Debit/Credit Card
+            <input type="radio" id="debitCreditCard" name="paymentMethod" value="debitCreditCard"  >
+            <span style="font-weight:lighter;">Debit/Credit Card</span>
         </label>
         <label for="cashOnDelivery">
             <input type="radio" id="cashOnDelivery" name="paymentMethod" value="cashOnDelivery" >
-            Cash on Delivery
+            <span style="font-weight:lighter;">Cash on Delivery</span>
         </label>
         <label for="bankDeposit">
             <input type="radio" id="bankDeposit" name="paymentMethod" value="bankDeposit" >
-            Bank Deposit
+            <span style="font-weight:lighter;">Bank Deposit</span>
         </label>
-        <br>
+        <br><br>
 
         <label><b>Payment Option:</b></label>
         <br>
         <label for="payAdvance">
             <input type="radio" id="payAdvance" name="paymentOption" value="payAdvance" >
-            Pay Advance <span style="color:red;">(This option is only available for Online Payment Users)</span></label>
+            <span style="font-weight:lighter;">Pay Advance</span> <span style="color:red;">(This option is only available for Online Payment Users)</span></label>
         <label for="payFullPayment">
             <input type="radio" id="payFullPayment" name="paymentOption" value="payFullPayment" >
-            Pay Full Payment</label>
-        <br>
+            <span style="font-weight:lighter;">Pay Full Payment</span></label>
+        <br><br>
 
         <label for="deliveryNote"><b>Delivery Note:</b></label>
         <textarea id="deliveryNote" name="deliveryNote"></textarea>
-        <br>
-
         <button type="submit" id="confirmOrderButton">Confirm Order</button>
+
+        <br>
+        </div>
     </form>
 
-    <div class="bankAccDetails">
+    <!-- <div class="bankAccDetails">
         <h3>Bank Account Details:</h3>
         <br>
-        <label>Account No: 1234567890</label>
-        <br>
-        <label>Account Name: S.M.T. Bhagya</label>
-        <br>
-        <label>Bank Name: ABC Bank</label>
-        <br>
-        <label>Branch Name: Colombo Branch</label>
-        <br>
+        <p>Account Name: D.S.B. Fernando</p>
+        <p>Account No :0430-35372791-101</p>
+        <p>Bank Name : Seylan Bank</p>
+        <p>Branch Name : Homagama</p>
+        <br> 
         <img src="{{ asset('images/QR_Code.png') }}" alt="qr_code" style="width:50px; height:50px; margin-left:100px;">
-    </div>
+    </div> -->
 
 
      <?php

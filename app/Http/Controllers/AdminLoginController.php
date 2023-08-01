@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Models\Customer;
+use App\Models\Product;
+use App\Models\Order;
 
 class AdminLoginController extends Controller
 {
@@ -37,8 +40,16 @@ class AdminLoginController extends Controller
         // Valid login, store the admin data in the session
         $request->session()->put('admin', $admin);
 
-        // Redirect to the home page
-        return view('html.admin-home');
+        // Get the counts for customers, products, and orders
+        $customerCount = Customer::count(); 
+        $productCount = Product::count();   
+        $orderCount = Order::count();   
+
+        return view('html.admin-home', [
+            'customerCount' => $customerCount,
+            'productCount' => $productCount,
+            'orderCount' => $orderCount,
+        ]);
     }
 }
 

@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
+    "\\app\\Models",
     "\\public",
+    "\\public\\css",
     "\\public\\js",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\html",
     "\\resources\\views\\pdf"
   ],
+  "SelectedNode": "\\app\\Models\\Customer.php",
   "PreviewInSolutionExplorer": false
 }

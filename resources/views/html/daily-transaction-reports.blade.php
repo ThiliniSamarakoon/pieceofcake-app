@@ -32,7 +32,7 @@
       </div>
 
     <div class="table-container">
-        <h1 class="heading">Daily Transaction Reports</h1>
+        <h1 class="heading">Daily Transaction Report</h1>
                 
         <table>
             <thead>

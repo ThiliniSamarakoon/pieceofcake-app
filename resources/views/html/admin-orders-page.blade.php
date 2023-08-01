@@ -9,11 +9,11 @@
 <body>
     {!! $header !!}
 
-    <div class="button-container">
+    <div class="heading">
         <h1>All Orders</h1>
-        <button class="button" style="background-color:#d3d3d3;">Completed Orders</button>
+       <!-- <button class="button" style="background-color:#d3d3d3;">Completed Orders</button>
         <button class="button" style="background-color:#ffe4e1;">Pending Orders</button>
-        <button class="button" style="background-color:#b0c4de;">Customized Orders</button>
+        <button class="button" style="background-color:#b0c4de;">Customized Orders</button> -->
     </div>
 
     <div class="order-container">

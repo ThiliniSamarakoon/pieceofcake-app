@@ -1,7 +1,7 @@
 .cart-container {
-    max-width: 900px;
+    max-width: 1000px;
     padding: 20px;
-    margin-left: 15px;
+    margin-left: -10px;
     align-content: center;
     margin-top: -50px;
 }
@@ -13,7 +13,7 @@ table {
 }
 
 th, td {
-    padding: 15px;
+    padding: 25px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
@@ -52,4 +52,14 @@ footer {
     margin-top: 170px;
 }
 
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="checkbox"] {
+    font-size:16px;
+}
 
+input[type="checkbox"] {
+    width:50px;
+    height:20px;
+}

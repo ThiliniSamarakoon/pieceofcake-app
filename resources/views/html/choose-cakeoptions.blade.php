@@ -100,7 +100,7 @@
 
         <!-- Description -->
         <div class="custom-order-column">
-            <h3>Message on the Cake: </h3>
+            <h3>Label on the Cake: </h3>
             <textarea name="description"></textarea>
         </div>
 

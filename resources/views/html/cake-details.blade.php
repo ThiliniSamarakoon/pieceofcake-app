@@ -40,7 +40,7 @@
         <div class="product-details">
                 <p class="product-id" >Product ID&nbsp;&nbsp;&nbsp;   :<input type="text" name="product_id" value="{{ $product->ProductID }}" style="border:none;"></p>
                 <!-- <p class="price">Price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            : ${{ $product->price }}</p>-->
-                <p class="price">Price:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:Rs.<input type="text" id="displayPrice" name="price" style="border:none;" value="{{ $product->price }}"></p>
+                <p class="price">Price:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:Rs.<input type="text" id="displayPrice" name="price" style="border:none; width:70px;" value="{{ $product->price }}">/ per 1kg</p>
 
                 <!-- <p class="item-weight">Item Weight&nbsp; :<input type="text" name="item_weight" value="{{ $product->item_weight }}" style="border:none;"></p> -->
                 <p class="cake-type">Cake Type&nbsp;&nbsp;&nbsp;     :<input type="text" name="cake_type" value="{{ $product->cake_type }}" style="border:none;"></p>

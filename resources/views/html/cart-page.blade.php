@@ -64,11 +64,11 @@
             <tbody>
             
                 <tr data-order-id="{{ $latestOrderID->OrderID }}">
-                    <td><input type="text" name="order_id" value="{{ $latestOrderID->OrderID }}" style="border:none;" readonly></td>
+                    <td><input type="text" name="order_id" value="{{ $latestOrderID->OrderID }}" style="border:none;width:50px;" readonly></td>
                     <input type="hidden" name="image_path" value="{{ $imagePath }}">
                     <td>
                         @if ($imagePath)
-                            <img src="{{ $imagePath }}" alt="Order Image" width="100" height="100">
+                            <img src="{{ $imagePath }}" alt="Order Image" width="225" height="225">
                         @else
                             <img src="{{ asset('images/default.jpeg') }}" alt="Default Image" width="500" height="500">
                         @endif

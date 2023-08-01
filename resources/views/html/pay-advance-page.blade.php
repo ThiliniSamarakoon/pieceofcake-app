@@ -33,13 +33,14 @@
     </div>
 
     <h1 class="heading">Pay Advance Form</h1>
-    <h3 style="color:red; text-align:center;">(When making the next installment payment, click on the 'Pay Advance' button available on the Profile page)</h3>
+    <h3 style="color:red; text-align:center;">(When making the next installment payment, go to Profile page)</h3>
+    
     <form id="paymentForm" method="POST" action="{{ route('installment.store') }}">
       @csrf
 
         <div class="form-group">
             <label for="nextPaymentDate">Next Payment Date:</label>
-            <input type="date" id="nextPaymentDate" name="nextPaymentDate" min="{{ date('Y-m-d', strtotime('+1 day')) }}"  max="{{ date('Y-m-d', strtotime('+30 day')) }}"  required>
+            <input type="date" id="nextPaymentDate" name="nextPaymentDate" min="{{ date('Y-m-d', strtotime('+2 day')) }}"  max="{{ date('Y-m-d', strtotime('+30 day')) }}"  required>
         </div>
 
 
@@ -56,10 +57,9 @@
 
         <button type="submit" id="confirmButton" onclick="calculateRemainingAmount()">Confirm</button>
     </form>
-
     <div class="form-group-due-amount">
-            <label for="dueAmount">Due Amount:</label><br>
-            <span id="dueAmount" name="dueAmount">
+            <label for="dueAmount" class="dueAmount">Due Amount:</label><br>
+            <span id="dueAmount" name="dueAmount" style="width:200px;">
              
                 <?php
                 // Include the Cart model
@@ -76,6 +76,7 @@
                 ?>
             </span>
         </div>
+
 
          <?php
     //Footer Section
