@@ -35,7 +35,7 @@
     ?>
     <div class="center-content">
             <h1 id="Admin-Panel">Add Products</h1>
-            <button class="productBtn" id="productCatalogBtn">Product Catalog</button>
+            <button class="productBtn" id="productCatalogBtn" >Product Catalog</button>
     </div>
 
 <?php

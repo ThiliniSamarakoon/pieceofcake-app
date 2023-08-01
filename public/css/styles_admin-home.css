@@ -85,7 +85,7 @@ body {
     align-items: center;
     width: 200px;
     height: 100px;
-    background-color: #8585c2;
+    background-color: #3E7689;
     margin: 0 10px;
     padding: 20px;
     border-radius: 10px;
@@ -94,8 +94,8 @@ body {
 .inner-square {
     width: 80px;
     height: 80px;
-    background-color: #ccc;
     margin-bottom: 10px;
+    background-color:black;
 }
 
 .rounded-button {
@@ -116,11 +116,13 @@ body {
     .textbox {
         width: 100%;
         height: 30px;
-        padding: 5px;
         box-sizing: border-box;
-        border: 1px solid #ccc;
         border-radius: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+        color:white;
+        text-align:center;
+        font-size:40px;
+        margin-top:-10px;
     }
 
 .inner-square {
@@ -170,4 +172,5 @@ footer {
         .footer-right a:hover {
             color: #000;
         }
+
 

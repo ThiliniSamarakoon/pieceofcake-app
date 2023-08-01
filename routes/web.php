@@ -20,7 +20,7 @@ use App\Http\Controllers\SecondInstallmentController;
 use App\Http\Controllers\AdminOrdersController;
 use App\Http\Controllers\AdminReportsController;
 use App\Http\Controllers\ProductCatalogController;
-
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -253,3 +253,14 @@ Route::match(['get', 'post'], '/daily-transaction-reports', [AdminReportsControl
     ->name('admin_dailyTransactionReports');
 
 Route::get('/product-catalog', [ProductCatalogController::class, 'showProductCatalog'])->name('product.catalog');
+
+//Route::put('/update-product/{id}', [ProductCatalogController::class, 'updateProduct'])->name('product.update');
+
+//Route::post('/update-product', [ProductCatalogController::class, 'updateProduct'])->name('product.update');
+//Route::match(['post', 'get'], '/update-product', [ProductCatalogController::class, 'updateProduct'])->name('product.update');
+
+Route::get('/update-product/{productId}', [ProductCatalogController::class, 'showUpdateProductForm'])->name('product.update');
+//Route::post('/update-product', [ProductCatalogController::class, 'updateProduct'])->name('product.update.submit');
+
+//Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin-home', [DashboardController::class, 'dashboard'])->name('admin.home');

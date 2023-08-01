@@ -2,16 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Models",
-    "\\database",
-    "\\database\\migrations",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\public",
-    "\\public\\css",
     "\\public\\js",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\html"
+    "\\resources\\views\\html",
+    "\\resources\\views\\pdf"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\AdminOrdersController.php",
   "PreviewInSolutionExplorer": false
 }

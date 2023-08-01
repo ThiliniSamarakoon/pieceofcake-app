@@ -43,25 +43,25 @@
             <div class="box-row">
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox">{{ $customerCount }}</span>
                     </div>
                     <button class="rounded-button">See Accounts</button>
                 </div>
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox"></span>
                     </div>
                     <button class="rounded-button">See Pending Orders</button>
                 </div>
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox"></span>
                     </div>
                     <button class="rounded-button">See Completed Orders</button>
                 </div>
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox"></span>
                     </div>
                     <button class="rounded-button">See Delivered Orders</button>
                 </div>
@@ -69,25 +69,25 @@
             <div class="box-row">
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox">{{ $productCount }}</span>
                     </div>
                     <button class="rounded-button">See Products</button>
                 </div>
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox">{{ $orderCount }}</span>
                     </div>
-                    <button class="rounded-button">See Total Orders</button>
+                    <button class="rounded-button" onclick="window.location.href = '{{ route('admin.orders') }}';">See All Orders</button>
                 </div>
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox"></span>
                     </div>
                     <button class="rounded-button">See Inventory</button>
                 </div>
                 <div class="box">
                     <div class="inner-square">
-                        <input type="text" class="textbox">
+                        <span class="textbox"></span>
                     </div>
                     <button class="rounded-button">See Messages</button>
                 </div>
